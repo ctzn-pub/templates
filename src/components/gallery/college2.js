@@ -1,4 +1,4 @@
-import Demographics from '../components/gallery/StandaloneDemographics.jsx';
+import Demographics from './StandaloneDemographics.jsx';
 
 import React, { useState } from 'react';
 function College() {
