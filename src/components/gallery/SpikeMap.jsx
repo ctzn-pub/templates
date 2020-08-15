@@ -9,7 +9,7 @@ const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2}
 
 const path = d3.geoPath();
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
-
+console.log('population', population);
 const data = population.slice(1).map(([population, state, county]) => {
   const id = state + county;
   const feature = features.get(id);

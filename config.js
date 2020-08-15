@@ -1,7 +1,7 @@
 const config = {
   gatsby: {
     pathPrefix: '/',
-    siteUrl: 'https://hasura.io',
+    siteUrl: 'https://ontopic.io',
     gaTrackingId: null,
     trailingSlash: false,
   },
@@ -38,24 +38,24 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
-      '/introduction', // add trailing slash if enabled above
-      '/codeblock',
+      '/barcharts', // add trailing slash if enabled above
+      '/maps',
     ],
     collapsedNav: [
-      '/codeblock', // add trailing slash if enabled above
+      // '/maps', // add trailing slash if enabled above
     ],
-    links: [{ text: 'Hasura', link: 'https://hasura.io' }],
+    links: [{ text: 'Ontopic', link: 'https://ontopic.io' }],
     frontline: false,
     ignoreIndex: true,
     title:
-      "<a href='https://hasura.io/learn/'>graphql </a><div class='greenCircle'></div><a href='https://hasura.io/learn/graphql/react/introduction/'>react</a>",
+      "<a href='https://ontopic.io/'>on </a><div class='greenCircle'></div><a href='https://ontopic.io/'>graphs</a>",
   },
   siteMetadata: {
-    title: 'Gatsby Gitbook Boilerplate | Hasura',
-    description: 'Documentation built with mdx. Powering hasura.io/learn ',
+    title: 'Gatsby Gitbook Boilerplate | Ontopic',
+    description: 'Documentation built with mdx. Powering ontopic.io ',
     ogImage: null,
-    docsLocation: 'https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content',
-    favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
+    docsLocation: 'https://github.com/ctzn-pub/templates/tree/master/content',
+    favicon: 'https://ontopic-static.netlify.app/favicon.ico',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
