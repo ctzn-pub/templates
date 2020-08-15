@@ -2,26 +2,41 @@ import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import population from './data/population.json';
-
+import fat from './data/obesity.json';
 import us from './data/counties-albers-10m.json';
 const format = d3.format(',.0f');
 const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
 const path = d3.geoPath();
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
+
 console.log('population', population);
-const data = population.slice(1).map(([population, state, county]) => {
+console.log('fat', fat);
+
+let data = population.slice(1).map(([population, state, county]) => {
   const id = state + county;
   const feature = features.get(id);
   return {
     id,
     position: feature && path.centroid(feature),
     title: feature && feature.properties.name,
-    value: +population,
+    // value: +population,
   };
 });
 
-const length = d3.scaleLinear([0, d3.max(data, d => d.value)], [0, 200]);
+const mergeById = (a1, a2) =>
+  a1.map(itm => ({
+    ...a2.find(item => item.id === itm.id && item),
+    ...itm,
+  }));
+
+data = mergeById(data, fat);
+
+console.log('data1', data);
+
+const length = d3.scalePow([0, d3.max(data, d => d.value)], [0, 20]).exponent(4.5);
+console.log('length 40', length(40));
+console.log('length 10', length(10));
 
 function SpikeMap() {
   const svgRef = useRef();
@@ -60,9 +75,9 @@ function SpikeMap() {
 
     legend
       .append('path')
-      .attr('fill', 'red')
+      .attr('fill', d => d.color)
       .attr('fill-opacity', 0.3)
-      .attr('stroke', 'red')
+      .attr('stroke', d => d.color)
       .attr('d', d => spike(length(d)));
 
     legend
@@ -72,9 +87,9 @@ function SpikeMap() {
 
     svg
       .append('g')
-      .attr('fill', 'red')
-      .attr('fill-opacity', 0.3)
-      .attr('stroke', 'red')
+      //    .attr('fill', 'blue')
+      // .attr('fill-opacity', 0.3)
+      //  .attr('stroke', 'blue')
       .selectAll('path')
       .data(
         data
@@ -88,6 +103,9 @@ function SpikeMap() {
       .join('path')
       .attr('transform', d => `translate(${d.position})`)
       .attr('d', d => spike(length(d.value)))
+      .attr('fill', d => d.color)
+      .attr('fill-opacity', 0.3)
+      .attr('stroke', d => d.color)
       .append('title')
       .text(
         d => `${d.title}
