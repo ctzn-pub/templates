@@ -1,9 +1,28 @@
 require('dotenv').config();
+const fetch = require(`node-fetch`);
+const { createHttpLink } = require(`apollo-link-http`);
+
 const queries = require('./src/utils/algolia');
 const config = require('./config');
 const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
+  {
+    resolve: 'gatsby-source-graphql', // <- Configure plugin
+    options: {
+      typeName: 'HASURA',
+      fieldName: 'hasura', // <- fieldName under which schema will be stitched
+      createLink: () =>
+        createHttpLink({
+          uri: process.env.GATSBY_HASURA_GRAPHQL_URL,
+          headers: {
+            'x-hasura-admin-secret': process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET,
+          },
+          fetch,
+        }),
+      //  refetchInterval: 10, // Refresh every 10 seconds for new data
+    },
+  },
   {
     resolve: `gatsby-plugin-layout`,
     options: {
