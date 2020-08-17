@@ -10,9 +10,6 @@ const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2}
 const path = d3.geoPath();
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
 
-console.log('population', population);
-console.log('fat', fat);
-
 let data = population.slice(1).map(([population, state, county]) => {
   const id = state + county;
   const feature = features.get(id);
@@ -32,12 +29,8 @@ const mergeById = (a1, a2) =>
 
 data = mergeById(data, fat);
 
-console.log('data1', data);
 
-const length = d3.scalePow([0, d3.max(data, d => d.value)], [0, 20]).exponent(4.5);
-console.log('length 40', length(40));
-console.log('length 10', length(10));
-
+const length = d3.scalePow([0, d3.max(data, d => d.value)], [0, 70]).exponent(6);
 function SpikeMap() {
   const svgRef = useRef();
   useEffect(() => {
@@ -71,7 +64,7 @@ function SpikeMap() {
           .reverse()
       )
       .join('g')
-      .attr('transform', (d, i) => `translate(${975 - (i + 1) * 18},590)`);
+      .attr('transform', (d, i) => `translate(${700 - (i + 1) * 18},590)`);
 
     legend
       .append('path')
