@@ -45,6 +45,7 @@
     "highcharts": "^8.1.2",
     "highcharts-react-official": "^3.0.0",
     "is-absolute-url": "^3.0.3",
+    "leaflet": "^1.6.0",
     "lodash.flatten": "^4.4.0",
     "lodash.startcase": "^4.4.0",
     "react": "^16.12.0",
