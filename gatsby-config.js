@@ -5,6 +5,12 @@ const { createHttpLink } = require(`apollo-link-http`);
 const queries = require('./src/utils/algolia');
 const config = require('./config');
 const plugins = [
+  {
+    resolve: 'gatsby-plugin-react-leaflet',
+    options: {
+      linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
+    },
+  },
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
   {
