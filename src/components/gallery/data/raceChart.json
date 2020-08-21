@@ -1,0 +1,1340 @@
+[
+  {
+    "varname": "abdefect",
+    "Short_Title": "Allow Abortion For Serious Birth Defect",
+    "gss_timetrends": [
+      {
+        "Overall": 0.79,
+        "Year": 1972,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1973,
+        "Average": 0.86,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1974,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.82,
+        "Year": 1975,
+        "Average": 0.84,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1976,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.85,
+        "Year": 1977,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.81,
+        "Year": 1978,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1980,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1982,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.78,
+        "Year": 1983,
+        "Average": 0.81,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.8,
+        "Year": 1984,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.79,
+        "Year": 1985,
+        "Average": 0.8,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.78,
+        "Year": 1987,
+        "Average": 0.8,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.79,
+        "Year": 1988,
+        "Average": 0.82,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.82,
+        "Year": 1989,
+        "Average": 0.82,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.81,
+        "Year": 1990,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1991,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.8,
+        "Year": 1993,
+        "Average": 0.79,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.82,
+        "Year": 1994,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.81,
+        "Year": 1996,
+        "Average": 0.81,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.77,
+        "Year": 1998,
+        "Average": 0.79,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.78,
+        "Year": 2000,
+        "Average": 0.74,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.77,
+        "Year": 2002,
+        "Average": 0.74,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.72,
+        "Year": 2004,
+        "Average": 0.68,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.73,
+        "Year": 2006,
+        "Average": 0.7,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.74,
+        "Year": 2008,
+        "Average": 0.65,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.74,
+        "Year": 2010,
+        "Average": 0.71,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.73,
+        "Year": 2012,
+        "Average": 0.69,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.75,
+        "Year": 2014,
+        "Average": 0.69,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.74,
+        "Year": 2016,
+        "Average": 0.73,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.76,
+        "Year": 2018,
+        "Average": 0.74,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      }
+    ]
+  },
+  {
+    "varname": "abpoor",
+    "Short_Title": "Allow Abortion If Can't Afford More Children",
+    "gss_timetrends": [
+      {
+        "Overall": 0.49,
+        "Year": 1972,
+        "Average": 0.54,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.53,
+        "Year": 1973,
+        "Average": 0.59,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.55,
+        "Year": 1974,
+        "Average": 0.58,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.52,
+        "Year": 1975,
+        "Average": 0.53,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.53,
+        "Year": 1976,
+        "Average": 0.58,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.53,
+        "Year": 1977,
+        "Average": 0.55,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1978,
+        "Average": 0.51,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.52,
+        "Year": 1980,
+        "Average": 0.56,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 1982,
+        "Average": 0.53,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 1983,
+        "Average": 0.45,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 1984,
+        "Average": 0.51,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.43,
+        "Year": 1985,
+        "Average": 0.43,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 1987,
+        "Average": 0.48,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 1988,
+        "Average": 0.44,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1989,
+        "Average": 0.51,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1990,
+        "Average": 0.48,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 1991,
+        "Average": 0.52,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.49,
+        "Year": 1993,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.5,
+        "Year": 1994,
+        "Average": 0.51,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 1996,
+        "Average": 0.47,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.43,
+        "Year": 1998,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 2000,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.43,
+        "Year": 2002,
+        "Average": 0.43,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 2004,
+        "Average": 0.34,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 2006,
+        "Average": 0.39,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 2008,
+        "Average": 0.42,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 2010,
+        "Average": 0.44,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 2012,
+        "Average": 0.42,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 2014,
+        "Average": 0.47,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 2016,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.49,
+        "Year": 2018,
+        "Average": 0.54,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      }
+    ]
+  },
+  {
+    "varname": "absingle",
+    "Short_Title": "Allow Abortion Because Not Married",
+    "gss_timetrends": [
+      {
+        "Overall": 0.44,
+        "Year": 1972,
+        "Average": 0.48,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.49,
+        "Year": 1973,
+        "Average": 0.52,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.5,
+        "Year": 1974,
+        "Average": 0.54,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 1975,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.5,
+        "Year": 1976,
+        "Average": 0.54,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.49,
+        "Year": 1977,
+        "Average": 0.48,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 1978,
+        "Average": 0.44,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 1980,
+        "Average": 0.52,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 1982,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.38,
+        "Year": 1983,
+        "Average": 0.39,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.43,
+        "Year": 1984,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 1985,
+        "Average": 0.4,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 1987,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.39,
+        "Year": 1988,
+        "Average": 0.4,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 1989,
+        "Average": 0.48,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 1990,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 1991,
+        "Average": 0.43,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1993,
+        "Average": 0.45,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1994,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 1996,
+        "Average": 0.43,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 1998,
+        "Average": 0.43,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.38,
+        "Year": 2000,
+        "Average": 0.38,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 2002,
+        "Average": 0.36,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 2004,
+        "Average": 0.32,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.38,
+        "Year": 2006,
+        "Average": 0.34,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 2008,
+        "Average": 0.38,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 2010,
+        "Average": 0.42,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 2012,
+        "Average": 0.37,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.43,
+        "Year": 2014,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 2016,
+        "Average": 0.44,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 2018,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      }
+    ]
+  },
+  {
+    "varname": "abnomore",
+    "Short_Title": "Allow Abortion If Want No More Children",
+    "gss_timetrends": [
+      {
+        "Overall": 0.4,
+        "Year": 1972,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 1973,
+        "Average": 0.56,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1974,
+        "Average": 0.5,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 1975,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 1976,
+        "Average": 0.52,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 1977,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 1978,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 1980,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 1982,
+        "Average": 0.5,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.38,
+        "Year": 1983,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 1984,
+        "Average": 0.45,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 1985,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 1987,
+        "Average": 0.43,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 1988,
+        "Average": 0.44,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 1989,
+        "Average": 0.47,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 1990,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 1991,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 1993,
+        "Average": 0.46,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 1994,
+        "Average": 0.49,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 1996,
+        "Average": 0.47,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 1998,
+        "Average": 0.44,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.4,
+        "Year": 2000,
+        "Average": 0.39,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.42,
+        "Year": 2002,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 2004,
+        "Average": 0.32,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.41,
+        "Year": 2006,
+        "Average": 0.36,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.44,
+        "Year": 2008,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.48,
+        "Year": 2010,
+        "Average": 0.48,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.45,
+        "Year": 2012,
+        "Average": 0.41,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.47,
+        "Year": 2014,
+        "Average": 0.45,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.46,
+        "Year": 2016,
+        "Average": 0.47,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.5,
+        "Year": 2018,
+        "Average": 0.53,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      }
+    ]
+  },
+  {
+    "varname": "abhlth",
+    "Short_Title": "Allow Abortion If Woman's Health Endangered",
+    "gss_timetrends": [
+      {
+        "Overall": 0.87,
+        "Year": 1972,
+        "Average": 0.92,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.92,
+        "Year": 1973,
+        "Average": 0.94,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.93,
+        "Year": 1974,
+        "Average": 0.94,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1975,
+        "Average": 0.94,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1976,
+        "Average": 0.95,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1977,
+        "Average": 0.93,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 1978,
+        "Average": 0.93,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1980,
+        "Average": 0.93,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1982,
+        "Average": 0.94,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 1983,
+        "Average": 0.92,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 1984,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 1985,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.89,
+        "Year": 1987,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.89,
+        "Year": 1988,
+        "Average": 0.92,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1989,
+        "Average": 0.93,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.93,
+        "Year": 1990,
+        "Average": 0.97,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 1991,
+        "Average": 0.94,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 1993,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 1994,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.92,
+        "Year": 1996,
+        "Average": 0.93,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.88,
+        "Year": 1998,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.88,
+        "Year": 2000,
+        "Average": 0.88,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.91,
+        "Year": 2002,
+        "Average": 0.89,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.85,
+        "Year": 2004,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.87,
+        "Year": 2006,
+        "Average": 0.84,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.89,
+        "Year": 2008,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.86,
+        "Year": 2010,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.87,
+        "Year": 2012,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.88,
+        "Year": 2014,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.89,
+        "Year": 2016,
+        "Average": 0.91,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.9,
+        "Year": 2018,
+        "Average": 0.9,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      }
+    ]
+  },
+  {
+    "varname": "abrape",
+    "Short_Title": "Allow Abortion In Cases Of Rape",
+    "gss_timetrends": [
+      {
+        "Overall": 0.79,
+        "Year": 1972,
+        "Average": 0.82,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1973,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.86,
+        "Year": 1974,
+        "Average": 0.88,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1975,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1976,
+        "Average": 0.86,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1977,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1978,
+        "Average": 0.86,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1980,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1982,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.82,
+        "Year": 1983,
+        "Average": 0.84,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.79,
+        "Year": 1984,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.82,
+        "Year": 1985,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.8,
+        "Year": 1987,
+        "Average": 0.82,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.81,
+        "Year": 1988,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1989,
+        "Average": 0.86,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.85,
+        "Year": 1990,
+        "Average": 0.88,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.87,
+        "Year": 1991,
+        "Average": 0.9,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.82,
+        "Year": 1993,
+        "Average": 0.86,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.83,
+        "Year": 1994,
+        "Average": 0.86,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.84,
+        "Year": 1996,
+        "Average": 0.87,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.8,
+        "Year": 1998,
+        "Average": 0.85,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.8,
+        "Year": 2000,
+        "Average": 0.8,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.78,
+        "Year": 2002,
+        "Average": 0.77,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.75,
+        "Year": 2004,
+        "Average": 0.74,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.77,
+        "Year": 2006,
+        "Average": 0.76,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.76,
+        "Year": 2008,
+        "Average": 0.75,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.79,
+        "Year": 2010,
+        "Average": 0.82,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.76,
+        "Year": 2012,
+        "Average": 0.76,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.78,
+        "Year": 2014,
+        "Average": 0.78,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.77,
+        "Year": 2016,
+        "Average": 0.83,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      },
+      {
+        "Overall": 0.79,
+        "Year": 2018,
+        "Average": 0.82,
+        "Demographic": "Age",
+        "DemographicLevel": "[18,35]"
+      }
+    ]
+  }
+]
