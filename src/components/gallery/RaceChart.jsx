@@ -165,19 +165,19 @@ function RaceChart() {
     if (years[selectedYearIndex.current] >= endYear) {
       pause();
     }
-    chartRef.current.update(
-      {
-        title: {
-          useHTML: true,
-          text: `<div>World population - overall: <b>${
-            getData(years[selectedYearIndex.current])[0][1]
-          }</b></span></div>`,
-        },
-      },
-      false,
-      false,
-      false
-    );
+    // chartRef.current.update(
+    //   {
+    //     title: {
+    //       useHTML: true,
+    //       text: `<div>World population - overall: <b>${
+    //         getData(years[selectedYearIndex.current])[0][1]
+    //       }</b></span></div>`,
+    //     },
+    //   },
+    //   false,
+    //   false,
+    //   false
+    // );
     chartRef.current.series[0].update({
       name: years[selectedYearIndex.current],
       data: getData(years[selectedYearIndex.current], 'Average')[1],
