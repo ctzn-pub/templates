@@ -224,7 +224,7 @@ function RaceChart() {
 
   const marks = years.map(y => ({
     value: y,
-    label: y % 10 === 0 ? y : '',
+    label: y % 10 === 0 || +y === startYear || +y === endYear ? y : '',
   }));
 
   if (data === null) return null;
