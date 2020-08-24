@@ -50,31 +50,45 @@ function Bubble({ data, type, axislabel, showLegend = false, chartsRefs = [], ch
   const bubbleOptions = {
     plotOptions: {
       series: {
-        events: showLegend
-          ? {
-              legendItemClick: function(event) {
-                chartsRefs.forEach(chartRef => {
-                  const chart = chartRef.current.chart;
-                  const series = chart.get(this.options.id); //get corresponding series
-
-                  if (series) {
-                    if (this.visible) {
-                      series.hide();
-                    } else {
-                      series.show();
-                    }
-                  }
-                });
-              },
-            }
-          : {},
         states: {
+          hover: {
+            enabled: false,
+            opacity: 0,
+          },
           inactive: {
-            opacity: 1,
+            opacity: 0,
           },
         },
       },
     },
+    // plotOptions: {
+    //   series: {
+    //     events: showLegend
+    //       ? {
+    //           legendItemClick: function(event) {
+    //             chartsRefs.forEach(chartRef => {
+    //               const chart = chartRef.current.chart;
+    //               const series = chart.get(this.options.id); //get corresponding series
+
+    //               if (series) {
+    //                 if (this.visible) {
+    //                   series.hide();
+    //                 } else {
+    //                   series.show();
+    //                 }
+    //               }
+    //             });
+    //           },
+    //         }
+    //       : {},
+    //     states: {
+    //       inactive: {
+    //         enabled: false,
+    //         opacity: 1,
+    //       },
+    //     },
+    //   },
+    // },
     title: {
       text: display,
       align: 'center',
@@ -118,7 +132,8 @@ function Bubble({ data, type, axislabel, showLegend = false, chartsRefs = [], ch
     exporting: { enabled: false },
 
     legend: {
-      enabled: showLegend,
+      enabled: false,
+      // enabled: showLegend && false,
       verticalAlign: 'top',
       // title: { text: "Main Religion" },
       layout: 'horizontal',
