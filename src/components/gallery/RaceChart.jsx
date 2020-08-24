@@ -3,6 +3,7 @@ import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import HC_data from 'highcharts/modules/data';
 import abortion_demographic from './data/raceChart.json';
+import abortion_politics_data from './data/abortion_politics.json';
 import { FaPlay, FaPause } from 'react-icons/fa';
 
 import Slider from '@material-ui/core/Slider';
@@ -12,7 +13,7 @@ if (typeof Highcharts === 'object') {
   HC_data(Highcharts);
 }
 
-const startYear = 1972;
+const startYear = 1977;
 const endYear = 2018;
 
 function RaceChart() {
@@ -21,33 +22,83 @@ function RaceChart() {
   const inputRef = React.useRef();
   const selectedYearIndex = React.useRef(0);
   const [data, setData] = React.useState(null);
+  const [years, setYears] = React.useState([]);
+  const [levels, setLevels] = React.useState([]);
   const [chartOption, setChartOption] = React.useState(null);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [selectedYear, setSelectedYear] = React.useState(startYear);
 
   React.useEffect(() => {
-    const chartData = abortion_demographic.map(variable => {
-      const dataObj = { 'Country Name': variable.Short_Title };
-      variable.gss_timetrends.forEach(({ Average, Overall, Year }) => {
-        dataObj[Year] = { Average: Average * 100, Overall: Overall * 100 };
+    const data = abortion_politics_data.data.gss_topics[0].gss_meta;
+    const years = [...new Set(data[0].gss_timetrends.map(x => x.Year))];
+    let demoLevels = [...new Set(data[0].gss_timetrends.map(x => x.DemographicLevel))];
+    demoLevels = demoLevels.map(level => {
+      const dataObj = data[0].gss_timetrends.find(x => x.DemographicLevel === level);
+      return {
+        level,
+        color: dataObj.Color,
+      };
+    });
+    setYears(years);
+    setLevels(demoLevels);
+    const chartData = data.map(variable => {
+      const dataObj = { varname: variable.varname };
+
+      variable.gss_timetrends.forEach(d => {
+        if (dataObj[d.Year]) {
+          dataObj[d.Year] = {
+            ...dataObj[d.Year],
+            [d.DemographicLevel]: d.Average * 100,
+            overall: d.Overall * 100,
+          };
+        } else {
+          dataObj[d.Year] = { [d.DemographicLevel]: d.Average * 100, overall: d.Overall * 100 };
+        }
       });
       return dataObj;
     });
+
+    // const chartData = abortion_demographic.map(variable => {
+    //   const dataObj = { 'varname': variable.Short_Title };
+    //   variable.gss_timetrends.forEach(({ Average, Overall, Year }) => {
+    //     dataObj[Year] = { Average: Average * 100, Overall: Overall * 100 };
+    //   });
+    //   return dataObj;
+    // });
     setData(chartData);
   }, []);
 
-  const getData = (year, type) => {
+  const getDataOverall = year => {
     let output = data
-      .map(data => {
-        return [data['Country Name'], data[year][type]];
+      .map(d => {
+        return [d['varname'], d[year].overall];
       })
       .sort((a, b) => b[1] - a[1]);
-    return [output[0], output.slice(1, 11)];
+    return output.slice(1, 11);
   };
+  const getDataLevels = (year, level) => {
+    let output = data
+      .map(data => {
+        return [data['varname'], data[year][level]];
+      })
+      .sort((a, b) => b[1] - a[1]);
+    return output.slice(1, 11);
+  };
+
   React.useEffect(() => {
     if (btnRef.current)
       setChartOption({
-        credits: { enabled: false },
+        credits: {
+          enabled: true,
+
+          text: 'Data Source: General Social Survey',
+          // href: "/source/gss",
+          style: {
+            fontSize: '10px',
+            color: 'black',
+            fontFamily: 'Times',
+          },
+        },
 
         chart: {
           animation: {
@@ -72,6 +123,8 @@ function RaceChart() {
         plotOptions: {
           scatter: { animation: false },
           series: {
+            pointWidth: 25,
+
             animation: false,
             groupPadding: 0,
             pointPadding: 0.1,
@@ -89,17 +142,32 @@ function RaceChart() {
         },
 
         legend: {
-          align: 'right',
-          verticalAlign: 'bottom',
-          itemStyle: {
-            fontWeight: 'bold',
-            fontSize: '50px',
-          },
-          symbolHeight: 0.001,
-          symbolWidth: 0.001,
-          symbolRadius: 0.001,
           enabled: false,
+          y: -20,
+          x: 220,
+          //  borderWidth: 1,
+
+          layout: 'horizontal',
+          //  align: "right",
+          itemStyle: {
+            fontSize: '14px',
+            fontWeight: 'normal',
+            fontFamily: 'Georgia',
+          },
+          itemMarginTop: 3,
+          itemMarginBottom: 0,
+          verticalAlign: 'top',
+          floating: true,
+          style: {
+            fontSize: '1em',
+          },
+          //paddingTop: 5,
+          // marginTop: 10,
+
+          margin: 0,
+          padding: 0,
         },
+
         xAxis: {
           type: 'category',
         },
@@ -117,13 +185,13 @@ function RaceChart() {
         },
         series: [
           {
-            colorByPoint: true,
+            // colorByPoint: true,
             dataSorting: {
               enabled: true,
               matchByName: true,
             },
-            // color: '#e7e7e7',
-            // borderColor: 'transparent',
+            color: '#e7e7e7',
+            borderColor: 'transparent',
             type: 'bar',
             dataLabels: [
               {
@@ -131,28 +199,32 @@ function RaceChart() {
               },
             ],
             name: years[selectedYearIndex.current],
-            data: getData(years[selectedYearIndex.current], 'Average')[1],
+            data: getDataOverall(years[selectedYearIndex.current]),
+            // w: 10,
           },
-          {
-            // colorByPoint: true,
+          ...levels.map(({ level, color }) => {
+            return {
+              // colorByPoint: true,
 
-            type: 'scatter',
-            marker: {
-              lineWidth: 2,
-              fillColor: '#f2f2f2',
-              lineColor: null,
-              radius: 5,
-              symbol: 'circle',
-            },
-            dataLabels: [
-              {
-                enabled: false,
+              type: 'scatter',
+              marker: {
+                lineWidth: 0,
+                fillColor: color,
+                lineColor: null,
+                radius: 7,
+                symbol: 'circle',
+                borderColor: 'transparent',
               },
-            ],
-            animation: true,
-            name: years[selectedYearIndex.current],
-            data: getData(years[selectedYearIndex.current], 'Overall')[1],
-          },
+              dataLabels: [
+                {
+                  enabled: false,
+                },
+              ],
+              animation: true,
+              name: years[selectedYearIndex.current],
+              data: getDataLevels(years[selectedYearIndex.current], level),
+            };
+          }),
         ],
       });
   }, [data]);
@@ -180,12 +252,37 @@ function RaceChart() {
     // );
     chartRef.current.series[0].update({
       name: years[selectedYearIndex.current],
-      data: getData(years[selectedYearIndex.current], 'Average')[1],
+      data: getDataOverall(years[selectedYearIndex.current]),
     });
-    chartRef.current.series[1].update({
-      name: years[selectedYearIndex.current],
-      data: getData(years[selectedYearIndex.current], 'Overall')[1],
+    levels.map((d, i) => {
+      chartRef.current.series[i + 1].update({
+        name: years[selectedYearIndex.current],
+        data: getDataLevels(years[selectedYearIndex.current], d.level),
+      });
     });
+
+    //   return {
+    //     // colorByPoint: true,
+
+    //     type: 'scatter',
+    //     marker: {
+    //       lineWidth: 2,
+    //       fillColor: color,
+    //       lineColor: null,
+    //       radius: 7,
+    //       symbol: 'circle',
+    //       borderColor: 'transparent',
+    //     },
+    //     dataLabels: [
+    //       {
+    //         enabled: false,
+    //       },
+    //     ],
+    //     animation: true,
+    //     name: years[selectedYearIndex.current],
+    //     data: getDataLevels(years[selectedYearIndex.current], level),
+    //   };
+    // }),
 
     // chartRef.current.redraw(false);
   };
@@ -279,12 +376,7 @@ function RaceChart() {
 
 export default RaceChart;
 
-const years = [
-  '1972',
-  '1973',
-  '1974',
-  '1975',
-  '1976',
+const years1 = [
   '1977',
   '1978',
   '1980',

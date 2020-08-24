@@ -14,6 +14,14 @@ const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
   {
+    resolve: 'gatsby-plugin-react-svg',
+    options: {
+      rule: {
+        include: /images\/.*\.svg/,
+      },
+    },
+  },
+  {
     resolve: 'gatsby-source-graphql', // <- Configure plugin
     options: {
       typeName: 'HASURA',

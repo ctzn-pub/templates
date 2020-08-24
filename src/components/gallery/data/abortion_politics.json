@@ -1,0 +1,4286 @@
+{
+  "data": {
+    "gss_topics": [
+      {
+        "RKLevel2": "Access to Abortion",
+        "gss_meta": [
+          {
+            "varname": "abany",
+            "gss_timetrends": [
+              {
+                "Average": 0.35,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.37,
+                "Variable": "abany",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.37,
+                "Variable": "abany",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.33,
+                "Variable": "abany",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.33,
+                "Variable": "abany",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abany",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abany",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.37,
+                "Variable": "abany",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.37,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.37,
+                "Variable": "abany",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.33,
+                "Variable": "abany",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.35,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.33,
+                "Variable": "abany",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.38,
+                "Variable": "abany",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.38,
+                "Variable": "abany",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.37,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.37,
+                "Variable": "abany",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.35,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.37,
+                "Variable": "abany",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.36,
+                "Variable": "abany",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.36,
+                "Variable": "abany",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abany",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abany",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "abany",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.38,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "abany",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abany",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abany",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.37,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abany",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abany",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.38,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abany",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abany",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.49,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abany",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.29,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abany",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.49,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.3,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.39,
+                "Variable": "abany",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abany",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.35,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abany",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "abany",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "abany",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "abany",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.28,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "abany",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.55,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abany",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.65,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.5,
+                "Variable": "abany",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.5,
+                "Variable": "abany",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          },
+          {
+            "varname": "abdefect",
+            "gss_timetrends": [
+              {
+                "Average": 0.77,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abdefect",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abdefect",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abdefect",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abdefect",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abdefect",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.88,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abdefect",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.82,
+                "Variable": "abdefect",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.82,
+                "Variable": "abdefect",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abdefect",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abdefect",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.85,
+                "Variable": "abdefect",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.88,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.85,
+                "Variable": "abdefect",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.81,
+                "Variable": "abdefect",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.81,
+                "Variable": "abdefect",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abdefect",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abdefect",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abdefect",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abdefect",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.78,
+                "Variable": "abdefect",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.78,
+                "Variable": "abdefect",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.8,
+                "Variable": "abdefect",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.76,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.8,
+                "Variable": "abdefect",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abdefect",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abdefect",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.77,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.78,
+                "Variable": "abdefect",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.78,
+                "Variable": "abdefect",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abdefect",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.74,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abdefect",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.82,
+                "Variable": "abdefect",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.82,
+                "Variable": "abdefect",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.81,
+                "Variable": "abdefect",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.81,
+                "Variable": "abdefect",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abdefect",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abdefect",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.8,
+                "Variable": "abdefect",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.75,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.8,
+                "Variable": "abdefect",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.82,
+                "Variable": "abdefect",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.78,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.82,
+                "Variable": "abdefect",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.81,
+                "Variable": "abdefect",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.75,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.81,
+                "Variable": "abdefect",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.77,
+                "Variable": "abdefect",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.72,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.77,
+                "Variable": "abdefect",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.78,
+                "Variable": "abdefect",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.72,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.78,
+                "Variable": "abdefect",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.77,
+                "Variable": "abdefect",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.69,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.77,
+                "Variable": "abdefect",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.72,
+                "Variable": "abdefect",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.63,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.72,
+                "Variable": "abdefect",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.73,
+                "Variable": "abdefect",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.62,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.73,
+                "Variable": "abdefect",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.74,
+                "Variable": "abdefect",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.68,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.74,
+                "Variable": "abdefect",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.74,
+                "Variable": "abdefect",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.65,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.74,
+                "Variable": "abdefect",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.73,
+                "Variable": "abdefect",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.65,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.73,
+                "Variable": "abdefect",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.75,
+                "Variable": "abdefect",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.68,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.75,
+                "Variable": "abdefect",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.74,
+                "Variable": "abdefect",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.66,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.74,
+                "Variable": "abdefect",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.76,
+                "Variable": "abdefect",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.67,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.76,
+                "Variable": "abdefect",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          },
+          {
+            "varname": "abpoor",
+            "gss_timetrends": [
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.49,
+                "Variable": "abpoor",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.49,
+                "Variable": "abpoor",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.53,
+                "Variable": "abpoor",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.57,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.53,
+                "Variable": "abpoor",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.55,
+                "Variable": "abpoor",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.6,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.55,
+                "Variable": "abpoor",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.52,
+                "Variable": "abpoor",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.52,
+                "Variable": "abpoor",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.53,
+                "Variable": "abpoor",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.53,
+                "Variable": "abpoor",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.53,
+                "Variable": "abpoor",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.57,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.53,
+                "Variable": "abpoor",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "abpoor",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "abpoor",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.52,
+                "Variable": "abpoor",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.52,
+                "Variable": "abpoor",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "abpoor",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "abpoor",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abpoor",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abpoor",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "abpoor",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "abpoor",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.44,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abpoor",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abpoor",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.37,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "abpoor",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "abpoor",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "abpoor",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "abpoor",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "abpoor",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "abpoor",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.59,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.49,
+                "Variable": "abpoor",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.49,
+                "Variable": "abpoor",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.55,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.5,
+                "Variable": "abpoor",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.5,
+                "Variable": "abpoor",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abpoor",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abpoor",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "abpoor",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "abpoor",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abpoor",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abpoor",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "abpoor",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "abpoor",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abpoor",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.29,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abpoor",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.3,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.54,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abpoor",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abpoor",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abpoor",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.57,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abpoor",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.34,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abpoor",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "abpoor",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.3,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "abpoor",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.63,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.49,
+                "Variable": "abpoor",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.34,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.49,
+                "Variable": "abpoor",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          },
+          {
+            "varname": "absingle",
+            "gss_timetrends": [
+              {
+                "Average": 0.41,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.49,
+                "Variable": "absingle",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.54,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.49,
+                "Variable": "absingle",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.5,
+                "Variable": "absingle",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.55,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.5,
+                "Variable": "absingle",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "absingle",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "absingle",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.5,
+                "Variable": "absingle",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.5,
+                "Variable": "absingle",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.49,
+                "Variable": "absingle",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.49,
+                "Variable": "absingle",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "absingle",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "absingle",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.37,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.38,
+                "Variable": "absingle",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.38,
+                "Variable": "absingle",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "absingle",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "absingle",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.38,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.39,
+                "Variable": "absingle",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.38,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.39,
+                "Variable": "absingle",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "absingle",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "absingle",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.49,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "absingle",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "absingle",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "absingle",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "absingle",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "absingle",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "absingle",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "absingle",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.35,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.44,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.38,
+                "Variable": "absingle",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.38,
+                "Variable": "absingle",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.3,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.54,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.28,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.38,
+                "Variable": "absingle",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.28,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.38,
+                "Variable": "absingle",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.34,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "absingle",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.49,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "absingle",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "absingle",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.49,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "absingle",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.43,
+                "Variable": "absingle",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.43,
+                "Variable": "absingle",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "absingle",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.3,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "absingle",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.59,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "absingle",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "absingle",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          },
+          {
+            "varname": "abnomore",
+            "gss_timetrends": [
+              {
+                "Average": 0.38,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "abnomore",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "abnomore",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "abnomore",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "abnomore",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.44,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.44,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "abnomore",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "abnomore",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.37,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.38,
+                "Variable": "abnomore",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.38,
+                "Variable": "abnomore",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abnomore",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abnomore",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.4,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.42,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.48,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.49,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "abnomore",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.39,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "abnomore",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "abnomore",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.45,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "abnomore",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.38,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "abnomore",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.43,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "abnomore",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.52,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.41,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.47,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abnomore",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abnomore",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.46,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.4,
+                "Variable": "abnomore",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.51,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.42,
+                "Variable": "abnomore",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.31,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.42,
+                "Variable": "abnomore",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abnomore",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.3,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abnomore",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.54,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.41,
+                "Variable": "abnomore",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.29,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.41,
+                "Variable": "abnomore",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.5,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.44,
+                "Variable": "abnomore",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.44,
+                "Variable": "abnomore",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.56,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.48,
+                "Variable": "abnomore",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.35,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.48,
+                "Variable": "abnomore",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.53,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.33,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.45,
+                "Variable": "abnomore",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.57,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.47,
+                "Variable": "abnomore",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.36,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.47,
+                "Variable": "abnomore",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.58,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.32,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.46,
+                "Variable": "abnomore",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.64,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.5,
+                "Variable": "abnomore",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.35,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.5,
+                "Variable": "abnomore",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          },
+          {
+            "varname": "abhlth",
+            "gss_timetrends": [
+              {
+                "Average": 0.85,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.87,
+                "Variable": "abhlth",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.87,
+                "Variable": "abhlth",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.92,
+                "Variable": "abhlth",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.92,
+                "Variable": "abhlth",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.93,
+                "Variable": "abhlth",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.94,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.93,
+                "Variable": "abhlth",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.93,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.93,
+                "Variable": "abhlth",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.93,
+                "Variable": "abhlth",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.93,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.93,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.87,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.94,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.92,
+                "Variable": "abhlth",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.92,
+                "Variable": "abhlth",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.88,
+                "Variable": "abhlth",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.88,
+                "Variable": "abhlth",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.91,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.88,
+                "Variable": "abhlth",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.87,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.88,
+                "Variable": "abhlth",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.94,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.91,
+                "Variable": "abhlth",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.9,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.85,
+                "Variable": "abhlth",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.85,
+                "Variable": "abhlth",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.87,
+                "Variable": "abhlth",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.87,
+                "Variable": "abhlth",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.86,
+                "Variable": "abhlth",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.86,
+                "Variable": "abhlth",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.87,
+                "Variable": "abhlth",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.87,
+                "Variable": "abhlth",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.92,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.88,
+                "Variable": "abhlth",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.88,
+                "Variable": "abhlth",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.93,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.89,
+                "Variable": "abhlth",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.95,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.9,
+                "Variable": "abhlth",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          },
+          {
+            "varname": "abrape",
+            "gss_timetrends": [
+              {
+                "Average": 0.77,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 1972,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1973,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.86,
+                "Variable": "abrape",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.87,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.86,
+                "Variable": "abrape",
+                "Year": 1974,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1975,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.87,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1976,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.87,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1977,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1978,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1980,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.88,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1982,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.82,
+                "Variable": "abrape",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.82,
+                "Variable": "abrape",
+                "Year": 1983,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 1984,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.82,
+                "Variable": "abrape",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.82,
+                "Variable": "abrape",
+                "Year": 1985,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.79,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.8,
+                "Variable": "abrape",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.8,
+                "Variable": "abrape",
+                "Year": 1987,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.81,
+                "Variable": "abrape",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.81,
+                "Variable": "abrape",
+                "Year": 1988,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1989,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.85,
+                "Variable": "abrape",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.85,
+                "Variable": "abrape",
+                "Year": 1990,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.89,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.87,
+                "Variable": "abrape",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.87,
+                "Variable": "abrape",
+                "Year": 1991,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.88,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.82,
+                "Variable": "abrape",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.76,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.82,
+                "Variable": "abrape",
+                "Year": 1993,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.83,
+                "Variable": "abrape",
+                "Year": 1994,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.87,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.8,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.84,
+                "Variable": "abrape",
+                "Year": 1996,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.8,
+                "Variable": "abrape",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.75,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.8,
+                "Variable": "abrape",
+                "Year": 1998,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.8,
+                "Variable": "abrape",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.75,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.8,
+                "Variable": "abrape",
+                "Year": 2000,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.78,
+                "Variable": "abrape",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.71,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.78,
+                "Variable": "abrape",
+                "Year": 2002,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.83,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.75,
+                "Variable": "abrape",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.67,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.75,
+                "Variable": "abrape",
+                "Year": 2004,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.85,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.77,
+                "Variable": "abrape",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.69,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.77,
+                "Variable": "abrape",
+                "Year": 2006,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.81,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.76,
+                "Variable": "abrape",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.7,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.76,
+                "Variable": "abrape",
+                "Year": 2008,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.86,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.71,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 2010,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.76,
+                "Variable": "abrape",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.67,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.76,
+                "Variable": "abrape",
+                "Year": 2012,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.82,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.78,
+                "Variable": "abrape",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.74,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.78,
+                "Variable": "abrape",
+                "Year": 2014,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.84,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.77,
+                "Variable": "abrape",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.67,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.77,
+                "Variable": "abrape",
+                "Year": 2016,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.88,
+                "Color": "#1467D1",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Democrat",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 2018,
+                "source": "GSS"
+              },
+              {
+                "Average": 0.7,
+                "Color": "#D12514",
+                "Demographic": "PolParty",
+                "DemographicLevel": "Republican",
+                "Overall": 0.79,
+                "Variable": "abrape",
+                "Year": 2018,
+                "source": "GSS"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
