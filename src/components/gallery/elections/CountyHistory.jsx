@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useCountyelectionData } from '../../../hooks/useCountyelectionData';
+import { useCountyElectionData } from '../../../hooks/useCountyelectionData';
 import { useYears } from '../../../hooks/useYears';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
@@ -11,7 +11,7 @@ function CountyHistory() {
   const [selectedVariable, setSelectedVariable] = useState({ value: 2016 });
   const [variableOptions, setVariablesOptions] = useState([]);
 
-  const data = useCountyelectionData(selectedVariable?.value);
+  const data = useCountyElectionData(selectedVariable?.value);
 
   useEffect(() => {
     if (variables) {
