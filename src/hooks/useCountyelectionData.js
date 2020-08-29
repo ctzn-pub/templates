@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 
-export const useCountyelectionData = variable => {
+export const useCountyElectionData = variable => {
   //   if (!variable) return null;
   const { loading, error, data } = useQuery(
     gql`
@@ -18,7 +18,5 @@ export const useCountyelectionData = variable => {
     { variables: { var: variable } }
   );
   if (loading || error) return null;
-  return {
-    data: data.electoral_history_yearly[0],
-  };
+  return data.electoral_history_yearly[0].counties;
 };

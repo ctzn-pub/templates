@@ -1,39 +1,38 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import population from './data/population.json';
-import fat from './data/obesity.json';
+
 import us from './data/counties-albers-10m.json';
 const format = d3.format(',.0f');
 const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
 const path = d3.geoPath();
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
+const width = 900;
+const height = 700;
+function SpikeMap({ data: rawData }) {
+  const [data, setData] = useState();
+  useEffect(() => {
+    if (rawData) {
+      let data = rawData.map(({ id, color4, Per_Dem, Per_Rep }) => {
+        const feature = features.get(id);
+        return {
+          id,
+          position: feature && path.centroid(feature),
+          title: feature && feature.properties.name,
+          color: color4,
+          value: Math.abs(Per_Dem - Per_Rep) * 100,
+        };
+      });
+      setData(data);
+    }
+  }, [rawData]);
 
-let data = population.slice(1).map(([population, state, county]) => {
-  const id = state + county;
-  const feature = features.get(id);
-  return {
-    id,
-    position: feature && path.centroid(feature),
-    title: feature && feature.properties.name,
-    // value: +population,
-  };
-});
-
-const mergeById = (a1, a2) =>
-  a1.map(itm => ({
-    ...a2.find(item => item.id === itm.id && item),
-    ...itm,
-  }));
-
-data = mergeById(data, fat);
-console.log('fat', fat);
-
-const length = d3.scalePow([0, d3.max(data, d => d.value)], [0, 70]).exponent(6);
-function SpikeMap() {
   const svgRef = useRef();
   useEffect(() => {
+    if (!data) return;
+    const length = d3.scalePow([0, 100], [0, 70]).exponent(4);
+
     const svg = d3.select(svgRef.current);
 
     svg
@@ -64,7 +63,7 @@ function SpikeMap() {
           .reverse()
       )
       .join('g')
-      .attr('transform', (d, i) => `translate(${700 - (i + 1) * 18},590)`);
+      .attr('transform', (d, i) => `translate(${width - (i + 1) * 18},${height})`);
 
     legend
       .append('path')
@@ -105,11 +104,11 @@ function SpikeMap() {
             ${format(d.value)}`
       );
     // return svg.node();
-  }, []);
+  }, [data]);
 
   return (
     <div>
-      <svg ref={svgRef} width="975" height="610" />
+      <svg ref={svgRef} width={width} height={height} />
     </div>
   );
 }

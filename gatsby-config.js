@@ -2,6 +2,7 @@ require('dotenv').config();
 const fetch = require(`node-fetch`);
 const { createHttpLink } = require(`apollo-link-http`);
 
+const path = require('path');
 const queries = require('./src/utils/algolia');
 const config = require('./config');
 const plugins = [
@@ -12,7 +13,16 @@ const plugins = [
     },
   },
   'gatsby-plugin-sitemap',
-  'gatsby-plugin-sharp',
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      // path: /\/\.\/src\/components\/images\/candidates\//,
+      path: path.join(__dirname, `src`, 'components', `images`, `candidates/`),
+    },
+  },
+  `gatsby-plugin-sharp`,
+  `gatsby-transformer-sharp`,
   {
     resolve: 'gatsby-plugin-react-svg',
     options: {
