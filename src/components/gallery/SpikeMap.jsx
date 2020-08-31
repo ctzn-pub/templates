@@ -55,14 +55,14 @@ function SpikeMap({ data: rawData }) {
 
     const svg = d3.select(svgRef.current);
 
-    svg
-      .append('path')
+    const g = svg.append('g');
+
+    g.append('path')
       .datum(topojson.feature(us, us.objects.nation))
       .attr('fill', '#e0e0e0')
       .attr('d', path);
 
-    svg
-      .append('path')
+    g.append('path')
       .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
       .attr('fill', 'none')
       .attr('stroke', 'white')
@@ -97,8 +97,7 @@ function SpikeMap({ data: rawData }) {
       .attr('dy', '1.3em')
       .text(length.tickFormat(4, 's'));
 
-    svg
-      .append('g')
+    g.append('g')
       //    .attr('fill', 'blue')
       // .attr('fill-opacity', 0.3)
       //  .attr('stroke', 'blue')
@@ -123,6 +122,7 @@ function SpikeMap({ data: rawData }) {
         d => `${d.title}
             ${format(d.value)}`
       );
+
     // return svg.node();
   }, [data]);
 

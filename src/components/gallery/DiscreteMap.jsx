@@ -55,15 +55,24 @@ function DiscreteMap({ data: rawData }) {
   useEffect(() => {
     if (!data) return;
     const svg = d3.select(svgRef.current);
+    function zoomed() {
+      g.selectAll('path') // To prevent stroke width from scaling
+        .attr('transform', d3.event.transform);
+    }
+    const zoom = d3
+      .zoom()
+      .scaleExtent([1, 8])
+      .on('zoom', zoomed);
 
-    svg
-      .append('path')
+    svg.call(zoom);
+    const g = svg.append('g');
+
+    g.append('path')
       .datum(topojson.feature(us, us.objects.nation))
       .attr('class', 'land')
       .attr('d', path);
 
-    svg
-      .append('path')
+    g.append('path')
       .datum(
         topojson.mesh(us, us.objects.counties, function(a, b) {
           return a !== b;
@@ -73,8 +82,7 @@ function DiscreteMap({ data: rawData }) {
       .attr('class', 'border border--state')
       .attr('d', path);
 
-    svg
-      .append('g')
+    g.append('g')
       //   .attr("class", "countries")
       .selectAll('path')
       .data(data)
@@ -91,8 +99,7 @@ function DiscreteMap({ data: rawData }) {
       .style('stroke', 'white')
       .style('stroke-width', 0.3);
 
-    svg
-      .append('g')
+    g.append('g')
       // .attr('class', 'bubble')
       .selectAll('path')
       .data(data)
