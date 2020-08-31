@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import us from './data/counties-albers-10m.json';
+import population from './data/population.json';
+
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import './bubbleStyle.css';
@@ -20,15 +22,33 @@ function DiscreteMap({ data: rawData }) {
   const svgRef = useRef();
   useEffect(() => {
     if (rawData) {
-      let data = rawData.map(({ id, color4 }) => {
+      // let data = rawData.map(({ id, color44 }) => {
+      //   const feature = features.get(id);
+      //   return {
+      //     id,
+      //     position: feature && path(feature),
+      //     title: feature && feature.properties.name,
+      //     color4: color44,
+      //   };
+      // });
+      let data = population.slice(1).map(([population, state, county]) => {
+        const id = state + county;
         const feature = features.get(id);
         return {
           id,
           position: feature && path(feature),
           title: feature && feature.properties.name,
-          color: color4,
+          value: +population,
         };
       });
+
+      const mergeById = (a1, a2) =>
+        a1.map(itm => ({
+          ...a2.find(item => item.id === itm.id && item),
+          ...itm,
+        }));
+
+      data = mergeById(data, rawData).filter(d => d.position);
       setData(data);
     }
   }, [rawData]);
@@ -62,7 +82,7 @@ function DiscreteMap({ data: rawData }) {
       .append('path')
       .attr('d', path)
       .style('fill', function(d) {
-        return d.color;
+        return d.color4;
       })
       .style('stroke', 'white')
       .style('stroke-width', 1.5)
@@ -81,12 +101,12 @@ function DiscreteMap({ data: rawData }) {
       .attr('d', d => {
         return d.position;
       })
-      .attr('fill', d => d.color)
+      .attr('fill', d => d.color4)
       .attr('fill-opacity', 0.5)
-      .attr('stroke', d => d.color)
+      .attr('stroke', d => d.color4)
       .append('title')
       .text(function(d) {
-        return d.title + 'color ' + d.color;
+        return d.title + 'color4 ' + d.color4;
       });
   }, [data]);
   return (

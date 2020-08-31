@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import us from './data/counties-albers-10m.json';
+import population from './data/population.json';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import './bubbleStyle.css';
@@ -19,16 +20,25 @@ function BubbleMap({ data: rawData }) {
   const [data, setData] = useState();
   useEffect(() => {
     if (rawData) {
-      let data = rawData.map(({ id, color4, Per_Dem, Per_Rep }) => {
+      let data = population.slice(1).map(([population, state, county]) => {
+        const id = state + county;
         const feature = features.get(id);
         return {
           id,
           position: feature && path.centroid(feature),
           title: feature && feature.properties.name,
-          color: color4,
-          value: Math.abs(Per_Dem - Per_Rep) * 100,
+          value: +population,
         };
       });
+
+      const mergeById = (a1, a2) =>
+        a1.map(itm => ({
+          ...a2.find(item => item.id === itm.id && item),
+          ...itm,
+        }));
+
+      data = mergeById(data, rawData).filter(d => d.position);
+
       setData(data);
     }
   }, [rawData]);
@@ -38,7 +48,7 @@ function BubbleMap({ data: rawData }) {
   useEffect(() => {
     if (!data) return;
 
-    var radius = d3.scalePow([0, 100], [0, 50]).exponent(4);
+    var radius = d3.scalePow([0, d3.max(data, d => d.value)], [0, 100]).exponent(1);
 
     const svg = d3.select(svgRef.current);
     var legend = svg
@@ -100,12 +110,12 @@ function BubbleMap({ data: rawData }) {
       .attr('r', function(d) {
         return radius(d.value);
       })
-      .attr('fill', d => d.color)
+      .attr('fill', d => d.color4)
       .attr('fill-opacity', 0.3)
-      .attr('stroke', d => d.color)
+      .attr('stroke', d => d.color4)
       .append('title')
       .text(function(d) {
-        return d.title + 'color ' + d.color;
+        return d.title + 'color4 ' + d.color4;
       });
   }, [data]);
   return (

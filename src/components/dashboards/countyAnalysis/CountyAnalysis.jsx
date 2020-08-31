@@ -16,9 +16,9 @@ function CountyAnalysis() {
   const [activeTab, setActiveTab] = useState('Spiky');
   const data = useCountyElectionData(selectedYear.Year);
   const imagesQueryData = useStaticQuery(query);
-  const images = imagesQueryData.allFile.edges
-    .filter(({ node }) => node.childImageSharp)
-    .map(y => y.node);
+  const images = imagesQueryData.allFile.edges.map(y => y.node);
+
+  console.log(images);
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
   };
@@ -146,7 +146,7 @@ const ElectionInfo = ({ images, selectedYear }) => {
         <NomineeBox
           name={selectedYear.D_Nominee_prop}
           party="D"
-          image={images.find(i => selectedYear.dem_pic.includes(i.base))?.childImageSharp.fluid}
+          image={images.find(i => selectedYear.dem_pic === i.name).publicURL}
         />
       </Col>
       <Col>
@@ -166,7 +166,7 @@ const ElectionInfo = ({ images, selectedYear }) => {
         <NomineeBox
           name={selectedYear.R_Nominee_prop}
           party="R"
-          image={images.find(i => selectedYear.rep_pic.includes(i.base))?.childImageSharp.fluid}
+          image={images.find(i => selectedYear.rep_pic === i.name).publicURL}
         />
       </Col>
     </Row>
@@ -178,14 +178,15 @@ const NomineeBox = ({ name, party, image }) => {
     <div className="d-flex flex-column align-items-center">
       <div className="text-center">{name}</div>
       <div
-        className="rounded overflow-hidden mt-2"
+        className="rounded-circle overflow-hidden mt-2"
         style={{
           width: '125px',
-          height: '155px',
+          height: '125px',
           border: `1px solid ${party === 'R' ? 'red' : 'blue'}`,
         }}
       >
-        <Img fluid={image} />
+        <img src={image} alt="" />
+        {/* <Img fluid={image} /> */}
       </div>
     </div>
   );
@@ -195,14 +196,8 @@ const query = graphql`
     allFile {
       edges {
         node {
-          childImageSharp {
-            fluid(maxWidth: 440, quality: 100) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
-
-          base
+          name
+          publicURL
         }
       }
     }
