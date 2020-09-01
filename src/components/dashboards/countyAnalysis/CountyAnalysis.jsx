@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
-import DiscreteMap from '../../gallery/DiscreteMap';
+import DiscreteMap from '../../gallery/highmaps/DiscreteMap';
 import BubbleMap from '../../gallery/BubbleMap';
 import SpikeMap from '../../gallery/SpikeMap';
 import Img from 'gatsby-image';
@@ -13,18 +13,19 @@ function CountyAnalysis() {
   const years = useYears();
 
   const [selectedYear, setSelectedYear] = useState(years[years.length - 1]);
-  const [activeTab, setActiveTab] = useState('Spiky');
+  const [activeTab, setActiveTab] = useState('Choropleth');
   const data = useCountyElectionData(selectedYear.Year);
+
   const imagesQueryData = useStaticQuery(query);
   const images = imagesQueryData.allFile.edges.map(y => y.node);
 
-  console.log(images);
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
-  console.log(selectedYear);
   if (!data) return 'loading';
+
+  const { counties, states } = data;
   return (
     <>
       <div
@@ -80,17 +81,17 @@ function CountyAnalysis() {
           </Nav>
           <TabContent activeTab={activeTab}>
             <TabPane tabId="Choropleth">
-              <DiscreteMap data={data} />
+              <DiscreteMap counties={counties} states={states} />
             </TabPane>
           </TabContent>
           <TabContent activeTab={activeTab}>
             <TabPane tabId="Bubble">
-              <BubbleMap data={data} />
+              <BubbleMap data={counties} />
             </TabPane>
           </TabContent>
           <TabContent activeTab={activeTab}>
             <TabPane tabId="Spiky">
-              <SpikeMap data={data} />
+              <SpikeMap data={counties} />
             </TabPane>
           </TabContent>
         </div>
