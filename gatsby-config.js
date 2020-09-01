@@ -13,6 +13,7 @@ const plugins = [
     },
   },
   'gatsby-plugin-sitemap',
+  `gatsby-plugin-remove-fingerprints`,
   {
     resolve: `gatsby-source-filesystem`,
     options: {

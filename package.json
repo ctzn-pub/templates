@@ -44,6 +44,7 @@
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-react-leaflet": "^2.0.13",
     "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-remove-fingerprints": "^0.0.2",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^2.6.30",
     "gatsby-plugin-sitemap": "^2.2.24",
@@ -88,7 +89,7 @@
   "main": "n/a",
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages --prefix-paths",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "lint": "eslint --fix \"src/**/*.{js,jsx}\""
   },

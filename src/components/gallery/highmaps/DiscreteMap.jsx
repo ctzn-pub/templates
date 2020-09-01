@@ -24,7 +24,6 @@ function DiscreteMap({ counties, states }) {
     const dataUSALL = Highcharts.geojson(Highcharts.maps['countries/us/us-all']);
     const separators = Highcharts.geojson(Highcharts.maps['countries/us/us-all'], 'mapline');
     // Set drilldown pointers
-    console.log(states);
     dataUSALL.forEach(function(el, i) {
       el.drilldown = el.properties['hc-key'];
       //   console.log(el);

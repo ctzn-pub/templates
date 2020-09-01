@@ -23,9 +23,9 @@ function CountyAnalysis() {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
-  if (!data) return 'loading';
+  // if (!data) return 'loading';
 
-  const { counties, states } = data;
+  // const { counties, states } = data;
   return (
     <>
       <div
@@ -36,65 +36,69 @@ function CountyAnalysis() {
       >
         <YearsSelect years={years} setSelectedYear={setSelectedYear} selectedYear={selectedYear} />
         <ElectionInfo images={images} selectedYear={selectedYear} />
+        {data ? (
+          <div className=" dash_card_body border-bottom">
+            <Nav tabs className=" mb-2">
+              <NavItem>
+                <NavLink
+                  tag="div"
+                  className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                    active: activeTab === 'Choropleth',
+                  })}
+                  onClick={() => {
+                    toggle('Choropleth');
+                  }}
+                >
+                  <div className="tabname">Choropleth</div>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  tag="div"
+                  className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                    active: activeTab === 'Bubble',
+                  })}
+                  onClick={() => {
+                    toggle('Bubble');
+                  }}
+                >
+                  <div className="tabname">Bubble</div>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  tag="div"
+                  className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                    active: activeTab === 'Spiky',
+                  })}
+                  onClick={() => {
+                    toggle('Spiky');
+                  }}
+                >
+                  <div className="tabname">Spiky</div>
+                </NavLink>
+              </NavItem>
+            </Nav>
+            <TabContent activeTab={activeTab}>
+              <TabPane tabId="Choropleth">
+                <DiscreteMap counties={data.counties} states={data.states} />
+              </TabPane>
+            </TabContent>
+            <TabContent activeTab={activeTab}>
+              <TabPane tabId="Bubble">
+                <BubbleMap data={data.counties} />
+              </TabPane>
+            </TabContent>
+            <TabContent activeTab={activeTab}>
+              <TabPane tabId="Spiky">
+                <SpikeMap data={data.counties} />
+              </TabPane>
+            </TabContent>
+          </div>
+        ) : (
+          'loading'
+        )}
 
-        <div className=" dash_card_body border-bottom">
-          <Nav tabs className=" mb-2">
-            <NavItem>
-              <NavLink
-                tag="div"
-                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
-                  active: activeTab === 'Choropleth',
-                })}
-                onClick={() => {
-                  toggle('Choropleth');
-                }}
-              >
-                <div className="tabname">Choropleth</div>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                tag="div"
-                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
-                  active: activeTab === 'Bubble',
-                })}
-                onClick={() => {
-                  toggle('Bubble');
-                }}
-              >
-                <div className="tabname">Bubble</div>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                tag="div"
-                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
-                  active: activeTab === 'Spiky',
-                })}
-                onClick={() => {
-                  toggle('Spiky');
-                }}
-              >
-                <div className="tabname">Spiky</div>
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <TabContent activeTab={activeTab}>
-            <TabPane tabId="Choropleth">
-              <DiscreteMap counties={counties} states={states} />
-            </TabPane>
-          </TabContent>
-          <TabContent activeTab={activeTab}>
-            <TabPane tabId="Bubble">
-              <BubbleMap data={counties} />
-            </TabPane>
-          </TabContent>
-          <TabContent activeTab={activeTab}>
-            <TabPane tabId="Spiky">
-              <SpikeMap data={counties} />
-            </TabPane>
-          </TabContent>
-        </div>
         <div className="p-3 dash_card_footer">footer</div>
       </div>
     </>
@@ -147,7 +151,7 @@ const ElectionInfo = ({ images, selectedYear }) => {
         <NomineeBox
           name={selectedYear.D_Nominee_prop}
           party="D"
-          image={images.find(i => selectedYear.dem_pic === i.name).publicURL}
+          image={images.find(i => selectedYear.dem_pic === i.name)?.publicURL}
         />
       </Col>
       <Col>
@@ -167,7 +171,7 @@ const ElectionInfo = ({ images, selectedYear }) => {
         <NomineeBox
           name={selectedYear.R_Nominee_prop}
           party="R"
-          image={images.find(i => selectedYear.rep_pic === i.name).publicURL}
+          image={images.find(i => selectedYear.rep_pic === i.name)?.publicURL}
         />
       </Col>
     </Row>
