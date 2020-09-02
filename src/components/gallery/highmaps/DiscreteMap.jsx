@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import us from '../data/counties-albers-10m.json';
-import population from '../data/population.json';
+
 import mapData from '../data/us/us-all.geo.json';
 import Highcharts from 'highcharts/highmaps';
 import HighchartsReact from 'highcharts-react-official';
@@ -26,23 +25,19 @@ function DiscreteMap({ counties, states }) {
     // Set drilldown pointers
     dataUSALL.forEach(function(el, i) {
       el.drilldown = el.properties['hc-key'];
-      //   console.log(el);
-      //   state-fips
-
-      //   FIPS
       const d = states.find(d => d.FIPS === +el.properties['state-fips']);
-      console.log(el.properties['state-fips']);
       el.color = d?.color;
     });
 
     const options = {
       chart: {
+        width: 750,
+        height: 500,
         events: {
           drilldown: async function(e) {
             if (!e.seriesOptions) {
               const chart = this;
               const mapKey = 'countries/us/' + e.point.drilldown + '-all';
-              console.log(mapKey);
               // Show the spinner
               chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
 
@@ -62,7 +57,6 @@ function DiscreteMap({ counties, states }) {
                 el.drilldown = el.properties['hc-key'];
                 //   el.color = 'red';
                 const d = counties.find(d => d.id === el.properties.fips);
-                // console.log(d);
                 el.color = d?.color4;
               });
               chart.addSeriesAsDrilldown(e.point, {

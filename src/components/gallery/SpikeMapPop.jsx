@@ -28,7 +28,6 @@ const mergeById = (a1, a2) =>
   }));
 
 data = mergeById(data, fat);
-console.log('fat', fat);
 
 const length = d3.scalePow([0, d3.max(data, d => d.value)], [0, 70]).exponent(6);
 function SpikeMap() {

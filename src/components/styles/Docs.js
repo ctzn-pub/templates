@@ -41,7 +41,7 @@ export const Edit = styled('div')`
 export const StyledMainWrapper = styled.div`
   max-width: 750px;
   color: ${props => props.theme.colors.text};
-
+  overflow: visible;
   ul,
   ol {
     -webkit-padding-start: 40px;

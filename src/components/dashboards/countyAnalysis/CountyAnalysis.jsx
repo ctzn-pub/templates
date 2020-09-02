@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import DiscreteMap from '../../gallery/highmaps/DiscreteMap';
+import DiscreteMapCounty from '../../gallery/DiscreteMap';
 import BubbleMap from '../../gallery/BubbleMap';
 import SpikeMap from '../../gallery/SpikeMap';
-import Img from 'gatsby-image';
+import Skeleton from '@material-ui/lab/Skeleton';
+import * as d3 from 'd3';
+import CheckIcon from '@material-ui/icons/Check';
 
 import { useYears } from '../../../hooks/useYears';
 import { useCountyElectionData } from '../../../hooks/useCountyelectionData';
@@ -13,7 +16,7 @@ function CountyAnalysis() {
   const years = useYears();
 
   const [selectedYear, setSelectedYear] = useState(years[years.length - 1]);
-  const [activeTab, setActiveTab] = useState('Choropleth');
+  const [activeTab, setActiveTab] = useState('Bubble');
   const data = useCountyElectionData(selectedYear.Year);
 
   const imagesQueryData = useStaticQuery(query);
@@ -23,9 +26,6 @@ function CountyAnalysis() {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
-  // if (!data) return 'loading';
-
-  // const { counties, states } = data;
   return (
     <>
       <div
@@ -36,68 +36,92 @@ function CountyAnalysis() {
       >
         <YearsSelect years={years} setSelectedYear={setSelectedYear} selectedYear={selectedYear} />
         <ElectionInfo images={images} selectedYear={selectedYear} />
-        {data ? (
-          <div className=" dash_card_body border-bottom">
-            <Nav tabs className=" mb-2">
-              <NavItem>
-                <NavLink
-                  tag="div"
-                  className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
-                    active: activeTab === 'Choropleth',
-                  })}
-                  onClick={() => {
-                    toggle('Choropleth');
-                  }}
-                >
-                  <div className="tabname">Choropleth</div>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  tag="div"
-                  className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
-                    active: activeTab === 'Bubble',
-                  })}
-                  onClick={() => {
-                    toggle('Bubble');
-                  }}
-                >
-                  <div className="tabname">Bubble</div>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  tag="div"
-                  className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
-                    active: activeTab === 'Spiky',
-                  })}
-                  onClick={() => {
-                    toggle('Spiky');
-                  }}
-                >
-                  <div className="tabname">Spiky</div>
-                </NavLink>
-              </NavItem>
-            </Nav>
-            <TabContent activeTab={activeTab}>
-              <TabPane tabId="Choropleth">
-                <DiscreteMap counties={data.counties} states={data.states} />
-              </TabPane>
-            </TabContent>
-            <TabContent activeTab={activeTab}>
-              <TabPane tabId="Bubble">
-                <BubbleMap data={data.counties} />
-              </TabPane>
-            </TabContent>
-            <TabContent activeTab={activeTab}>
-              <TabPane tabId="Spiky">
-                <SpikeMap data={data.counties} />
-              </TabPane>
-            </TabContent>
-          </div>
-        ) : (
-          'loading'
-        )}
+
+        <div className=" dash_card_body border-bottom">
+          <Nav tabs className=" mb-2">
+            <NavItem>
+              <NavLink
+                tag="div"
+                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                  active: activeTab === 'Choropleth',
+                })}
+                onClick={() => {
+                  toggle('Choropleth');
+                }}
+              >
+                <div className="tabname">Choropleth</div>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                tag="div"
+                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                  active: activeTab === 'Choropleth by County',
+                })}
+                onClick={() => {
+                  toggle('Choropleth by County');
+                }}
+              >
+                <div className="tabname">Choropleth by County</div>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                tag="div"
+                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                  active: activeTab === 'Bubble',
+                })}
+                onClick={() => {
+                  toggle('Bubble');
+                }}
+              >
+                <div className="tabname">Bubble</div>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                tag="div"
+                className={classnames('d-flex align-items-center h-100 w-100 ml-2 ', {
+                  active: activeTab === 'Spiky',
+                })}
+                onClick={() => {
+                  toggle('Spiky');
+                }}
+              >
+                <div className="tabname">Spiky</div>
+              </NavLink>
+            </NavItem>
+          </Nav>
+          {data ? (
+            <div key={selectedYear.Year}>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Choropleth">
+                  <DiscreteMap counties={data.counties} states={data.states} />
+                </TabPane>
+              </TabContent>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Choropleth by County">
+                  <DiscreteMapCounty data={data.counties} />
+                </TabPane>
+              </TabContent>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Bubble">
+                  <BubbleMap data={data.counties} />
+                </TabPane>
+              </TabContent>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Spiky">
+                  <SpikeMap data={data.counties} />
+                </TabPane>
+              </TabContent>
+            </div>
+          ) : (
+            <>
+              <h1 className="text-center">Loading</h1>
+              <Skeleton variant="rect" width={900} height={500} />
+            </>
+          )}
+        </div>
 
         <div className="p-3 dash_card_footer">footer</div>
       </div>
@@ -145,6 +169,7 @@ const YearsSelect = ({ years, setSelectedYear, selectedYear }) => {
   );
 };
 const ElectionInfo = ({ images, selectedYear }) => {
+  console.log(selectedYear);
   return (
     <Row className="d-flex justify-content-around">
       <Col>
@@ -156,9 +181,19 @@ const ElectionInfo = ({ images, selectedYear }) => {
       </Col>
       <Col>
         <div className>
-          <div className="d-flex justify-content-around w-100 display-4">
-            <p className="text-primary">{selectedYear.D_EV_Total}</p>
-            <p className="text-danger">{selectedYear.R_EV_Total}</p>
+          <div className="d-flex justify-content-between w-100 display-4">
+            <p className="text-primary w-50 text-left">
+              {selectedYear.winning_party === 'D' && (
+                <CheckIcon style={{ fontSize: 40, marginRight: 10, marginBottom: 10 }} />
+              )}
+              {selectedYear.D_EV_Total}
+            </p>
+            <p className="text-danger w-50 text-right">
+              {selectedYear.R_EV_Total}
+              {selectedYear.winning_party === 'R' && (
+                <CheckIcon style={{ fontSize: 40, marginLeft: 10, marginBottom: 10 }} />
+              )}
+            </p>
           </div>
           <div className="lead text-center mb-3">Popular Votes:</div>
           <div className="d-flex justify-content-around w-100 lead">
@@ -172,6 +207,20 @@ const ElectionInfo = ({ images, selectedYear }) => {
           name={selectedYear.R_Nominee_prop}
           party="R"
           image={images.find(i => selectedYear.rep_pic === i.name)?.publicURL}
+        />
+      </Col>
+      <Col sm="12">
+        <VotesBar
+          data={[
+            {
+              label: selectedYear.D_Nominee_prop,
+              value: selectedYear.D_EV_Total,
+            },
+            {
+              label: selectedYear.R_Nominee_prop,
+              value: selectedYear.R_EV_Total,
+            },
+          ]}
         />
       </Col>
     </Row>
@@ -196,6 +245,96 @@ const NomineeBox = ({ name, party, image }) => {
     </div>
   );
 };
+
+const groupData = (data, total) => {
+  const percent = d3
+    .scaleLinear()
+    .domain([0, total])
+    .range([0, 100]);
+  let cumulative = 0;
+  const _data = data
+    .map(d => {
+      cumulative += d.value;
+      return {
+        value: d.value,
+        cumulative: cumulative - d.value,
+        label: d.label,
+        percent: percent(d.value),
+      };
+    })
+    .filter(d => d.value > 0);
+  return _data;
+};
+
+const VotesBar = ({ data }) => {
+  const svgRef = useRef();
+
+  useEffect(() => {
+    const config = {
+      f: d3.format('.1f'),
+      margin: { top: 20, right: 0, bottom: 50, left: 0 },
+      width: 900,
+      height: 90,
+      barHeight: 40,
+      colors: ['#007bff', '#dc3545'],
+    };
+    const { f, margin, width, height, barHeight, colors } = config;
+    const w = width;
+    const h = height - margin.top - margin.bottom;
+    const halfBarHeight = barHeight / 2;
+
+    const total = d3.sum(data, d => d.value);
+    const _data = groupData(data, total);
+
+    // set up scales for horizontal placement
+    const xScale = d3
+      .scaleLinear()
+      .domain([0, total])
+      .range([0, w]);
+
+    // create svg in passed in div
+    d3.select(svgRef.current)
+      .selectAll('svg')
+      .remove();
+    const selection = d3
+      .select(svgRef.current)
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .append('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    // stack rect for each data value
+    selection
+      .selectAll('rect')
+      .data(_data)
+      .enter()
+      .append('rect')
+      .attr('class', 'rect-stacked')
+      .attr('x', d => xScale(d.cumulative))
+      .attr('y', h / 2 - halfBarHeight)
+      .attr('height', barHeight)
+      .attr('width', d => xScale(d.value))
+      .style('fill', (d, i) => colors[i]);
+
+    // add values on bar
+    selection
+      .selectAll('.text-value')
+      .data(_data)
+      .enter()
+      .append('text')
+      .attr('class', 'text-value')
+      .attr('fill', '#fff')
+      .attr('font-size', '1.3rem')
+      .attr('text-anchor', 'middle')
+      .attr('x', d => xScale(d.cumulative) + xScale(d.value) / 2)
+      .attr('y', h / 2 + 5)
+      .text(d => d.value);
+  }, [data]);
+
+  return <div ref={svgRef}></div>;
+};
+
 const query = graphql`
   query {
     allFile {

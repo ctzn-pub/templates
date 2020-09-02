@@ -6,10 +6,9 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import './bubbleStyle.css';
 
-var width = 960,
-  height = 600;
+var width = 750,
+  height = 500;
 
-var path = d3.geoPath();
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
 
 // var radius = d3.scalePow([0, d3.max(data, d => d.value)], [0, 15]).exponent(4);
@@ -18,7 +17,11 @@ const features = new Map(topojson.feature(us, us.objects.counties).features.map(
 
 function DiscreteMap({ data: rawData }) {
   const [data, setData] = useState();
+  var projection = d3
+    .geoIdentity()
+    .fitSize([width, height], topojson.feature(us, us.objects.counties));
 
+  var path = d3.geoPath().projection(projection);
   const svgRef = useRef();
   useEffect(() => {
     if (rawData) {
@@ -117,7 +120,7 @@ function DiscreteMap({ data: rawData }) {
       });
   }, [data]);
   return (
-    <div>
+    <div className="bubble_container">
       <svg ref={svgRef} width={width} height={height}></svg>
     </div>
   );

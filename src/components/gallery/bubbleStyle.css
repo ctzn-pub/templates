@@ -1,31 +1,31 @@
-.land {
+.bubble_container .land {
   fill: #ddd;
 }
 
-.border {
+.bubble_container .border {
   fill: none;
   stroke: #fff;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
 
-.bubble {
+.bubble_container .bubble {
   fill: brown;
   fill-opacity: 0.5;
   stroke: #fff;
   stroke-width: 0.5px;
 }
 
-.bubble :hover {
+.bubble_container .bubble :hover {
   stroke: #000;
 }
 
-.legend circle {
+.bubble_container .legend circle {
   fill: none;
   stroke: #ccc;
 }
 
-.legend text {
+.bubble_container .legend text {
   fill: #777;
   font: 10px sans-serif;
   text-anchor: middle;

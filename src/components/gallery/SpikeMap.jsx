@@ -9,11 +9,17 @@ const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2}
 
 const path = d3.geoPath();
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
-const width = 900;
-const height = 700;
+const width = 750;
+const height = 500;
 
 function SpikeMap({ data: rawData }) {
   const [data, setData] = useState();
+  var projection = d3
+    .geoIdentity()
+    .fitSize([width, height], topojson.feature(us, us.objects.counties));
+
+  var path = d3.geoPath().projection(projection);
+
   useEffect(() => {
     if (rawData) {
       let data = population.slice(1).map(([population, state, county]) => {
@@ -69,33 +75,34 @@ function SpikeMap({ data: rawData }) {
       .attr('stroke-linejoin', 'round')
       .attr('d', path);
 
-    const legend = svg
-      .append('g')
-      .attr('fill', '#777')
-      .attr('text-anchor', 'middle')
-      .attr('font-family', 'sans-serif')
-      .attr('font-size', 10)
-      .selectAll('g')
-      .data(
-        length
-          .ticks(4)
-          .slice(1)
-          .reverse()
-      )
-      .join('g')
-      .attr('transform', (d, i) => `translate(${width - (i + 1) * 18},${height})`);
+    // const legend = svg
+    //   .append('g')
+    //   .attr('fill', '#777')
+    //   .attr('text-anchor', 'middle')
+    //   .attr('font-family', 'sans-serif')
+    //   .attr('font-size', 10)
+    //   .selectAll('g')
+    //   .data(
+    //     length
+    //       .ticks(4)
+    //       .slice(1)
+    //       .reverse()
+    //   )
+    //   .join('g')
+    //   .attr('transform', (d, i) => `translate(${width - (i + 1) * 18 + 20},${height - 50})`);
 
-    legend
-      .append('path')
-      .attr('fill', d => d.color4)
-      .attr('fill-opacity', 0.3)
-      .attr('stroke', d => d.color4)
-      .attr('d', d => spike(length(d)));
+    // legend
+    //   .append('path')
+    //   .attr('fill', d => d.color4)
+    //   .attr('fill-opacity', 0.3)
+    //   .attr('stroke', d => d.color4)
+    //   .attr('d', d => spike(length(d)));
 
-    legend
-      .append('text')
-      .attr('dy', '1.3em')
-      .text(length.tickFormat(4, 's'));
+    // legend
+    //   .append('text')
+    //   .attr('dy', '1.3em')
+    //   .attr('color', 'black')
+    //   .text('hi');
 
     g.append('g')
       //    .attr('fill', 'blue')

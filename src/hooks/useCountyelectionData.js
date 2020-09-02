@@ -22,9 +22,8 @@ export const useCountyElectionData = variable => {
     `,
     { variables: { var: variable } }
   );
-  console.log(error);
+  // console.log(error);
   if (loading || error) return null;
-  console.log(data);
   return {
     counties: data.electoral_history_yearly[0].counties,
     states: data.electoral_history_state,
