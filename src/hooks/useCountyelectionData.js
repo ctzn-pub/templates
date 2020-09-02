@@ -23,9 +23,13 @@ export const useCountyElectionData = variable => {
     { variables: { var: variable } }
   );
   // console.log(error);
-  if (loading || error) return null;
+  // if (loading || error) return null;
   return {
-    counties: data.electoral_history_yearly[0].counties,
-    states: data.electoral_history_state,
+    loading,
+    error,
+    data: {
+      counties: data?.electoral_history_yearly[0].counties,
+      states: data?.electoral_history_state,
+    },
   };
 };

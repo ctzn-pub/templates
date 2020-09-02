@@ -12,7 +12,7 @@ const features = new Map(topojson.feature(us, us.objects.counties).features.map(
 //   .exponent(1.5);
 // var radius = d3.scalePow([0, d3.max(data, d => d.value)], [0, 70]).exponent(6);
 
-function BubbleMap({ data: rawData }) {
+function BubbleMap({ data: rawData, year }) {
   const [data, setData] = useState();
   const [width, setWidth] = useState(750);
   const [height, setHeight] = useState(500);
@@ -45,15 +45,16 @@ function BubbleMap({ data: rawData }) {
 
       setData(data);
     }
-  }, [rawData]);
-
+  }, [rawData, year]);
   const svgRef = useRef();
 
   useEffect(() => {
     if (!data) return;
+    console.log(year, 'updated data');
 
     var radius = d3.scalePow([0, d3.max(data, d => d.value)], [0, 100]).exponent(1);
     const svg = d3.select(svgRef.current);
+    svg.selectAll('*').remove();
     // var legend = svg
     //   .append('g')
     //   .attr('class', 'legend')
@@ -123,9 +124,9 @@ function BubbleMap({ data: rawData }) {
       .text(function(d) {
         return d.title + 'color4 ' + d.color4;
       });
-  }, [data]);
+  }, [data, year]);
   return (
-    <div className="w-100 bubble_container">
+    <div className="w-100 bubble_container" key={year}>
       <svg
         ref={svgRef}
         width={width}

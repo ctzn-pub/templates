@@ -12,7 +12,7 @@ const features = new Map(topojson.feature(us, us.objects.counties).features.map(
 const width = 750;
 const height = 500;
 
-function SpikeMap({ data: rawData }) {
+function SpikeMap({ data: rawData, year }) {
   const [data, setData] = useState();
   var projection = d3
     .geoIdentity()
@@ -52,7 +52,7 @@ function SpikeMap({ data: rawData }) {
       // });
       setData(data);
     }
-  }, [rawData]);
+  }, [rawData, year]);
 
   const svgRef = useRef();
   useEffect(() => {

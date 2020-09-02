@@ -17,7 +17,15 @@ function CountyAnalysis() {
 
   const [selectedYear, setSelectedYear] = useState(years[years.length - 1]);
   const [activeTab, setActiveTab] = useState('Bubble');
-  const data = useCountyElectionData(selectedYear.Year);
+  const [loading, setLoading] = useState('Bubble');
+  const { data, loading: loadingQuery } = useCountyElectionData(selectedYear.Year);
+  const loadingTimeOut = useRef();
+
+  useEffect(() => {
+    setLoading(true);
+    loadingTimeOut.current = setTimeout(() => setLoading(false), 300);
+    return () => clearTimeout(loadingTimeOut.current);
+  }, [selectedYear.Year]);
 
   const imagesQueryData = useStaticQuery(query);
   const images = imagesQueryData.allFile.edges.map(y => y.node);
@@ -92,34 +100,38 @@ function CountyAnalysis() {
               </NavLink>
             </NavItem>
           </Nav>
-          {data ? (
-            <div key={selectedYear.Year}>
-              <TabContent activeTab={activeTab}>
-                <TabPane tabId="Choropleth">
-                  <DiscreteMap counties={data.counties} states={data.states} />
-                </TabPane>
-              </TabContent>
-              <TabContent activeTab={activeTab}>
-                <TabPane tabId="Choropleth by County">
-                  <DiscreteMapCounty data={data.counties} />
-                </TabPane>
-              </TabContent>
-              <TabContent activeTab={activeTab}>
-                <TabPane tabId="Bubble">
-                  <BubbleMap data={data.counties} />
-                </TabPane>
-              </TabContent>
-              <TabContent activeTab={activeTab}>
-                <TabPane tabId="Spiky">
-                  <SpikeMap data={data.counties} />
-                </TabPane>
-              </TabContent>
-            </div>
-          ) : (
+          {!data || loading || loadingQuery ? (
             <>
               <h1 className="text-center">Loading</h1>
               <Skeleton variant="rect" width={900} height={500} />
             </>
+          ) : (
+            <div key={selectedYear.Year}>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Choropleth">
+                  <DiscreteMap
+                    counties={data.counties}
+                    states={data.states}
+                    year={selectedYear.Year}
+                  />
+                </TabPane>
+              </TabContent>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Choropleth by County">
+                  <DiscreteMapCounty data={data.counties} year={selectedYear.Year} />
+                </TabPane>
+              </TabContent>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Bubble">
+                  <BubbleMap data={data.counties} year={selectedYear.Year} />
+                </TabPane>
+              </TabContent>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="Spiky">
+                  <SpikeMap data={data.counties} year={selectedYear.Year} />
+                </TabPane>
+              </TabContent>
+            </div>
           )}
         </div>
 
@@ -169,9 +181,22 @@ const YearsSelect = ({ years, setSelectedYear, selectedYear }) => {
   );
 };
 const ElectionInfo = ({ images, selectedYear }) => {
-  console.log(selectedYear);
   return (
     <Row className="d-flex justify-content-around">
+      <Col sm="12">
+        <VotesBar
+          data={[
+            {
+              label: selectedYear.D_Nominee_prop,
+              value: selectedYear.D_EV_Total,
+            },
+            {
+              label: selectedYear.R_Nominee_prop,
+              value: selectedYear.R_EV_Total,
+            },
+          ]}
+        />
+      </Col>
       <Col>
         <NomineeBox
           name={selectedYear.D_Nominee_prop}
@@ -182,17 +207,21 @@ const ElectionInfo = ({ images, selectedYear }) => {
       <Col>
         <div className>
           <div className="d-flex justify-content-between w-100 display-4">
-            <p className="text-primary w-50 text-left">
-              {selectedYear.winning_party === 'D' && (
-                <CheckIcon style={{ fontSize: 40, marginRight: 10, marginBottom: 10 }} />
-              )}
-              {selectedYear.D_EV_Total}
+            <p className="text-primary w-50 text-left d-flex">
+              <div className="w-25 mr-2">
+                {selectedYear.winning_party === 'D' && (
+                  <CheckIcon style={{ fontSize: 40, marginBottom: 10 }} />
+                )}
+              </div>
+              <div className="w-75">{selectedYear.D_EV_Total}</div>
             </p>
-            <p className="text-danger w-50 text-right">
-              {selectedYear.R_EV_Total}
-              {selectedYear.winning_party === 'R' && (
-                <CheckIcon style={{ fontSize: 40, marginLeft: 10, marginBottom: 10 }} />
-              )}
+            <p className="text-danger w-50 text-right d-flex">
+              <div className="w-75">{selectedYear.R_EV_Total}</div>
+              <div className="w-25 ml-2">
+                {selectedYear.winning_party === 'R' && (
+                  <CheckIcon style={{ fontSize: 40, marginBottom: 10 }} />
+                )}
+              </div>
             </p>
           </div>
           <div className="lead text-center mb-3">Popular Votes:</div>
@@ -209,16 +238,18 @@ const ElectionInfo = ({ images, selectedYear }) => {
           image={images.find(i => selectedYear.rep_pic === i.name)?.publicURL}
         />
       </Col>
+
       <Col sm="12">
         <VotesBar
+          percent
           data={[
             {
               label: selectedYear.D_Nominee_prop,
-              value: selectedYear.D_EV_Total,
+              value: selectedYear.D_Popular * 100,
             },
             {
               label: selectedYear.R_Nominee_prop,
-              value: selectedYear.R_EV_Total,
+              value: selectedYear.R_Popular * 100,
             },
           ]}
         />
@@ -266,7 +297,7 @@ const groupData = (data, total) => {
   return _data;
 };
 
-const VotesBar = ({ data }) => {
+const VotesBar = ({ data, percent = false }) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -329,7 +360,7 @@ const VotesBar = ({ data }) => {
       .attr('text-anchor', 'middle')
       .attr('x', d => xScale(d.cumulative) + xScale(d.value) / 2)
       .attr('y', h / 2 + 5)
-      .text(d => d.value);
+      .text(d => (percent ? d.value.toFixed(2) + '%' : d.value));
   }, [data]);
 
   return <div ref={svgRef}></div>;

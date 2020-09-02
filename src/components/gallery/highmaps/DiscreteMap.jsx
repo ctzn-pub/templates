@@ -15,7 +15,7 @@ if (typeof Highcharts === 'object') {
   Highcharts.maps['countries/us/us-all'] = mapData;
 }
 
-function DiscreteMap({ counties, states }) {
+function DiscreteMap({ counties, states, year }) {
   const [data, setData] = useState(null);
   const [options, setOptions] = useState(null);
 
@@ -144,7 +144,7 @@ function DiscreteMap({ counties, states }) {
     };
 
     setOptions(options);
-  }, []);
+  }, [states, counties]);
 
   if (!options) return null;
   return (
