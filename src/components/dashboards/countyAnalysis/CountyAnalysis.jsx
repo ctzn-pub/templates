@@ -183,6 +183,9 @@ const YearsSelect = ({ years, setSelectedYear, selectedYear }) => {
 const ElectionInfo = ({ images, selectedYear }) => {
   return (
     <Row className="d-flex justify-content-around">
+      <div>
+        <div className="lead text-center mb-3 text-bold">Electoral Votes</div>
+      </div>
       <Col sm="12">
         <VotesBar
           data={[
@@ -224,11 +227,11 @@ const ElectionInfo = ({ images, selectedYear }) => {
               </div>
             </p>
           </div>
-          <div className="lead text-center mb-3">Popular Votes:</div>
           <div className="d-flex justify-content-around w-100 lead">
             <p className="text-primary">{parseFloat(selectedYear.D_Popular * 100).toFixed(2)}%</p>
             <p className="text-danger">{parseFloat(selectedYear.R_Popular * 100).toFixed(2)}%</p>
           </div>
+          <div className="lead text-center mb-3 text-bold">Popular Votes</div>
         </div>
       </Col>
       <Col>
@@ -356,7 +359,8 @@ const VotesBar = ({ data, percent = false }) => {
       .append('text')
       .attr('class', 'text-value')
       .attr('fill', '#fff')
-      .attr('font-size', '1.3rem')
+      .attr('font-size', '1rem')
+      .attr('font-weight', 'bold')
       .attr('text-anchor', 'middle')
       .attr('x', d => xScale(d.cumulative) + xScale(d.value) / 2)
       .attr('y', h / 2 + 5)
