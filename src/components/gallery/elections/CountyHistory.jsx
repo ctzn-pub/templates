@@ -11,7 +11,7 @@ function CountyHistory() {
   const [selectedVariable, setSelectedVariable] = useState({ value: 2016 });
   const [variableOptions, setVariablesOptions] = useState([]);
 
-  const data = useCountyElectionData(selectedVariable?.value);
+  const { data } = useCountyElectionData(selectedVariable?.value);
 
   useEffect(() => {
     if (variables) {
@@ -41,7 +41,7 @@ function CountyHistory() {
         <Skeleton variant="rect" width={500} height={400} />
       </div>
     );
-  let { counties } = data.data;
+  let { counties } = data;
 
   const opts = variableOptions.find(obj => {
     return obj.value == selectedVariable.value;
@@ -61,10 +61,10 @@ function CountyHistory() {
           classNamePrefix="react-select"
         />
         <h1>
-          {opts.rep} vs. {opts.dem}
+          {opts?.rep} vs. {opts?.dem}
         </h1>
 
-        <h2>{opts.value}</h2>
+        <h2>{opts?.value}</h2>
       </div>
     </div>
   );
