@@ -40,16 +40,7 @@ function SpikeMap({ data: rawData, year }) {
         }));
 
       data = mergeById(data, rawData).filter(d => d.position);
-      // let data = rawData.map(({ id, color44, Per_Dem, Per_Rep }) => {
-      //   const feature = features.get(id);
-      //   return {
-      //     id,
-      //     position: feature && path.centroid(feature),
-      //     title: feature && feature.properties.name,
-      //     color4: color44,
-      //     value: Math.abs(Per_Dem - Per_Rep) * 100,
-      //   };
-      // });
+
       setData(data);
     }
   }, [rawData, year]);
@@ -57,7 +48,7 @@ function SpikeMap({ data: rawData, year }) {
   const svgRef = useRef();
   useEffect(() => {
     if (!data) return;
-    const length = d3.scalePow([0, d3.max(data, d => d.value)], [0, 100]).exponent(1);
+    const length = d3.scaleSqrt([0, d3.max(data, d => d.value)], [0, 40]);
 
     const svg = d3.select(svgRef.current);
 
@@ -65,49 +56,19 @@ function SpikeMap({ data: rawData, year }) {
 
     g.append('path')
       .datum(topojson.feature(us, us.objects.nation))
-      .attr('fill', '#e0e0e0')
+      .attr('fill', '#fff')
+      .attr('stroke', 'black')
       .attr('d', path);
 
     g.append('path')
       .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
       .attr('fill', 'none')
-      .attr('stroke', 'white')
+      .attr('stroke', 'black')
       .attr('stroke-linejoin', 'round')
       .attr('d', path);
 
-    // const legend = svg
-    //   .append('g')
-    //   .attr('fill', '#777')
-    //   .attr('text-anchor', 'middle')
-    //   .attr('font-family', 'sans-serif')
-    //   .attr('font-size', 10)
-    //   .selectAll('g')
-    //   .data(
-    //     length
-    //       .ticks(4)
-    //       .slice(1)
-    //       .reverse()
-    //   )
-    //   .join('g')
-    //   .attr('transform', (d, i) => `translate(${width - (i + 1) * 18 + 20},${height - 50})`);
-
-    // legend
-    //   .append('path')
-    //   .attr('fill', d => d.color4)
-    //   .attr('fill-opacity', 0.3)
-    //   .attr('stroke', d => d.color4)
-    //   .attr('d', d => spike(length(d)));
-
-    // legend
-    //   .append('text')
-    //   .attr('dy', '1.3em')
-    //   .attr('color', 'black')
-    //   .text('hi');
-
     g.append('g')
-      //    .attr('fill', 'blue')
-      // .attr('fill-opacity', 0.3)
-      //  .attr('stroke', 'blue')
+
       .selectAll('path')
       .data(
         data
@@ -125,10 +86,9 @@ function SpikeMap({ data: rawData, year }) {
       .attr('fill-opacity', 0.3)
       .attr('stroke', d => d.color4)
       .append('title')
-      .text(
-        d => `${d.title}
-            ${format(d.value)}`
-      );
+      .text(function(d) {
+        return d.title + 'color4 ' + d.color4;
+      });
 
     // return svg.node();
   }, [data]);

@@ -9,9 +9,6 @@ var formatNumber = d3.format(',.0f');
 
 const features = new Map(topojson.feature(us, us.objects.counties).features.map(d => [d.id, d]));
 
-//   .exponent(1.5);
-// var radius = d3.scalePow([0, d3.max(data, d => d.value)], [0, 70]).exponent(6);
-
 function BubbleMap({ data: rawData, year }) {
   const [data, setData] = useState();
   const [width, setWidth] = useState(750);
@@ -50,58 +47,24 @@ function BubbleMap({ data: rawData, year }) {
 
   useEffect(() => {
     if (!data) return;
-    console.log(year, 'updated data');
 
-    var radius = d3.scalePow([0, d3.max(data, d => d.value)], [0, 100]).exponent(1);
+    var radius = d3.scaleSqrt([0, d3.max(data, d => d.value)], [0, 40]);
     const svg = d3.select(svgRef.current);
+
     svg.selectAll('*').remove();
-    // var legend = svg
-    //   .append('g')
-    //   .attr('class', 'legend')
-    //   .attr('transform', 'translate(' + (width - 50) + ',' + (height - 20) + ')')
-    //   .selectAll('g')
-    //   .data(
-    //     radius
-    //       .ticks(4)
-    //       .slice(1)
-    //       .reverse()
-    //   )
-    //   .enter()
-    //   .append('g');
-
-    // legend
-    //   .append('circle')
-    //   .attr('cy', function(d) {
-    //     return -radius(d);
-    //   })
-    //   .attr('r', radius);
-
-    // legend
-    //   .append('text')
-    //   .attr('y', function(d) {
-    //     return -2 * radius(d);
-    //   })
-    //   .attr('dy', '1.3em')
-    //   .text(d3.format('.1s'));
-
     svg
       .append('path')
       .datum(topojson.feature(us, us.objects.nation))
-      .attr('class', 'land')
-      .attr('width', width)
-
+      .attr('fill', '#fff')
+      .attr('stroke', 'black')
       .attr('d', path);
 
     svg
       .append('path')
-      .datum(
-        topojson.mesh(us, us.objects.counties, function(a, b) {
-          return a !== b;
-        })
-      )
-      .attr('class', 'border border--state')
-      .attr('preserveAspectRatio', 'xMidYMid')
-      .attr('width', width)
+      .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
+      .attr('fill', 'none')
+      .attr('stroke', 'black')
+      .attr('stroke-linejoin', 'round')
       .attr('d', path);
 
     svg
@@ -122,7 +85,7 @@ function BubbleMap({ data: rawData, year }) {
       .attr('stroke', d => d.color4)
       .append('title')
       .text(function(d) {
-        return d.title + 'color4 ' + d.color4;
+        return d.title + 'color4 ' + d.id;
       });
   }, [data, year]);
   return (
