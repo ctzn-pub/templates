@@ -3,7 +3,6 @@ import us from './data/counties-albers-10m.json';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import './bubbleStyle.css';
-import { usePopulation } from '../../hooks/usePopulation';
 
 var formatNumber = d3.format(',.0f');
 
@@ -13,7 +12,6 @@ function BubbleMap({ data: rawData, year }) {
   const [data, setData] = useState();
   const [width, setWidth] = useState(750);
   const [height, setHeight] = useState(500);
-  const population = usePopulation();
 
   var projection = d3
     .geoIdentity()
@@ -22,24 +20,15 @@ function BubbleMap({ data: rawData, year }) {
   var path = d3.geoPath().projection(projection);
   useEffect(() => {
     if (rawData) {
-      let data = population.map(({ Population, id }) => {
-        const feature = features.get(id);
+      let data = rawData.map(a => {
+        const feature = features.get(a.id);
         return {
-          id,
+          ...a,
           position: feature && path.centroid(feature),
           title: feature && feature.properties.name,
-          value: +Population,
+          value: +a.Total_Vote,
         };
       });
-
-      const mergeById = (a1, a2) =>
-        a1.map(itm => ({
-          ...a2.find(item => item.id === itm.id && item),
-          ...itm,
-        }));
-
-      data = mergeById(data, rawData).filter(d => d.position);
-
       setData(data);
     }
   }, [rawData, year]);
@@ -89,6 +78,7 @@ function BubbleMap({ data: rawData, year }) {
         <div>${d.title}</div>
         <div>Democrat: ${(100 * d.Per_Dem).toFixed(2)}%</div>
         <div>Republican: ${(100 * d.Per_Rep).toFixed(2)}%</div>
+        <div>Total Votes: ${Number(d.Total_Vote).toLocaleString()}</div>
         `;
       });
   }, [data, year]);

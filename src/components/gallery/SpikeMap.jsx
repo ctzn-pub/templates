@@ -1,10 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import population from './data/population.json';
 
 import us from './data/counties-albers-10m.json';
-import { usePopulation } from '../../hooks/usePopulation';
 const format = d3.format(',.0f');
 const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
@@ -15,7 +13,6 @@ const height = 500;
 
 function SpikeMap({ data: rawData, year }) {
   const [data, setData] = useState();
-  const population = usePopulation();
 
   var projection = d3
     .geoIdentity()
@@ -25,23 +22,15 @@ function SpikeMap({ data: rawData, year }) {
 
   useEffect(() => {
     if (rawData) {
-      let data = population.map(({ Population, id }) => {
-        const feature = features.get(id);
+      let data = rawData.map(a => {
+        const feature = features.get(a.id);
         return {
-          id,
+          ...a,
           position: feature && path.centroid(feature),
           title: feature && feature.properties.name,
-          value: +Population,
+          value: +a.Total_Vote,
         };
       });
-
-      const mergeById = (a1, a2) =>
-        a1.map(itm => ({
-          ...a2.find(item => item.id === itm.id && item),
-          ...itm,
-        }));
-
-      data = mergeById(data, rawData).filter(d => d.position);
 
       setData(data);
     }
@@ -93,6 +82,8 @@ function SpikeMap({ data: rawData, year }) {
         <div>${d.title}</div>
         <div>Democrat: ${(100 * d.Per_Dem).toFixed(2)}%</div>
         <div>Republican: ${(100 * d.Per_Rep).toFixed(2)}%</div>
+        <div>Total Votes: ${Number(d.Total_Vote).toLocaleString()}</div>
+
         `;
       });
   }, [data]);

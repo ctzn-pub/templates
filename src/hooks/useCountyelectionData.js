@@ -16,6 +16,7 @@ export const useCountyElectionData = variable => {
             id
             Per_Dem
             Per_Rep
+            Total_Vote
           }
         }
       }
