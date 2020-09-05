@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import us from './data/counties-albers-10m.json';
-import population from './data/population.json';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import './bubbleStyle.css';
+import { usePopulation } from '../../hooks/usePopulation';
 
 var formatNumber = d3.format(',.0f');
 
@@ -13,6 +13,7 @@ function BubbleMap({ data: rawData, year }) {
   const [data, setData] = useState();
   const [width, setWidth] = useState(750);
   const [height, setHeight] = useState(500);
+  const population = usePopulation();
 
   var projection = d3
     .geoIdentity()
@@ -21,14 +22,13 @@ function BubbleMap({ data: rawData, year }) {
   var path = d3.geoPath().projection(projection);
   useEffect(() => {
     if (rawData) {
-      let data = population.slice(1).map(([population, state, county]) => {
-        const id = state + county;
+      let data = population.map(({ Population, id }) => {
         const feature = features.get(id);
         return {
           id,
           position: feature && path.centroid(feature),
           title: feature && feature.properties.name,
-          value: +population,
+          value: +Population,
         };
       });
 
@@ -84,19 +84,17 @@ function BubbleMap({ data: rawData, year }) {
       .attr('fill-opacity', 0.3)
       .attr('stroke', d => d.color4)
       .append('title')
-      .text(function(d) {
-        return d.title + 'color4 ' + d.id;
+      .html(function(d) {
+        return `
+        <div>${d.title}</div>
+        <div>Democrat: ${(100 * d.Per_Dem).toFixed(2)}%</div>
+        <div>Republican: ${(100 * d.Per_Rep).toFixed(2)}%</div>
+        `;
       });
   }, [data, year]);
   return (
-    <div className="w-100 bubble_container" key={year}>
-      <svg
-        ref={svgRef}
-        width={width}
-        height={height}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="xMidYMid meet"
-      ></svg>
+    <div className="w-100 bubble_container">
+      <svg ref={svgRef} width={width} height={height}></svg>
     </div>
   );
 }

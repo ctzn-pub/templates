@@ -36,10 +36,12 @@ function DiscreteMap({ counties, states, year }) {
         events: {
           drilldown: async function(e) {
             if (!e.seriesOptions) {
+              console.log(e.point.name);
+              this.setTitle({ text: `Election results by county` }, { text: e.point.name });
               const chart = this;
               const mapKey = 'countries/us/' + e.point.drilldown + '-all';
               // Show the spinner
-              chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
+              // chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
 
               // Load the drilldown map
               const res = await fetch(
@@ -51,7 +53,7 @@ function DiscreteMap({ counties, states, year }) {
 
               let data = Highcharts.geojson(Highcharts.maps[mapKey]);
 
-              chart.hideLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
+              // chart.hideLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
 
               data.forEach(function(el, i) {
                 el.drilldown = el.properties['hc-key'];
@@ -68,15 +70,15 @@ function DiscreteMap({ counties, states, year }) {
                 },
               });
             }
-
-            this.setTitle(null, { text: e.point.name });
           },
           drillup: function() {
-            this.setTitle(null, { text: '' });
+            this.setTitle({ text: `Election results by county` }, { text: '' });
           },
         },
       },
-
+      title: {
+        text: `Election results by county`,
+      },
       legend: {
         enabled: false,
         layout: 'vertical',

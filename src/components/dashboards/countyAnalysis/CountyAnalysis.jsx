@@ -16,8 +16,8 @@ function CountyAnalysis() {
   const years = useYears();
 
   const [selectedYear, setSelectedYear] = useState(years[years.length - 1]);
-  const [activeTab, setActiveTab] = useState('Bubble');
-  const [loading, setLoading] = useState('Bubble');
+  const [activeTab, setActiveTab] = useState('Choropleth by County');
+  const [loading, setLoading] = useState();
   const { data, loading: loadingQuery } = useCountyElectionData(selectedYear.Year);
   const loadingTimeOut = useRef();
 

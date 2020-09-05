@@ -4,6 +4,7 @@ import * as topojson from 'topojson-client';
 import population from './data/population.json';
 
 import us from './data/counties-albers-10m.json';
+import { usePopulation } from '../../hooks/usePopulation';
 const format = d3.format(',.0f');
 const spike = (length, width = 7) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
@@ -14,6 +15,8 @@ const height = 500;
 
 function SpikeMap({ data: rawData, year }) {
   const [data, setData] = useState();
+  const population = usePopulation();
+
   var projection = d3
     .geoIdentity()
     .fitSize([width, height], topojson.feature(us, us.objects.counties));
@@ -22,14 +25,13 @@ function SpikeMap({ data: rawData, year }) {
 
   useEffect(() => {
     if (rawData) {
-      let data = population.slice(1).map(([population, state, county]) => {
-        const id = state + county;
+      let data = population.map(({ Population, id }) => {
         const feature = features.get(id);
         return {
           id,
           position: feature && path.centroid(feature),
           title: feature && feature.properties.name,
-          value: +population,
+          value: +Population,
         };
       });
 
@@ -86,11 +88,13 @@ function SpikeMap({ data: rawData, year }) {
       .attr('fill-opacity', 0.3)
       .attr('stroke', d => d.color4)
       .append('title')
-      .text(function(d) {
-        return d.title + 'color4 ' + d.color4;
+      .html(function(d) {
+        return `
+        <div>${d.title}</div>
+        <div>Democrat: ${(100 * d.Per_Dem).toFixed(2)}%</div>
+        <div>Republican: ${(100 * d.Per_Rep).toFixed(2)}%</div>
+        `;
       });
-
-    // return svg.node();
   }, [data]);
 
   return (
