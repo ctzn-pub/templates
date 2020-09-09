@@ -2,7 +2,7 @@ import React from 'react';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 
-function RaceChart({ levels, data, colors, title, demo, overall }) {
+function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source }) {
   const chartRef = React.useRef();
   const [chartOption, setChartOption] = React.useState(null);
 
@@ -26,9 +26,9 @@ function RaceChart({ levels, data, colors, title, demo, overall }) {
   React.useEffect(() => {
     setChartOption({
       credits: {
-        enabled: false,
+        enabled: true,
 
-        text: 'Data Source: General Social Survey',
+        text: `Data Source: ${source}`,
         // href: "/source/gss",
         style: {
           fontSize: '10px',
@@ -100,9 +100,9 @@ function RaceChart({ levels, data, colors, title, demo, overall }) {
         type: 'category',
       },
       yAxis: {
-        opposite: true,
+        // opposite: true,
         title: {
-          text: '',
+          text: yLabel,
         },
         // tickAmount: 10,
         labels: {

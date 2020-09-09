@@ -9,7 +9,7 @@ import SplitBarChart from './SplitBarChart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function SplitBar() {
   const { data, metadata, overall } = useSplitData();
-  console.log({ data: data[0] });
+  console.log({ metadata });
   const demos = useSplitBarDemo();
 
   const [selectedDemo, setSelectedDemo] = useState(demos[0].demo);
@@ -100,6 +100,8 @@ function SplitBar() {
             title={metadata.question_text}
             demo={selectedDemo}
             overall={overall}
+            yLabel={`${metadata.units} ${metadata.measure}`}
+            source={metadata?.data_source?.long_name}
           />
         </div>
       </div>
