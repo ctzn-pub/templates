@@ -1,11 +1,6 @@
 import React from 'react';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-import HC_data from 'highcharts/modules/data';
-
-if (typeof Highcharts === 'object') {
-  HC_data(Highcharts);
-}
 
 function RaceChart({ levels, data, colors, title, demo, overall }) {
   const chartRef = React.useRef();
@@ -31,7 +26,7 @@ function RaceChart({ levels, data, colors, title, demo, overall }) {
   React.useEffect(() => {
     setChartOption({
       credits: {
-        enabled: true,
+        enabled: false,
 
         text: 'Data Source: General Social Survey',
         // href: "/source/gss",

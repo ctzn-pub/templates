@@ -9,7 +9,7 @@ import SplitBarChart from './SplitBarChart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function SplitBar() {
   const { data, metadata, overall } = useSplitData();
-  console.log({ overall });
+  console.log({ data: data[0] });
   const demos = useSplitBarDemo();
 
   const [selectedDemo, setSelectedDemo] = useState(demos[0].demo);
