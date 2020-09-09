@@ -134,8 +134,6 @@ function CountyAnalysis() {
             </div>
           )}
         </div>
-
-        <div className="p-3 dash_card_footer">footer</div>
       </div>
     </>
   );
