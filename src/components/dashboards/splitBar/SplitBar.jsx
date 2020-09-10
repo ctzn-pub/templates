@@ -31,13 +31,15 @@ function SplitBar() {
   return (
     <>
       <div
-        className="border rounded dash_card p-3 "
+        className="border rounded dash_card"
         style={{
           width: 900,
         }}
       >
-        <div className="lead p-4">{metadata.measure}</div>
-        <div className=" dash_card_body border-bottom">
+        <div className="border-bottom p-3">
+          <div className="h3">{metadata.measure}</div>
+        </div>
+        <div className="dash_card_body border-bottom p-3">
           <div className="d-flex align-items-center">
             <div
               onClick={() => {
@@ -65,7 +67,6 @@ function SplitBar() {
                     'active-pill': selectedDemo === demo,
                   })}
                 >
-                  {/* <i className={demo.demographics_metum.icon + ' fas mr-2'}></i> */}
                   {demo}
                 </div>
               ))}
@@ -86,13 +87,6 @@ function SplitBar() {
               />
             </div>
           </div>
-          {/* {!data || loading || loadingQuery ? ( */}
-          {/* <>
-                <h1 className="text-center">Loading</h1>
-                <Skeleton variant="rect" width={900} height={500} />
-              </>
-            ) : ( */}
-
           <SplitBarChart
             data={data.filter(d => d.demo === selectedDemo)}
             levels={selectedDemoLevels}
@@ -103,6 +97,16 @@ function SplitBar() {
             yLabel={`${metadata.units} ${metadata.measure}`}
             source={metadata?.data_source?.long_name}
           />
+        </div>
+
+        <div className=" d-flex justify-content-end p-3">
+          <div className="w-50">
+            <h5>Technical Notes</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At nobis dolor eligendi
+              architecto, accusantium beatae est excepturi quae suscip
+            </p>
+          </div>
         </div>
       </div>
     </>
