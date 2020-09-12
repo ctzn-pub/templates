@@ -1,36 +1,47 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import InteractionsChart from './InteractionsChart';
 import Left from '../../../images/leftarrow.svg';
 import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
-import { useMemo } from 'react';
-function Interactions({}) {
-  const {
-    hasura: { single_variable_interaction2: data },
-  } = useStaticQuery(dataQuery);
+import MarginalEffectChart from './MarginalEffectChart';
 
-  const colors = [data[0].color_1, data[0].color_2];
-  const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
-  const demosDisplay = useMemo(() => [...new Set(data.map(a => a.displayname))], [data]);
+function MarginalEffect() {
+  const {
+    hasura: { single_variable_main_effects: data },
+  } = useStaticQuery(query);
+
+  const demos = useMemo(() => [...new Set(data.map(d => d.demo))], [data]);
+  return (
+    <>
+      <DesktopMarginalEffect data={data} demos={demos} />
+      <MobileMarginalEffect data={data} demos={demos} />
+    </>
+  );
+}
+
+const DesktopMarginalEffect = ({ data, demos }) => {
+  return (
+    <div className="row d-none d-md-flex">
+      {demos.map(demo => (
+        <div className="col-4" key={demo}>
+          <MarginalEffectChart data={data.filter(d => d.demo === demo)} demo={demo} />
+        </div>
+      ))}
+    </div>
+  );
+};
+const MobileMarginalEffect = ({ data, demos }) => {
+  const demosDisplay = useMemo(() => [...new Set(data.map(a => a.demo))], [data]);
   const demoContainer = useRef();
 
   const [selectedDemo, setSelectedDemo] = useState(demos[0]);
-  const [selectedDemofacets, setSelectedDemofacets] = useState([
-    ...new Set(data.filter(d => d.demo === selectedDemo).map(d => d.facet)),
-  ]);
 
   const onDemographicChange = demo => {
-    setSelectedDemofacets([...new Set(data.filter(d => d.displayname === demo).map(d => d.facet))]);
     setSelectedDemo(demo);
   };
 
   return (
-    <div>
-      <div className="lead ">
-        People seeing racial discrimination where it really does NOT exist by Political Party &{' '}
-        {selectedDemo}
-      </div>
+    <div className="d-block d-md-none">
       <div className="d-flex align-items-center">
         <div
           onClick={() => {
@@ -78,42 +89,23 @@ function Interactions({}) {
           />
         </div>
       </div>
-      <div className="row">
-        {selectedDemofacets.map(facet => (
-          <div className="col-12 col-md-6">
-            <InteractionsChart
-              data={data.filter(a => a.displayname === selectedDemo && a.facet === facet)}
-              facet={facet}
-              colors={colors}
-              demo={selectedDemo}
-            />
-          </div>
-        ))}
-      </div>
+      <MarginalEffectChart data={data.filter(d => d.demo === selectedDemo)} demo={selectedDemo} />
     </div>
   );
-}
+};
+export default MarginalEffect;
 
-export default Interactions;
-
-const dataQuery = graphql`
+const query = graphql`
   {
     hasura {
-      single_variable_interaction2(
+      single_variable_main_effects(
         where: { source: { _eq: "vsg" }, variable: { _eq: "gender_attitudes_maleboss" } }
       ) {
-        color_1
-        color_2
         conf_high
         conf_low
         demo
-        displayname
-        facet
-        group
         labels
-        predicted
-        variable
-        x
+        y: predicted
       }
     }
   }

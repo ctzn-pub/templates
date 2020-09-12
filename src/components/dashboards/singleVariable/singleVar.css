@@ -1,0 +1,11 @@
+.graphBox {
+  cursor: pointer;
+}
+.graphBox:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.graphBox.active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  border: 2px solid black;
+}
