@@ -40,7 +40,7 @@ function SingleVariable() {
         </TabContent>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="marginal_effect">
-            <MarginalEffect />
+            <MarginalEffect variable={metadata.title} />
           </TabPane>
         </TabContent>
         <TabContent activeTab={activeTab}>
@@ -73,20 +73,22 @@ function SingleVariable() {
             activeTab={activeTab}
           />
         </div>
-        <div className="col-4">
+        <div className="col-4 single_var_side_note">
           <div>
-            <h5>Technical Notes</h5>
+            <h6>Technical Notes</h6>
             <p>
-              This pane shows the results from a model {metadata.title} ~ Politics * (demographic),
-              controlling for other demographics
+              This pane shows the results from a model <strong>{metadata.title}</strong> ~ Politics
+              * (demographic), controlling for other demographics
             </p>
           </div>
           <div>
-            <h5>Data Source</h5>
-            <p>This chart uses data derived from {metadata.data_source.long_name}.</p>
+            <h6>Data Source</h6>
+            <p>
+              This chart uses data derived from <strong>{metadata.data_source.long_name}</strong>.
+            </p>
           </div>
           <div>
-            <h5>Original Question</h5>
+            <h6>Original Question</h6>
             <p>{metadata.question_text}</p>
           </div>
         </div>

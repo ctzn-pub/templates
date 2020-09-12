@@ -5,7 +5,7 @@ import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import MarginalEffectChart from './MarginalEffectChart';
 
-function MarginalEffect() {
+function MarginalEffect({ variable }) {
   const {
     hasura: { single_variable_main_effects: data },
   } = useStaticQuery(query);
@@ -13,24 +13,28 @@ function MarginalEffect() {
   const demos = useMemo(() => [...new Set(data.map(d => d.demo))], [data]);
   return (
     <>
-      <DesktopMarginalEffect data={data} demos={demos} />
-      <MobileMarginalEffect data={data} demos={demos} />
+      <DesktopMarginalEffect data={data} demos={demos} variable={variable} />
+      <MobileMarginalEffect data={data} demos={demos} variable={variable} />
     </>
   );
 }
 
-const DesktopMarginalEffect = ({ data, demos }) => {
+const DesktopMarginalEffect = ({ data, demos, variable }) => {
   return (
     <div className="row d-none d-md-flex">
       {demos.map(demo => (
         <div className="col-4" key={demo}>
-          <MarginalEffectChart data={data.filter(d => d.demo === demo)} demo={demo} />
+          <MarginalEffectChart
+            data={data.filter(d => d.demo === demo)}
+            demo={demo}
+            variable={variable}
+          />
         </div>
       ))}
     </div>
   );
 };
-const MobileMarginalEffect = ({ data, demos }) => {
+const MobileMarginalEffect = ({ data, demos, variable }) => {
   const demosDisplay = useMemo(() => [...new Set(data.map(a => a.demo))], [data]);
   const demoContainer = useRef();
 
@@ -89,7 +93,11 @@ const MobileMarginalEffect = ({ data, demos }) => {
           />
         </div>
       </div>
-      <MarginalEffectChart data={data.filter(d => d.demo === selectedDemo)} demo={selectedDemo} />
+      <MarginalEffectChart
+        data={data.filter(d => d.demo === selectedDemo)}
+        demo={selectedDemo}
+        variable={variable}
+      />
     </div>
   );
 };

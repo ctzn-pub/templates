@@ -10,8 +10,8 @@ if (typeof window !== `undefined`) {
   more(Highcharts);
 }
 
-function MarginalEffect({ data, demo }) {
-  const axislabel = 'label';
+function MarginalEffect({ data, demo, variable }) {
+  const axislabel = variable;
   //   console.log(ser);
 
   const chartData = data.map(level => ({
