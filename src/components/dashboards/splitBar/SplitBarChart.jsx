@@ -19,8 +19,10 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
       .map(data => {
         return [data['combo_lab'], data.avg];
       })
-      .sort((a, b) => b[1] - a[1]);
-
+      .sort((a, b) => b[1] - a[1])
+      .map(data => {
+        return { name: data[0], y: data[1] };
+      });
     return output;
   };
   React.useEffect(() => {
@@ -38,7 +40,10 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
       },
 
       chart: {
-        // hide levels with no data
+        style: {
+          fontFamily: 'Georgia',
+        },
+
         events: {
           load: function() {
             this.series.forEach(function(s) {
@@ -52,9 +57,10 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
 
       plotOptions: {
         bar: {
-          pointPadding: 0.1,
-          groupPadding: 0,
+          pointPadding: 0,
+          groupPadding: 0.02,
         },
+
         series: {
           states: {
             inactive: {
@@ -71,40 +77,53 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
       },
 
       title: {
-        margin: 2,
-        text: title + ' by ' + demo,
+        style: { fontSize: '14px' },
+        align: 'left',
+        margin: 0,
+        text: title + ' (by ' + demo + ')',
       },
-
       legend: {
-        itemStyle: { fontSize: 10 },
+        itemStyle: {
+          color: '#333333',
+          cursor: 'pointer',
+          fontSize: '12px',
+          fontWeight: 'light',
+          textOverflow: 'ellipsis',
+        },
 
         title: {
-          style: { fontSize: 12 },
+          style: { fontSize: 12, fontWeight: 'light' },
           text: null,
           //  (isBinary ? "% " : "") +
           //   this.props.rank.demographics_metum.sitewide_demographic,
         },
         layout: 'horizontal',
-        // borderColor: "#F6F5F5",
-        // borderWidth: 1,
-        // borderColor: "#e0e0e0",
         align: 'center',
         verticalAlign: 'top',
-        margin: 0,
-        padding: 0,
+        margin: 10,
+        padding: 10,
         itemMarginTop: 0,
         itemMarginBottom: 10,
       },
 
       xAxis: {
         type: 'category',
+        lineWidth: 0,
+        minorGridLineWidth: 0,
+        lineColor: 'transparent',
+
+        //  minorTickLength: 0,
       },
       yAxis: {
         // opposite: true,
         title: {
           text: yLabel,
         },
-        // tickAmount: 10,
+        gridLineColor: 'transparent',
+        tickInterval: 25,
+        tickColor: '#9f9f9f',
+        tickWidth: 1,
+
         labels: {
           formatter: function() {
             return this.value + ' %';
@@ -113,7 +132,7 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
       },
       series: [
         {
-          color: '#e7e7e7',
+          color: '#f5f5f5',
           borderColor: 'transparent',
           type: 'bar',
           dataLabels: [
@@ -143,22 +162,26 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
               console.log(level, getDataLevels(level));
               return false;
             },
-            type: 'scatter',
+
             marker: {
-              lineWidth: 0,
+              // //   lineWidth: 0,
               fillColor: colors[i],
-              lineColor: null,
-              radius: 7,
-              symbol: 'circle',
-              borderColor: 'transparent',
+              //  lineColor: null,
+              // //   radius: 7,
+              // //   symbol: 'circle',
+              // //   borderColor: 'transparent',
             },
             name: level,
+
             dataLabels: [
               {
                 enabled: false,
               },
             ],
             data: getDataLevels(level),
+            type: 'bubble',
+
+            maxSize: 7,
             tooltip: {
               valueDecimals: 2,
               headerFormat: '',

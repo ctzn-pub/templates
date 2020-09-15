@@ -8,9 +8,8 @@ import SplitBarChart from './SplitBarChart';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 function SplitBar() {
-  const { data, metadata, overall } = useSplitData();
+  const { data, metadata, overall, card } = useSplitData();
   const demos = useSplitBarDemo();
-
   const [selectedDemo, setSelectedDemo] = useState(demos[0].demo);
   const [selectedDemoObj, setSelectedDemoObj] = useState(demos[0]);
 
@@ -21,6 +20,7 @@ function SplitBar() {
   const demoContainer = useRef();
   const demosDisplay = [...new Set(demos.map(a => a.displayname))];
 
+  console.log('demosDisplay', demosDisplay);
   const onDemographicChange = demo => {
     setSelectedDemoLevels([...new Set(data.filter(d => d.demo === demo).map(d => d.level))]);
     setSelectedDemo(demo);
@@ -36,7 +36,9 @@ function SplitBar() {
         }}
       >
         <div className="border-bottom p-3">
-          <div className="h3">{metadata.measure}</div>
+          <div className="h3" style={{ fontFamily: 'Georgia' }}>
+            {card.title}
+          </div>
         </div>
         <div className="dash_card_body border-bottom p-3">
           <div className="d-flex align-items-center">
@@ -51,6 +53,7 @@ function SplitBar() {
               <Left
                 style={{
                   height: '20px',
+
                   width: '20px',
                 }}
               />
@@ -60,7 +63,7 @@ function SplitBar() {
                 <div
                   key={demo}
                   onClick={() => {
-                    onDemographicChange(demo);
+                    onDemographicChange(demo.replace(/\s/g, ''));
                   }}
                   className={classnames('demo-pills', {
                     'active-pill': selectedDemo === demo,
@@ -89,7 +92,7 @@ function SplitBar() {
           <SplitBarChart
             data={data.filter(d => d.demo === selectedDemo)}
             levels={selectedDemoLevels}
-            colors={[selectedDemoObj.color1, selectedDemoObj.color2]}
+            colors={[selectedDemoObj.color2, selectedDemoObj.color1]}
             title={metadata.question_text}
             demo={selectedDemo}
             overall={overall}

@@ -4,6 +4,19 @@ export const useSplitData = () => {
     graphql`
       {
         hasura {
+          cards(where: { variable_id: { _eq: "news_sources" }, source: { _eq: "vsg" } }) {
+            initial_state
+            source
+            template_type
+            title
+            variable_id
+            cards_tags {
+              tag {
+                id
+                tag_value
+              }
+            }
+          }
           question_bank(where: { source: { _eq: "vsg" }, question_id: { _eq: "news_sources" } }) {
             measure
             question_text
@@ -39,6 +52,7 @@ export const useSplitData = () => {
 
   return {
     data: hasura.split_bar_data,
+    card: hasura.cards[0],
     metadata: hasura.question_bank[0],
     overall: hasura.split_bar_overall_data,
   };
