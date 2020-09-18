@@ -1,0 +1,175 @@
+/* Global style shared among all charts */
+/* General */
+.chart *,
+.chart *::before,
+.chart *::after {
+  box-sizing: border-box;
+}
+
+.chart {
+  position: relative;
+  line-height: 1.2;
+}
+
+.chart svg {
+  display: block;
+}
+
+.chart select {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Layout */
+.chart .with-sidebar {
+  overflow: hidden;
+}
+
+.chart .with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.with-sidebar > * > * {
+  margin: 0.5rem;
+}
+
+.chart .sidebar {
+  flex-basis: 240px;
+  flex-grow: 1;
+}
+
+.chart .not-sidebar {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 66%;
+}
+
+.chart .stack > * + * {
+  margin-top: 1rem;
+}
+
+/* Typography */
+.chart {
+  color: #424242;
+}
+
+.chart .chart-title {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.chart .axis text,
+.chart .legend-label {
+  font-size: 14px;
+  color: #757575;
+}
+
+.chart .axis .tick text {
+  color: #bdbdbd;
+}
+
+.chart label,
+.chart .legend-title {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.chart .trend-annotation {
+  font-size: 14px;
+  color: #757575;
+  stroke: #fff;
+  stroke-width: 2px;
+  paint-order: stroke;
+  pointer-events: none;
+}
+
+.chart .facet-title {
+  color: #424242;
+}
+
+/* Legend */
+.chart .legend-items > * + * {
+  margin-top: 0.25rem;
+}
+
+.chart .legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.chart .legend-item > * + * {
+  margin-left: 0.5rem;
+}
+
+.chart .legend-swatch {
+  width: 1rem;
+  height: 1rem;
+}
+
+.chart .legend-size-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart .legend-size-inner {
+  border-radius: 50%;
+  border: 1px solid currentColor;
+}
+
+/* Chart elements */
+.chart .axis line,
+.chart .axis path {
+  stroke: #e0e0e0;
+}
+
+.chart .axis line {
+  stroke-dasharray: 4;
+}
+
+.chart .marker {
+  stroke: #fff;
+  stroke-width: 0.5;
+}
+
+.chart .marker.active {
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.chart .marker.inactive {
+  opacity: 0.2;
+}
+
+.chart .trend-line {
+  stroke: #757575;
+}
+
+/* Tooltip */
+.chart .chart-tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.chart .chart-tooltip.show {
+  opacity: 1;
+}
+
+.chart .chart-tooltip td:first-child {
+  text-align: right;
+}
+
+.chart .chart-tooltip td:last-child {
+  font-weight: bold;
+}

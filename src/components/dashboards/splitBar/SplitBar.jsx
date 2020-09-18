@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import SplitBarChart from './SplitBarChart';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function SplitBar() {
   const { data, metadata, overall, card } = useSplitData();
   const demos = useSplitBarDemo();

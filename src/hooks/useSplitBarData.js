@@ -4,12 +4,13 @@ export const useSplitData = () => {
     graphql`
       {
         hasura {
-          cards(where: { variable_id: { _eq: "news_sources" }, source: { _eq: "vsg" } }) {
-            initial_state
-            source
+          cards(
+            where: {
+              qb_card_bridges: { source: { _eq: "vsg" }, question_id: { _eq: "news_sources" } }
+            }
+          ) {
             template_type
             title
-            variable_id
             cards_tags {
               tag {
                 id
