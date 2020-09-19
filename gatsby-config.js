@@ -12,6 +12,7 @@ const plugins = [
       linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
     },
   },
+
   'gatsby-plugin-sitemap',
   `gatsby-plugin-remove-fingerprints`,
   {
@@ -24,6 +25,8 @@ const plugins = [
   },
   `gatsby-plugin-sharp`,
   `gatsby-transformer-sharp`,
+  `gatsby-plugin-styled-components`,
+  `gatsby-plugin-emotion`,
   {
     resolve: 'gatsby-plugin-react-svg',
     options: {
@@ -54,7 +57,6 @@ const plugins = [
       component: require.resolve(`./src/templates/docs.js`),
     },
   },
-  'gatsby-plugin-emotion',
   'gatsby-plugin-react-helmet',
   {
     resolve: 'gatsby-source-filesystem',
