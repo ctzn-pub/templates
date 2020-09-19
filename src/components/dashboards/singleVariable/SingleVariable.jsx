@@ -13,11 +13,12 @@ import './singleVar.css';
 
 function SingleVariable() {
   let {
-    hasura: { question_bank: metadata },
+    hasura: { question_bank: metadata, frequency },
   } = useStaticQuery(query);
   metadata = metadata[0];
 
-  const [activeTab, setActiveTab] = useState('var_summery');
+  const [activeTab, setActiveTab] = useState('marginal_effect');
+  const [selectedDemo, setSelectedDemo] = useState();
 
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
@@ -40,12 +41,12 @@ function SingleVariable() {
         </TabContent>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="marginal_effect">
-            <MarginalEffect variable={metadata.title} />
+            <MarginalEffect variable={metadata.title} setTechnicalNotesDemo={setSelectedDemo} />
           </TabPane>
         </TabContent>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="interactions">
-            <Interactions />
+            <Interactions setTechnicalNotesDemo={setSelectedDemo} />
           </TabPane>
         </TabContent>
       </div>
@@ -73,25 +74,12 @@ function SingleVariable() {
             activeTab={activeTab}
           />
         </div>
-        <div className="col-4 single_var_side_note">
-          <div>
-            <h6>Technical Notes</h6>
-            <p>
-              This pane shows the results from a model <strong>{metadata.title}</strong> ~ Politics
-              * (demographic), controlling for other demographics
-            </p>
-          </div>
-          <div>
-            <h6>Data Source</h6>
-            <p>
-              This chart uses data derived from <strong>{metadata.data_source.long_name}</strong>.
-            </p>
-          </div>
-          <div>
-            <h6>Original Question</h6>
-            <p>{metadata.question_text}</p>
-          </div>
-        </div>
+        <TechnicalNotes
+          metadata={metadata}
+          frequency={frequency}
+          activeTab={activeTab}
+          selectedDemo={selectedDemo}
+        />
       </div>
     </div>
   );
@@ -99,6 +87,97 @@ function SingleVariable() {
 
 export default SingleVariable;
 
+const TechnicalNotes = ({ metadata, activeTab, frequency, selectedDemo }) => {
+  if (activeTab === 'var_summery') {
+    return (
+      <div className="col-4 single_var_side_note">
+        <div>
+          <h6>Technical Notes</h6>
+          <p>
+            Total # of observations:{' '}
+            <strong>
+              {frequency.reduce((acc, d) => acc + d.count, 0).toLocaleString('en-US')}
+            </strong>
+          </p>
+        </div>
+        <div>
+          <h6>Original Scale</h6>
+          <p>{metadata.scale_original}</p>
+        </div>
+        <div>
+          <h6>Transformation</h6>
+          <p>{metadata.transformation}</p>
+        </div>
+        <div>
+          <h6>Data Source</h6>
+          <p>
+            This chart uses data derived from <strong>{metadata.data_source.long_name}</strong>.
+          </p>
+        </div>
+        <div>
+          <h6>Original Question</h6>
+          <p>{metadata.question_text}</p>
+        </div>
+      </div>
+    );
+  } else if (activeTab === 'marginal_effect') {
+    // Panel 2 (Marginal Effects) let's make the plots a little short.
+    //  the titles should be 'displayname' (I left it out of the query
+    //    ... oops :pensive: by addcident, I added to the snippet in
+    //    notion too) . Technical notes here are ' This pane shows the
+    //    results from a model Preference for Male Bosses ~ demographics.
+    //     controlling for other demographics.
+
+    return (
+      <div className="col-4 single_var_side_note">
+        <div>
+          <h6>Technical Notes</h6>
+          <p>
+            This pane shows the results from a model <strong>{metadata.title}</strong>{' '}
+            {selectedDemo ? '~ ' + selectedDemo : ''} , controlling for other demographics
+          </p>
+        </div>
+        <div>
+          <h6>Data Source</h6>
+          <p>
+            This chart uses data derived from <strong>{metadata.data_source.long_name}</strong>.
+          </p>
+        </div>
+        <div>
+          <h6>Original Question</h6>
+          <p>{metadata.question_text}</p>
+        </div>
+      </div>
+    );
+  } else if (activeTab === 'interactions') {
+    // Interactions: the ordering for education is off but I will try to change that in the db.
+    //  Colors should be blue (democrat) and red (republican) ..also are we definitng the names too ??
+    //   & Can '(demographic) ' in the technical notes here be the chosen
+    // tab (Age, Gun Owner, Education, etc)  ?
+
+    return (
+      <div className="col-4 single_var_side_note">
+        <div>
+          <h6>Technical Notes</h6>
+          <p>
+            This pane shows the results from a model <strong>{metadata.title}</strong>{' '}
+            {selectedDemo ? '~ ' + selectedDemo : ''} , controlling for other demographics
+          </p>
+        </div>
+        <div>
+          <h6>Data Source</h6>
+          <p>
+            This chart uses data derived from <strong>{metadata.data_source.long_name}</strong>.
+          </p>
+        </div>
+        <div>
+          <h6>Original Question</h6>
+          <p>{metadata.question_text}</p>
+        </div>
+      </div>
+    );
+  }
+};
 const GraphBox = ({ text, link, toggle, img, activeTab }) => (
   <div
     onClick={() => toggle(link)}
@@ -140,6 +219,9 @@ const query = graphql`
         transformation
         units
         title
+      }
+      frequency(where: { source: { _eq: "vsg" }, variable: { _eq: "gender_attitudes_maleboss" } }) {
+        count
       }
     }
   }

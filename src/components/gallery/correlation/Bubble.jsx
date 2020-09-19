@@ -74,6 +74,10 @@ function Bubble({ data, type, axislabel, showLegend = false, chartsRefs = [], ch
             opacity: 1,
           },
         },
+
+        animation: {
+          // duration: 2000,
+        },
       },
     },
     title: {

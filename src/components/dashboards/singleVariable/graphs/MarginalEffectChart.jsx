@@ -10,7 +10,7 @@ if (typeof window !== `undefined`) {
   more(Highcharts);
 }
 
-function MarginalEffect({ data, demo, variable }) {
+function MarginalEffect({ data, demo, variable, mobile = false }) {
   const axislabel = variable;
   //   console.log(ser);
 
@@ -52,6 +52,7 @@ function MarginalEffect({ data, demo, variable }) {
     contrastTextColor: '#F0F0F3',
     maskColor: 'rgba(255,255,255,0.3)',
     chart: {
+      height: mobile ? '350' : '250',
       style: {
         fontFamily: 'Georgia',
       },
@@ -173,7 +174,7 @@ function MarginalEffect({ data, demo, variable }) {
     >
       <HighchartsReact
         highcharts={Highcharts}
-        containerProps={{ style: { height: '100%' } }}
+        // containerProps={{ style: { height: '100%' } }}
         options={options}
       />
     </div>

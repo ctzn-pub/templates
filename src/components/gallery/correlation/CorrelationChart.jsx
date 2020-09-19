@@ -124,87 +124,95 @@ function CorrelationChart({ data, axislabel, subGraphId }) {
       </Nav>
       <TabContent activeTab={activeTab}>
         <TabPane tabId="wealth">
-          <div className="l-body-outset">
-            <div className="row">
-              <div className="col-12 col-md-4 ">
-                <Bubble type="hdi" chartRef={hdiRef} axislabel={axislabel} data={data} />
-              </div>
-              <div className="col-12 col-md-4 ">
-                <Bubble type="gdp" chartRef={gdpRef} axislabel={axislabel} data={data} />
-              </div>
-              <div className="col-12 col-md-4 ">
-                <Bubble
-                  type="education"
-                  chartRef={educationRef}
-                  axislabel={axislabel}
-                  data={data}
-                />
+          {activeTab === 'wealth' && (
+            <div className="l-body-outset">
+              <div className="row">
+                <div className="col-12 col-md-4 ">
+                  <Bubble type="hdi" chartRef={hdiRef} axislabel={axislabel} data={data} />
+                </div>
+                <div className="col-12 col-md-4 ">
+                  <Bubble type="gdp" chartRef={gdpRef} axislabel={axislabel} data={data} />
+                </div>
+                <div className="col-12 col-md-4 ">
+                  <Bubble
+                    type="education"
+                    chartRef={educationRef}
+                    axislabel={axislabel}
+                    data={data}
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </TabPane>
         <TabPane tabId="inequality">
-          <div className="row">
-            <div className="col-12 col-md-4 ">
-              <Bubble
-                chartRef={gender_inequalityRef}
-                type="gender_inequality"
-                axislabel={axislabel}
-                data={data}
-              />
+          {activeTab === 'inequality' && (
+            <div className="row">
+              <div className="col-12 col-md-4 ">
+                <Bubble
+                  chartRef={gender_inequalityRef}
+                  type="gender_inequality"
+                  axislabel={axislabel}
+                  data={data}
+                />
+              </div>
+              <div className="col-12 col-md-4 ">
+                <Bubble type="gini" chartRef={giniRef} axislabel={axislabel} data={data} />
+              </div>
+              <div className="col-12 col-md-4 ">
+                <Bubble
+                  chartRef={inequality_LERef}
+                  type="inequality_LE"
+                  axislabel={axislabel}
+                  data={data}
+                />
+              </div>
             </div>
-            <div className="col-12 col-md-4 ">
-              <Bubble type="gini" chartRef={giniRef} axislabel={axislabel} data={data} />
-            </div>
-            <div className="col-12 col-md-4 ">
-              <Bubble
-                chartRef={inequality_LERef}
-                type="inequality_LE"
-                axislabel={axislabel}
-                data={data}
-              />
-            </div>
-          </div>
+          )}
         </TabPane>
         <TabPane tabId="diversity">
-          <div className="l-body-outset">
-            <div className="row">
-              <div className="col-12 col-md-4 ">
-                <Bubble type="ethnic" chartRef={ethnicRef} axislabel={axislabel} data={data} />
-              </div>
-              <div className="col-12 col-md-4 ">
-                <Bubble
-                  type="linguistic"
-                  chartRef={linguisticRef}
-                  axislabel={axislabel}
-                  data={data}
-                />
-              </div>
-              <div className="col-12 col-md-4 ">
-                <Bubble
-                  type="religious"
-                  chartRef={religiousRef}
-                  axislabel={axislabel}
-                  data={data}
-                />
-              </div>
-            </div>{' '}
-          </div>{' '}
-        </TabPane>
-        <TabPane tabId="cultural">
-          <div className="l-body-outset">
-            <div className="row">
-              <div className="col-12 col-md-4 ">
-                <Bubble type="pdi" chartRef={pdiRef} axislabel={axislabel} data={data} />
-              </div>
-              <div className="col-12 col-md-4 ">
-                <Bubble type="idv" chartRef={idvRef} axislabel={axislabel} data={data} />
-              </div>
-              <div className="col-12 col-md-4 ">
-                <Bubble type="mas" chartRef={masRef} axislabel={axislabel} data={data} />
+          {activeTab === 'diversity' && (
+            <div className="l-body-outset">
+              <div className="row">
+                <div className="col-12 col-md-4 ">
+                  <Bubble type="ethnic" chartRef={ethnicRef} axislabel={axislabel} data={data} />
+                </div>
+                <div className="col-12 col-md-4 ">
+                  <Bubble
+                    type="linguistic"
+                    chartRef={linguisticRef}
+                    axislabel={axislabel}
+                    data={data}
+                  />
+                </div>
+                <div className="col-12 col-md-4 ">
+                  <Bubble
+                    type="religious"
+                    chartRef={religiousRef}
+                    axislabel={axislabel}
+                    data={data}
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          )}
+        </TabPane>
+        <TabPane tabId="cultural">
+          {activeTab === 'cultural' && (
+            <div className="l-body-outset">
+              <div className="row">
+                <div className="col-12 col-md-4 ">
+                  <Bubble type="pdi" chartRef={pdiRef} axislabel={axislabel} data={data} />
+                </div>
+                <div className="col-12 col-md-4 ">
+                  <Bubble type="idv" chartRef={idvRef} axislabel={axislabel} data={data} />
+                </div>
+                <div className="col-12 col-md-4 ">
+                  <Bubble type="mas" chartRef={masRef} axislabel={axislabel} data={data} />
+                </div>
+              </div>
+            </div>
+          )}
         </TabPane>
       </TabContent>
       <BubbleEmpty

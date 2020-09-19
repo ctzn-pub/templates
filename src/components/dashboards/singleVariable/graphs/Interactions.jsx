@@ -5,7 +5,7 @@ import Left from '../../../images/leftarrow.svg';
 import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import { useMemo } from 'react';
-function Interactions({}) {
+function Interactions({ setTechnicalNotesDemo }) {
   const {
     hasura: { single_variable_interaction2: data },
   } = useStaticQuery(dataQuery);
@@ -23,6 +23,7 @@ function Interactions({}) {
   const onDemographicChange = demo => {
     setSelectedDemofacets([...new Set(data.filter(d => d.displayname === demo).map(d => d.facet))]);
     setSelectedDemo(demo);
+    setTechnicalNotesDemo(demo);
   };
 
   return (

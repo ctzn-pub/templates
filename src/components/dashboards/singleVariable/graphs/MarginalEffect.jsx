@@ -5,16 +5,20 @@ import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import MarginalEffectChart from './MarginalEffectChart';
 
-function MarginalEffect({ variable }) {
+function MarginalEffect({ variable, setTechnicalNotesDemo }) {
   const {
     hasura: { single_variable_main_effects: data },
   } = useStaticQuery(query);
-
-  const demos = useMemo(() => [...new Set(data.map(d => d.demo))], [data]);
+  const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
   return (
     <>
       <DesktopMarginalEffect data={data} demos={demos} variable={variable} />
-      <MobileMarginalEffect data={data} demos={demos} variable={variable} />
+      <MobileMarginalEffect
+        data={data}
+        demos={demos}
+        variable={variable}
+        setTechnicalNotesDemo={setTechnicalNotesDemo}
+      />
     </>
   );
 }
@@ -25,7 +29,7 @@ const DesktopMarginalEffect = ({ data, demos, variable }) => {
       {demos.map(demo => (
         <div className="col-4" key={demo}>
           <MarginalEffectChart
-            data={data.filter(d => d.demo === demo)}
+            data={data.filter(d => d.displayname === demo)}
             demo={demo}
             variable={variable}
           />
@@ -34,14 +38,15 @@ const DesktopMarginalEffect = ({ data, demos, variable }) => {
     </div>
   );
 };
-const MobileMarginalEffect = ({ data, demos, variable }) => {
-  const demosDisplay = useMemo(() => [...new Set(data.map(a => a.demo))], [data]);
+const MobileMarginalEffect = ({ data, demos, variable, setTechnicalNotesDemo }) => {
+  const demosDisplay = useMemo(() => [...new Set(data.map(a => a.displayname))], [data]);
   const demoContainer = useRef();
 
   const [selectedDemo, setSelectedDemo] = useState(demos[0]);
 
   const onDemographicChange = demo => {
     setSelectedDemo(demo);
+    setTechnicalNotesDemo(demo);
   };
 
   return (
@@ -94,7 +99,8 @@ const MobileMarginalEffect = ({ data, demos, variable }) => {
         </div>
       </div>
       <MarginalEffectChart
-        data={data.filter(d => d.demo === selectedDemo)}
+        mobile
+        data={data.filter(d => d.displayname === selectedDemo)}
         demo={selectedDemo}
         variable={variable}
       />
@@ -114,6 +120,7 @@ const query = graphql`
         demo
         labels
         y: predicted
+        displayname
       }
     }
   }
