@@ -166,10 +166,6 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
             marker: {
               // //   lineWidth: 0,
               fillColor: colors[i],
-              //  lineColor: null,
-              // //   radius: 7,
-              // //   symbol: 'circle',
-              // //   borderColor: 'transparent',
             },
             name: level,
 
@@ -203,8 +199,11 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
 
   if (data === null) return null;
   return (
-    <div style={{ width: 800 }}>
+    <div>
       <HighchartsReact
+        containerProps={{
+          width: '100%',
+        }}
         highcharts={Highcharts}
         options={chartOption}
         callback={chart => (chartRef.current = chart)}
