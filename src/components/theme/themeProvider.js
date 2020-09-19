@@ -72,7 +72,7 @@ class ThemeProvider extends React.Component {
             }
 
             body {
-              font-family: 'Roboto';
+              font-family: 'Georgia';
             }
             .visibleMobile {
               display: none;
@@ -278,7 +278,7 @@ class ThemeProvider extends React.Component {
             }
 
             .logoContent {
-              font-family: 'Roboto';
+              font-family: 'Georgia';
               margin-left: 16px;
               font-size: 28px;
               line-height: 1.5;
@@ -331,7 +331,7 @@ class ThemeProvider extends React.Component {
               -webkit-overflow-scrolling: touch;
             }
             .navBarUL li a {
-              font-family: 'Roboto';
+              font-family: 'Georgia';
               color: #fff !important;
               font-size: 16px;
               font-weight: 500;
@@ -432,7 +432,7 @@ class ThemeProvider extends React.Component {
             }
 
             .headerNav {
-              font-family: 'Roboto';
+              font-family: 'Georgia';
               padding: 0px 24px;
               color: #001933;
               font-size: 16px;
