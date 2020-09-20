@@ -6,9 +6,10 @@ import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import { useMemo } from 'react';
 function Interactions({ setTechnicalNotesDemo }) {
-  const {
+  let {
     hasura: { single_variable_interaction2: data },
   } = useStaticQuery(dataQuery);
+  data = data.map(d => ({ ...d, displayname: d.demoByLabelsDemo.displayname }));
 
   const colors = [data[0].color_1, data[0].color_2];
   const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
@@ -108,7 +109,9 @@ const dataQuery = graphql`
         conf_high
         conf_low
         demo
-        displayname
+        demoByLabelsDemo {
+          displayname
+        }
         facet
         group
         labels

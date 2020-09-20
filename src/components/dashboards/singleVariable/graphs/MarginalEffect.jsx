@@ -6,9 +6,11 @@ import classnames from 'classnames';
 import MarginalEffectChart from './MarginalEffectChart';
 
 function MarginalEffect({ variable, setTechnicalNotesDemo }) {
-  const {
+  let {
     hasura: { single_variable_main_effects: data },
   } = useStaticQuery(query);
+  data = data.map(d => ({ ...d, displayname: d.demoByLabelsDemo.displayname }));
+
   const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
   return (
     <>
@@ -120,7 +122,9 @@ const query = graphql`
         demo
         labels
         y: predicted
-        displayname
+        demoByLabelsDemo {
+          displayname
+        }
       }
     }
   }
