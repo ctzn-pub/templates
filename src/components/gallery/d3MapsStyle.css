@@ -166,7 +166,7 @@
   opacity: 1;
 }
 
-.chart .chart-tooltip td:first-child {
+.chart .chart-tooltip td:first-of-type {
   text-align: right;
 }
 

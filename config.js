@@ -9,7 +9,7 @@ const config = {
     logo: './onlogo.svg',
     logoLink: 'https://ontopic.io/',
     title: "<a href='https://ontopic.io/'>Graph Documentation</a>",
-    githubUrl: 'https://github.com/ctzn-pub/templates',
+    githubUrl: 'https://github.com/ctzn-pub',
     helpUrl: '',
     tweetText: '',
     social: `<li>
