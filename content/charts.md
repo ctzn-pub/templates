@@ -1,9 +1,9 @@
 ---
-title: 'Bar Charts'
-metaTitle: 'Different Kinds of Bar Charts'
+title: 'Charts'
+metaTitle: 'This is a gallery of charts'
 metaDescription: 'This is showing all the kinds of Bar Charts we have'
 ---
 
-# Bar Charts
+# Charts
 
 Bar charts are used usually for showing averages and distributions of data.
