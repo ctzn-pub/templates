@@ -57,7 +57,7 @@ const options = {
   facet: {
     income: {
       key: 'income',
-      display: 'Income Groupe',
+      display: 'Income Group',
       domain: ['Low income', 'Lower middle income', 'Upper middle income', 'High income'],
     },
   },
@@ -106,7 +106,7 @@ function FacetedScatterChart() {
   return (
     <div
       style={{
-        width: 900,
+        width: '100%',
       }}
     >
       <div ref={chartRef}></div>

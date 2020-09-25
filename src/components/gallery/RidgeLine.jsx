@@ -3,9 +3,9 @@ import data from './data/ridge.json';
 import * as d3 from 'd3';
 
 // set the dimensions and margins of the graph
-var margin = { top: 80, right: 300, bottom: 50, left: 100 },
-  width = 900 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+//var margin = { top: 80, right: 300, bottom: 50, left: 100 },
+// width = 900 - margin.left - margin.right,
+// height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 
@@ -30,7 +30,20 @@ function kernelEpanechnikov(k) {
 
 function RidgeLine() {
   const svgRef = useRef();
+  let width;
+  let margin;
+  let height;
   useEffect(() => {
+    const container = d3.select(svgRef.current);
+    const w = container.node().clientWidth;
+    margin = { top: 80, right: (w / 10) * 3 + 10, bottom: 50, left: w / 10 + 10 };
+    console.log('w', w);
+    height = 400 - margin.top - margin.bottom;
+
+    width = w - margin.left - margin.right;
+    console.log(' width + margin.left + margin.right', width + margin.left + margin.right);
+    console.log(' width , margin.left , margin.right', width, margin.left, margin.right);
+
     // Get the different categories and count them
     let categories = [...new Set(data.map(d => d.state))];
     const fillCat = [...new Set(data.map(d => d.state_round1_rec))];
@@ -99,7 +112,7 @@ function RidgeLine() {
       .attr('y', -55)
       //   .attr('width', 90)
       .html(title)
-      .style('font-size', 16)
+      .style('font-size', width > 300 ? 16 : 12)
       .style('font-weight', 'bold');
 
     svg
@@ -113,8 +126,8 @@ function RidgeLine() {
       .style('font-size', 14)
       .style('font-weight', 'light');
     // fill legend
-
-    const legendX = width + 50;
+    const legwidth = width > 300 ? 50 : 10;
+    const legendX = width + legwidth;
     const legendy = height / 2;
     svg
       .append('circle')
@@ -133,14 +146,14 @@ function RidgeLine() {
       .attr('x', legendX + 10)
       .attr('y', legendy)
       .text('Did not recieve')
-      .style('font-size', '15px')
+      .style('font-size', width > 300 ? '15px' : '10px')
       .attr('alignment-baseline', 'middle');
     svg
       .append('text')
       .attr('x', legendX + 10)
       .attr('y', legendy + 30)
       .text('Recieved stimulus')
-      .style('font-size', '15px')
+      .style('font-size', width > 300 ? '15px' : '10px')
       .attr('alignment-baseline', 'middle');
 
     // Create a Y scale for densities
@@ -210,8 +223,12 @@ function RidgeLine() {
       );
   }, []);
   return (
-    <div>
-      <svg ref={svgRef} width={900} height="400" />
+    <div
+      style={{
+        width: '100%',
+      }}
+    >
+      <div ref={svgRef}></div>
     </div>
   );
 }

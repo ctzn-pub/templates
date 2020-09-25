@@ -1,9 +1,9 @@
 ---
-title: 'dashboards'
-metaTitle: 'Different Kinds of Bar Charts'
-metaDescription: 'This is showing all the kinds of Bar Charts we have'
+title: 'Dashboards'
+metaTitle: 'Dashbaords'
+metaDescription: 'Showing all of the dashboards we have'
 ---
 
-# Bar Charts
+# Dashboards
 
-Bar charts are used usually for showing averages and distributions of data.
+<!-- Show all of our dashboards -->

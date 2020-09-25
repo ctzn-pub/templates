@@ -65,7 +65,7 @@ function Correlation() {
   return (
     <div
       style={{
-        width: 900,
+        width: '100%',
       }}
     >
       <div>
