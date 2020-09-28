@@ -1,29 +1,89 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 function FrontPage() {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx {
-        edges {
-          node {
-            frontmatter {
-              title
+  const Grid = styled.div`
+    display: grid;
+    align-items: top;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+
+    grid-gap: 64px;
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+      grid-gap: 80px;
+    }
+  `;
+
+  const SingleCard = styled.div`
+    width: 400px;
+    height: 400px;
+  `;
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          pages: allMdx(filter: { frontmatter: { show: { eq: "yes" } } }) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  date
+                  tags
+                  image
+                  slug
+                  subtitle
+                }
+              }
+            }
+          }
+          images: allFile(filter: { sourceInstanceName: { eq: "preview" } }) {
+            edges {
+              node {
+                relativePath
+                childImageSharp {
+                  fixed {
+                    width
+                  }
+                }
+              }
             }
           }
         }
-      }
-    }
-  `);
+      `}
+      render={data => (
+        <div id="container">
+          <h1 style={{ marginBottom: 40 }}>Our Contents</h1>
+          <div>
+            <Grid>
+              {data.pages.edges.map(d => {
+                const title = d.node.fields.slug;
+                const path = d.node.frontmatter.path;
+                const image = d.node.frontmatter.image;
 
-  const posts = data.allMdx.edges.map(d => ({
-    title: d.node.frontmatter.title,
-  }));
-
-  return (
-    <div>
-      <h1>Hello! </h1>
-    </div>
+                const img = data.images.edges.find(({ node }) => node.relativePath === image).node;
+                return (
+                  <SingleCard
+                    title={title}
+                    url={path}
+                    image={img.childImageSharp.fluid}
+                    key={title}
+                  >
+                    {title}
+                  </SingleCard>
+                );
+              })}
+            </Grid>
+          </div>
+        </div>
+      )}
+    />
   );
 }
 

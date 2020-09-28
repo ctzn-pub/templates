@@ -21,11 +21,11 @@ function SplitBar() {
   const demoContainer = useRef();
   const demosDisplay = [...new Set(demos.map(a => a.displayname))];
 
-  console.log('demosDisplay', demosDisplay);
   const onDemographicChange = demo => {
-    setSelectedDemoLevels([...new Set(data.filter(d => d.demo === demo).map(d => d.level))]);
-    setSelectedDemo(demo);
-    setSelectedDemoObj(demos.find(a => a.demo === demo));
+    const change = demos.find(node => node.displayname === demo);
+    setSelectedDemoLevels([...new Set(data.filter(d => d.demo === change.demo).map(d => d.level))]);
+    setSelectedDemo(change.demo);
+    setSelectedDemoObj(demos.find(a => a.demo === change.demo));
   };
 
   return (
@@ -64,7 +64,7 @@ function SplitBar() {
                 <div
                   key={demo}
                   onClick={() => {
-                    onDemographicChange(demo.replace(/\s/g, ''));
+                    onDemographicChange(demo);
                   }}
                   className={classnames('demo-pills', {
                     'active-pill': selectedDemo === demo,

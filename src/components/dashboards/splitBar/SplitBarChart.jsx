@@ -115,6 +115,7 @@ function RaceChart({ levels, data, colors, title, demo, overall, yLabel, source 
         //  minorTickLength: 0,
       },
       yAxis: {
+        min: 0,
         // opposite: true,
         title: {
           text: yLabel,

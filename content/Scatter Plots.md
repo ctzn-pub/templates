@@ -1,6 +1,8 @@
 ---
-title: 'Charts'
+title: 'Scatterplots'
 metaTitle: 'This is a gallery of charts'
+show: 'no'
+slug: '/scatterplots'
 metaDescription: 'This is showing all the kinds of Bar Charts we have'
 ---
 

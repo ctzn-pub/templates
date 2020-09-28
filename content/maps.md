@@ -2,9 +2,9 @@
 title: 'Maps'
 metaTitle: 'Different Kinds of Maps'
 metaDescription: 'This is showing all the kinds of maps we have'
+show: 'no'
+slug: '/map'
 ---
- 
-
 
 ```javascript
 import React from 'react';
