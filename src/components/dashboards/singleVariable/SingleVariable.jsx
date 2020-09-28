@@ -39,7 +39,11 @@ function SingleVariable() {
         </TabContent>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="marginal_effect">
-            <MarginalEffect variable={metadata.title} setTechnicalNotesDemo={setSelectedDemo} />
+            <MarginalEffect
+              variable={metadata.title}
+              setTechnicalNotesDemo={setSelectedDemo}
+              axislabel={metadata.measure}
+            />
           </TabPane>
         </TabContent>
         <TabContent activeTab={activeTab}>

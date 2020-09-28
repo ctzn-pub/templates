@@ -5,7 +5,7 @@ import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import MarginalEffectChart from './MarginalEffectChart';
 
-function MarginalEffect({ variable, setTechnicalNotesDemo }) {
+function MarginalEffect({ variable, axislabel, setTechnicalNotesDemo }) {
   let {
     hasura: { single_variable_main_effects: data },
   } = useStaticQuery(query);
@@ -14,18 +14,19 @@ function MarginalEffect({ variable, setTechnicalNotesDemo }) {
   const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
   return (
     <>
-      <DesktopMarginalEffect data={data} demos={demos} variable={variable} />
+      <DesktopMarginalEffect data={data} demos={demos} axislabel={axislabel} variable={variable} />
       <MobileMarginalEffect
         data={data}
         demos={demos}
         variable={variable}
+        axislabel={axislabel}
         setTechnicalNotesDemo={setTechnicalNotesDemo}
       />
     </>
   );
 }
 
-const DesktopMarginalEffect = ({ data, demos, variable }) => {
+const DesktopMarginalEffect = ({ data, axislabel, demos, variable }) => {
   return (
     <div className="row d-none d-md-flex">
       {demos.map(demo => (
@@ -33,6 +34,7 @@ const DesktopMarginalEffect = ({ data, demos, variable }) => {
           <MarginalEffectChart
             data={data.filter(d => d.displayname === demo)}
             demo={demo}
+            axislabel={axislabel}
             variable={variable}
           />
         </div>
@@ -40,7 +42,7 @@ const DesktopMarginalEffect = ({ data, demos, variable }) => {
     </div>
   );
 };
-const MobileMarginalEffect = ({ data, demos, variable, setTechnicalNotesDemo }) => {
+const MobileMarginalEffect = ({ data, demos, axislabel, variable, setTechnicalNotesDemo }) => {
   const demosDisplay = useMemo(() => [...new Set(data.map(a => a.displayname))], [data]);
   const demoContainer = useRef();
 
@@ -104,6 +106,7 @@ const MobileMarginalEffect = ({ data, demos, variable, setTechnicalNotesDemo }) 
         mobile
         data={data.filter(d => d.displayname === selectedDemo)}
         demo={selectedDemo}
+        axislabel={axislabel}
         variable={variable}
       />
     </div>

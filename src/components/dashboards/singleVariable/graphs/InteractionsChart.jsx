@@ -11,15 +11,18 @@ if (typeof window !== `undefined`) {
   more(Highcharts);
 }
 
-function Interactions({ data, demo, axislabel, facet, colors }) {
+function Interactions({ data, demo, axislabel, facet }) {
   const c1 = data.map(level => ({
     high: level.conf_high * 100,
     low: level.conf_low * 100,
     y: level.predicted * 100,
     label: level.group,
     name: level.labels,
-    order: level.x,
+    order: level.demoByLabelsDemo.order,
   }));
+
+  //  const colors = [data[0].color_1, data[0].color_2];
+  const colors = ['#3768c6', '#eb2a2c'];
 
   const pol_group = c1.reduce((acc, item) => {
     if (!acc[item.label]) {

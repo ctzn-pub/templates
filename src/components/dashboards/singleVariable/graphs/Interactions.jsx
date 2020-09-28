@@ -11,7 +11,6 @@ function Interactions({ setTechnicalNotesDemo, axislabel }) {
   } = useStaticQuery(dataQuery);
   data = data.map(d => ({ ...d, displayname: d.demoByLabelsDemo.displayname }));
 
-  const colors = [data[0].color_1, data[0].color_2];
   const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
   const demosDisplay = useMemo(() => [...new Set(data.map(a => a.displayname))], [data]);
   const demoContainer = useRef();
@@ -86,7 +85,7 @@ function Interactions({ setTechnicalNotesDemo, axislabel }) {
             <InteractionsChart
               data={data.filter(a => a.displayname === selectedDemo && a.facet === facet)}
               facet={facet}
-              colors={colors}
+              //  colors={colors}
               axislabel={axislabel}
               demo={selectedDemo}
             />
@@ -112,6 +111,7 @@ const dataQuery = graphql`
         demo
         demoByLabelsDemo {
           displayname
+          order
         }
         facet
         group

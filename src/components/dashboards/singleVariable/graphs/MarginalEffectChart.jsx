@@ -10,17 +10,18 @@ if (typeof window !== `undefined`) {
   more(Highcharts);
 }
 
-function MarginalEffect({ data, demo, variable, mobile = false }) {
-  const axislabel = variable;
-  //   console.log(ser);
-
+function MarginalEffect({ data, demo, axislabel, variable, mobile = false }) {
+  //const axislabel = variable;
+  console.log('axislabeld', axislabel);
   const chartData = data.map(level => ({
-    high: level.conf_high,
-    low: level.conf_low,
-    y: level.y,
+    high: level.conf_high * 100,
+    low: level.conf_low * 100,
+    y: level.y * 100,
     label: level.group,
     name: level.labels,
-    order: level.x,
+    //order: level.x,
+
+    order: level.demoByLabelsDemo.order,
   }));
 
   const options = {
