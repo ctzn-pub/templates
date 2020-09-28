@@ -16,10 +16,8 @@ function SingleVariable() {
     hasura: { question_bank: metadata, frequency },
   } = useStaticQuery(query);
   metadata = metadata[0];
-
-  const [activeTab, setActiveTab] = useState('marginal_effect');
+  const [activeTab, setActiveTab] = useState('interactions');
   const [selectedDemo, setSelectedDemo] = useState();
-
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
   };
@@ -46,7 +44,7 @@ function SingleVariable() {
         </TabContent>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="interactions">
-            <Interactions setTechnicalNotesDemo={setSelectedDemo} />
+            <Interactions setTechnicalNotesDemo={setSelectedDemo} axislabel={metadata.measure} />
           </TabPane>
         </TabContent>
       </div>
@@ -200,7 +198,7 @@ const GraphBox = ({ text, link, toggle, img, activeTab }) => (
       //   width: '150px',
       // }}
     />
-    <div classname="mt-2">{text}</div>
+    <div className="mt-2">{text}</div>
   </div>
 );
 

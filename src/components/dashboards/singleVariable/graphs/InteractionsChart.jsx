@@ -11,11 +11,11 @@ if (typeof window !== `undefined`) {
   more(Highcharts);
 }
 
-function Interactions({ data, demo, facet, colors }) {
+function Interactions({ data, demo, axislabel, facet, colors }) {
   const c1 = data.map(level => ({
-    high: level.conf_high,
-    low: level.conf_low,
-    y: level.predicted,
+    high: level.conf_high * 100,
+    low: level.conf_low * 100,
+    y: level.predicted * 100,
     label: level.group,
     name: level.labels,
     order: level.x,
@@ -51,8 +51,10 @@ function Interactions({ data, demo, facet, colors }) {
     ];
   }, []);
 
-  const axislabel = 'label';
+  // const axislabel = 'label';
   //   console.log(ser);
+
+  const lookup = { white: 'White Only', nonwhite: 'Non-White' };
 
   const options = {
     subtitle: {
@@ -94,7 +96,7 @@ function Interactions({ data, demo, facet, colors }) {
         fontFamily: 'Georgia',
         fontSize: 12,
       },
-      text: facet,
+      text: lookup[facet],
       align: 'center',
     },
     yAxis: {

@@ -5,7 +5,7 @@ import Left from '../../../images/leftarrow.svg';
 import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import { useMemo } from 'react';
-function Interactions({ setTechnicalNotesDemo }) {
+function Interactions({ setTechnicalNotesDemo, axislabel }) {
   let {
     hasura: { single_variable_interaction2: data },
   } = useStaticQuery(dataQuery);
@@ -87,6 +87,7 @@ function Interactions({ setTechnicalNotesDemo }) {
               data={data.filter(a => a.displayname === selectedDemo && a.facet === facet)}
               facet={facet}
               colors={colors}
+              axislabel={axislabel}
               demo={selectedDemo}
             />
           </div>
