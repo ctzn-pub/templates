@@ -1,34 +1,33 @@
 import React, { useState, useRef } from 'react';
-import { useSplitData } from '../../../hooks/useSplitBarData';
-import { useSplitBarDemo } from '../../../hooks/useSplitBarDemo';
+import { useTimeTrendDemo } from '../../../hooks/useTimeTrendDemo';
 import Left from '../../images/leftarrow.svg';
 import Right from '../../images/rightarrow.svg';
 import classnames from 'classnames';
-import SplitBarChart from './SplitBarChart';
+import TimeTrendChart from './TimeTrendChart.jsx';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-function SplitBar() {
-  const { data, metadata, overall, card } = useSplitData();
-  const demos = useSplitBarDemo();
-  const [selectedDemo, setSelectedDemo] = useState(demos[0]);
-  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[0]);
-
+function TimeTrend(alldata, defs) {
+  const data = alldata.alldata.chartdata.map(d => Object.freeze(d));
+  const demos = alldata.defs;
+  const [selectedDemo, setSelectedDemo] = useState(demos[4]);
+  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[4]);
+  const colors = [selectedDemoObj.color2, selectedDemoObj.color1];
+  console.log('demos', demos);
   const [selectedDemoLevels, setSelectedDemoLevels] = useState([
-    ...new Set(data.filter(d => d.demo === selectedDemo.displayname).map(d => d.level)),
+    ...new Set(data.filter(d => d.demo === selectedDemo.demo).map(d => d.level)),
   ]);
   const demoContainer = useRef();
-  const demosDisplay = [...new Set(demos.map(a => a.displayname))];
+  const demosDisplay = [...new Set(demos.map(a => a.display))];
 
   const onDemographicChange = demo => {
-    const change = demos.find(node => node.displayname === demo);
+    const change = demos.find(node => node.display === demo);
     setSelectedDemoLevels([...new Set(data.filter(d => d.demo === change.demo).map(d => d.level))]);
     setSelectedDemo(change);
     setSelectedDemoObj(demos.find(a => a.demo === change.demo));
   };
 
   return (
-    <>
+    <div>
+      {/* // <h1>Trends over time</h1> */}
       <div
         className="border rounded dash_card"
         style={{
@@ -37,7 +36,7 @@ function SplitBar() {
       >
         <div className="border-bottom p-3">
           <div className="h3" style={{ fontFamily: 'Georgia' }}>
-            {card.title}
+            {alldata.alldata.title}
           </div>
         </div>
         <div className="dash_card_body border-bottom p-3">
@@ -53,7 +52,6 @@ function SplitBar() {
               <Left
                 style={{
                   height: '20px',
-
                   width: '20px',
                 }}
               />
@@ -66,7 +64,7 @@ function SplitBar() {
                     onDemographicChange(demo);
                   }}
                   className={classnames('demo-pills', {
-                    'active-pill': selectedDemo.displayname === demo,
+                    'active-pill': selectedDemo.display === demo,
                   })}
                 >
                   {demo}
@@ -89,33 +87,22 @@ function SplitBar() {
               />
             </div>
           </div>
-          <SplitBarChart
+
+          <TimeTrendChart
             data={data.filter(d => d.demo === selectedDemo.demo)}
             levels={selectedDemoLevels}
-            colors={[selectedDemoObj.color2, selectedDemoObj.color1]}
-            title={metadata.question_text}
-            demo={selectedDemo.displayname}
-            overall={overall}
-            yLabel={`${metadata.units} ${metadata.measure}`}
-            source={metadata?.data_source?.long_name}
+            colors={colors}
+            title={alldata.alldata.question_text}
+            demo={selectedDemo.display}
+            yLabel={`${alldata.alldata.units} ${alldata.alldata.measure}`}
+            //  source={metadata?.data_source?.long_name}
           />
         </div>
-
-        <div className=" d-flex justify-content-end p-3">
-          <div className="w-50">
-            <h5>Technical Notes</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At nobis dolor eligendi
-              architecto, accusantium beatae est excepturi quae suscip
-            </p>
-          </div>
-        </div>
       </div>
-    </>
+    </div>
   );
 }
 
-export default SplitBar;
 function sideScroll(direction, speed, distance, step, demoContainer) {
   let scrollAmount = 0;
   var slideTimer = setInterval(function() {
@@ -130,3 +117,5 @@ function sideScroll(direction, speed, distance, step, demoContainer) {
     }
   }, speed);
 }
+
+export default TimeTrend;
