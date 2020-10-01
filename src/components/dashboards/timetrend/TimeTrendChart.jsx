@@ -375,9 +375,9 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
 
   const mortarboard = chart => {
     chartRef.current = chart;
-    chart.renderer
-      .image('https://www.highcharts.com/samples/graphics/sun.png', 800, 500, 30, 30)
-      .add();
+    // chart.renderer
+    //   .image('https://www.highcharts.com/samples/graphics/sun.png', 800, 500, 30, 30)
+    //   .add();
   };
 
   if (data === null) return null;

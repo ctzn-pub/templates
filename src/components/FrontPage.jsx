@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import FrontCard from './common/FrontCard';
 
 function FrontPage() {
   const Grid = styled.div`
@@ -48,8 +49,8 @@ function FrontPage() {
               node {
                 relativePath
                 childImageSharp {
-                  fixed {
-                    width
+                  fluid(maxWidth: 400, maxHeight: 400) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -63,20 +64,21 @@ function FrontPage() {
           <div>
             <Grid>
               {data.pages.edges.map(d => {
-                const title = d.node.fields.slug;
-                const path = d.node.frontmatter.path;
+                const title = d.node.frontmatter.title;
+                const path = d.node.fields.slug;
                 const image = d.node.frontmatter.image;
 
                 const img = data.images.edges.find(({ node }) => node.relativePath === image).node;
+                console.log('img', img);
+
                 return (
-                  <SingleCard
+                  <FrontCard
                     title={title}
                     url={path}
                     image={img.childImageSharp.fluid}
                     key={title}
-                  >
-                    {title}
-                  </SingleCard>
+                    subtitle={title}
+                  />
                 );
               })}
             </Grid>

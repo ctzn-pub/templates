@@ -8,8 +8,8 @@ import TimeTrendChart from './TimeTrendChart.jsx';
 function TimeTrend(alldata, defs) {
   const data = alldata.alldata.chartdata.map(d => Object.freeze(d));
   const demos = alldata.defs;
-  const [selectedDemo, setSelectedDemo] = useState(demos[4]);
-  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[4]);
+  const [selectedDemo, setSelectedDemo] = useState(demos[3]);
+  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[3]);
   const colors = [selectedDemoObj.color2, selectedDemoObj.color1];
   console.log('demos', demos);
   const [selectedDemoLevels, setSelectedDemoLevels] = useState([
