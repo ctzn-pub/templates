@@ -31,7 +31,7 @@ function TimeTrend(alldata, defs) {
       <div
         className="border rounded dash_card"
         style={{
-          width: 900,
+          width: '100%',
         }}
       >
         <div className="border-bottom p-3">

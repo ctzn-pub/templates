@@ -12,7 +12,7 @@ if (typeof window !== `undefined`) {
 
 function MarginalEffect({ data, demo, axislabel, variable, mobile = false }) {
   //const axislabel = variable;
-  console.log('axislabeld', axislabel);
+
   const chartData = data.map(level => ({
     high: level.conf_high * 100,
     low: level.conf_low * 100,

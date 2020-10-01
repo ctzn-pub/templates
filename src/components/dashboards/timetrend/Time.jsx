@@ -44,7 +44,7 @@ function Time() {
           />
         </div>
         <h1>Loading</h1>
-        <Skeleton variant="rect" width={800} height={400} />
+        <Skeleton variant="rect" width={'100%'} height={773} />
       </div>
     );
   let { alldata, defs } = data;

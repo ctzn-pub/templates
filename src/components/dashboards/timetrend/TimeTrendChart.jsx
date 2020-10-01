@@ -21,6 +21,11 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
   };
   React.useEffect(() => {
     setChartOption({
+      tooltip: {
+        borderColor: '#000000',
+        backgroundColor: '#ffffff',
+      },
+
       chart: {
         events: {
           load: function() {
@@ -321,10 +326,10 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
               headerFormat: '',
               useHTML: true,
               pointFormatter: function() {
-                return `
-                  <span style="color:${this.color}"> ● </span> ${this.series.name}: <b>Year: ${
-                  this.x
-                }</b><br> ${this.y.toFixed(2)}
+                return `<b> ${this.x}</b>: ${' '} ${Math.round(this.y * 100).toFixed(
+                  0
+                )} ${' '}  ${yLabel} <br>
+                  <span style="color:${this.color}"> ● </span> ${this.series.name}<br> 
                   </b><br>
                   `;
               },
@@ -368,6 +373,13 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
     });
   }, [data, levels]);
 
+  const mortarboard = chart => {
+    chartRef.current = chart;
+    chart.renderer
+      .image('https://www.highcharts.com/samples/graphics/sun.png', 800, 500, 30, 30)
+      .add();
+  };
+
   if (data === null) return null;
   return (
     <div>
@@ -377,7 +389,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
         }}
         highcharts={Highcharts}
         options={chartOption}
-        callback={chart => (chartRef.current = chart)}
+        //  callback={chart => (chartRef.current = chart)}
+        callback={mortarboard}
       />
     </div>
   );
