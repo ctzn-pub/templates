@@ -147,8 +147,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 1952,
             to: 1960,
-            //    color: "#fffafe",
-            color: '#ffe6e6',
+            color: '#fffafe',
+            //color: '#ffe6e6',
 
             label: {
               text: 'Eisenhower',
@@ -177,8 +177,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 1972,
             to: 1977,
-            //    color: "#fffafe",
-            color: '#ffe6e6',
+            color: '#fffafe',
+            ///   color: '#ffe6e6',
 
             label: {
               text: 'Nixon/Ford',
@@ -192,8 +192,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 1977,
             to: 1980,
-            color: '#c5d8ff',
-            // color: "#f7f8ff",
+            //  color: '#c5d8ff',
+            color: '#f7f8ff',
             label: {
               text: 'Carter',
               align: 'left',
@@ -206,8 +206,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 1980,
             to: 1992,
-            //     color: "#fffafe",
-            color: '#ffe6e6',
+            color: '#fffafe',
+            //   color: '#ffe6e6',
 
             label: {
               text: 'Reagan/Bush1',
@@ -221,8 +221,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 1992,
             to: 2000,
-            //  color: "#f7f8ff",
-            color: '#c5d8ff',
+            color: '#f7f8ff',
+            //    color: '#c5d8ff',
 
             label: {
               text: 'Clinton',
@@ -236,8 +236,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 2000,
             to: 2008,
-            //     color: "#fffafe",
-            color: '#ffe6e6',
+            color: '#fffafe',
+            //      color: '#ffe6e6',
 
             label: {
               text: 'Bush2',
@@ -251,9 +251,9 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 2008,
             to: 2016,
-            color: '#c5d8ff',
+            //     color: '#c5d8ff',
 
-            // color: "#f7f8ff",
+            color: '#f7f8ff',
             label: {
               text: 'Obama',
               align: 'left',
@@ -266,8 +266,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 2016,
             to: 2018,
-            //  color: "#fffafe",
-            color: '#ffe6e6',
+            color: '#fffafe',
+            //       color: '#ffe6e6',
             label: {
               text: 'Trump',
               align: 'left',

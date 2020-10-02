@@ -16,8 +16,7 @@ const Description = styled.p`
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
-  margin-bottom: 19px;
-
+  margin-bottom: 5px;
   margin-top: 11px;
 `;
 
@@ -73,20 +72,22 @@ const Bookimg = styled(Img)`
 
 const Tile = styled(BackgroundImage)`
   border-top-left-radius: 6px;
+
   border-top-right-radius: 6px;
+
   ::before {
-    -webkit-transition: ease 2000ms background-position;
-    -moz-transition: ease 2000ms background-position;
-    -ms-transition: ease 2000ms background-position;
-    -o-transition: ease 2000ms background-position;
-    transition: ease 2000ms background-position !important;
+    -webkit-transition: ease 1000ms background-position;
+    -moz-transition: ease 1000ms background-position;
+    -ms-transition: ease 1000ms background-position;
+    -o-transition: ease 1000ms background-position;
+    transition: ease 1000ms background-position !important;
   }
   ::after {
-    -webkit-transition: ease 2000ms background-position;
-    -moz-transition: ease 2000ms background-position;
-    -ms-transition: ease 2000ms background-position;
-    -o-transition: ease 2000ms background-position;
-    transition: ease 2000ms background-position !important;
+    -webkit-transition: ease 1000ms background-position;
+    -moz-transition: ease 1000ms background-position;
+    -ms-transition: ease 1000ms background-position;
+    -o-transition: ease 1000ms background-position;
+    transition: ease 1000ms background-position !important;
   }
   :hover::before {
     background-position: 50% 100% !important;
@@ -95,31 +96,42 @@ const Tile = styled(BackgroundImage)`
     background-position: 50% 100% !important;
   }
 `;
-const Content = styled.div`
-  padding: 10% 10% 5% 10%;
+const CardText = styled.div`
+  position: relative;
+  // background-color: rgba(255, 255, 255, 0.75);
+  height: auto;
+  margin-top: 10px;
+  padding: 80px 0;
+`;
+
+const CardTextInner = styled.div`
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.75);
+
+  margin-top: 10px;
+  padding: 5px 10px;
 `;
 
 const FrontCard = ({ title, url, image, subtitle }) => (
   <Wrapper>
-    <Card>
-      <Tile
-        Tag="section"
-        //   className={className}
-        fluid={image}
-        backgroundColor={`#040e18`}
-      >
-        <Title>{title}</Title>
-        <Description> {subtitle}</Description>
-      </Tile>
-      {/* <Bookimg fluid={image} alt={title} /> */}
-      <Content>
-        <ActionButton>
-          <Link to={url} style={{ color: '#fff', textDecoration: 'none' }}>
-            Readc
-          </Link>
-        </ActionButton>
-      </Content>
-    </Card>
+    <Link to={url}>
+      <Card>
+        <Tile
+          Tag="section"
+          //   className={className}
+          fluid={image}
+          backgroundColor={`#040e18`}
+        >
+          <CardText>
+            <CardTextInner>
+              <Title>{title}</Title>
+              <Description> {subtitle}</Description>
+            </CardTextInner>
+          </CardText>
+        </Tile>
+        {/* <Bookimg fluid={image} alt={title} /> */}
+      </Card>
+    </Link>
   </Wrapper>
 );
 

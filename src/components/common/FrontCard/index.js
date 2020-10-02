@@ -1,1 +1,1 @@
-export { default } from './FrontCard';
+export { default } from './FrontCard2';
