@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTimeTrendDemo } from '../../../hooks/useTimeTrendDemo';
 import { useAnesVariables } from '../../../hooks/useAnesVariables';
-
-import Left from '../../images/leftarrow.svg';
-import Right from '../../images/rightarrow.svg';
-import classnames from 'classnames';
 import TimeTrend from './TimeTrend.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
