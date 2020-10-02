@@ -77,9 +77,7 @@ function FrontPage() {
     };
   });
 
-  console.log('tags', tags);
-
-  const [selectedVariable, setSelectedVariable] = useState(tags);
+  const [selectedVariable, setSelectedVariable] = useState(null);
 
   function containsAny(source, target) {
     var result = source.filter(function(item) {
@@ -106,7 +104,7 @@ function FrontPage() {
       <Select
         closeMenuOnSelect={false}
         components={animatedComponents}
-        defaultValue={(tags[1], tags[2])}
+        defaultValue={[]}
         isMulti
         value={selectedVariable}
         onChange={v => setSelectedVariable(v)}
