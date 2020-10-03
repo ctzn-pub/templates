@@ -124,6 +124,7 @@ function FrontPage() {
               <FrontCard
                 title={title}
                 url={path}
+                tags={tags}
                 image={img.childImageSharp.fluid}
                 key={title}
                 subtitle={title}

@@ -112,7 +112,24 @@ const CardTextInner = styled.div`
   padding: 5px 10px;
 `;
 
-const FrontCard = ({ title, url, image, subtitle }) => (
+const Tags = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+`;
+
+const LittleTag = styled.button`
+  background-color: #00000091;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 5px;
+  display: inline-block;
+  width: unset !important;
+  margin: 5px;
+`;
+const FrontCard = ({ title, url, tags, image, subtitle }) => (
   <Wrapper>
     <Link to={url}>
       <Card>
@@ -127,6 +144,15 @@ const FrontCard = ({ title, url, image, subtitle }) => (
               <Title>{title}</Title>
               <Description> {subtitle}</Description>
             </CardTextInner>
+            <Tags>
+              {tags.map(d => {
+                return (
+                  <LittleTag>
+                    <span>{d}</span>
+                  </LittleTag>
+                );
+              })}
+            </Tags>
           </CardText>
         </Tile>
         {/* <Bookimg fluid={image} alt={title} /> */}
