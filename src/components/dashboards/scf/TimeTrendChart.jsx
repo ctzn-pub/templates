@@ -15,7 +15,12 @@ function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel
     const output = data
       .filter(a => a.level === level)
       .map(data => {
-        return [+data['year'], data.avg];
+        if (unit2 == 'raw') {
+          return [+data['year'], data.avg];
+        }
+        if (unit2 == 'pdiff') {
+          return [+data['year'], data.avg * 100];
+        }
       })
       .sort((a, b) => a[0] - b[0])
       .map(d => {
@@ -110,7 +115,7 @@ function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel
                   return '$' + this.y.toFixed(2);
                 }
                 if (unit2 === 'pdiff') {
-                  const val = this.y * 100;
+                  const val = this.y;
                   return val.toFixed(2) + '%';
                 }
               }
@@ -163,7 +168,6 @@ function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel
         //   width: 2,
         //   color: 'gray',
         // },
-
         lineWidth: 0,
         minorGridLineWidth: 0,
         lineColor: 'transparent',
@@ -353,7 +357,7 @@ function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel
               return '$' + this.value.toFixed(0);
             }
             if (unit2 === 'pdiff') {
-              const val = this.value * 100;
+              const val = this.value;
               return val.toFixed(0) + '%';
             }
           },
@@ -370,16 +374,12 @@ function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel
               valueDecimals: 2,
               headerFormat: '',
               useHTML: true,
-              valuePrefix: '$',
-              headerFormat: '<b>{point.x}  (thousands of 2019 dollars)</b><br>',
-              // pointFormatter: function() {
-              //   return `<b> ${this.x}</b>: ${' $'} ${this.y.toFixed(
-              //     0
-              //   )} ${' (thousands of 2019 dollars)'}   <br>
-              //     <span style="color:${this.color}"> ● </span> ${this.series.name}<br>
-              //     </b><br>
-              //     `;
-              // },
+              valuePrefix: unit2 == 'raw' ? '$' : '',
+              valueSuffix: unit2 == 'raw' ? '' : '%',
+              headerFormat:
+                unit2 == 'raw'
+                  ? '<b>{point.x}  (thousands of 2019 dollars)</b><br>'
+                  : '<b>{point.x}  (% change since 1989)</b><br>',
             },
           };
         }),
