@@ -31,6 +31,9 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
       tooltip: {
         borderColor: '#000000',
         backgroundColor: '#ffffff',
+
+        shared: true,
+        crosshairs: true,
       },
 
       chart: {
@@ -66,15 +69,6 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
         ],
       },
       plotOptions: {
-        area: {
-          stacking: 'percent',
-          lineColor: '#ffffff',
-          lineWidth: 1,
-          marker: {
-            lineWidth: 1,
-            lineColor: '#ffffff',
-          },
-        },
         series: {
           states: {
             inactive: {
@@ -99,7 +93,12 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
           dataLabels: {
             enabled: true,
             formatter: function() {
-              return '$' + this.y.toFixed(2);
+              var dataMax = this.series.dataMax;
+              var dataMin = this.series.dataMin;
+
+              if (this.y === dataMax || this.y === dataMin) {
+                return '$' + this.y.toFixed(2);
+              }
             },
           },
           marker: {
@@ -117,9 +116,9 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
         href: 'ontopic.io',
       },
       title: {
-        style: { fontSize: '14px' },
-        align: 'left',
-        // margin: 0,
+        style: { fontSize: '16px' },
+        align: 'center',
+        margin: 0,
         text: title + ' by ' + demo + ' in thousands of 2019 dollars',
       },
       legend: {
@@ -145,6 +144,10 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
       },
 
       xAxis: {
+        // crosshair: {
+        //   width: 2,
+        //   color: 'gray',
+        // },
         lineWidth: 0,
         minorGridLineWidth: 0,
         lineColor: 'transparent',
@@ -345,14 +348,16 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
               valueDecimals: 2,
               headerFormat: '',
               useHTML: true,
-              pointFormatter: function() {
-                return `<b> ${this.x}</b>: ${' $'} ${this.y.toFixed(
-                  0
-                )} ${' (thousands of 2019 dollars)'}   <br>
-                  <span style="color:${this.color}"> ● </span> ${this.series.name}<br> 
-                  </b><br>
-                  `;
-              },
+              valuePrefix: '$',
+              headerFormat: '<b>{point.x}  (thousands of 2019 dollars)</b><br>',
+              // pointFormatter: function() {
+              //   return `<b> ${this.x}</b>: ${' $'} ${this.y.toFixed(
+              //     0
+              //   )} ${' (thousands of 2019 dollars)'}   <br>
+              //     <span style="color:${this.color}"> ● </span> ${this.series.name}<br>
+              //     </b><br>
+              //     `;
+              // },
             },
           };
         }),

@@ -50,7 +50,8 @@ export const useTimeTrendDemo = variable => {
             unit
           }
         }
-        demos: scf_demodefs {
+        demos: scf_demodefs(order_by: { order: desc }) {
+          order
           display
           color2
           color1

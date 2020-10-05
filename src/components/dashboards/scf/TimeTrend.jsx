@@ -13,10 +13,12 @@ const Radiobutton = styled.div`
 function TimeTrend(alldata, defs) {
   const data = alldata.alldata.chartdata.map(d => Object.freeze(d));
   const demos = alldata.defs;
+  const starting = demos.find(element => element.demo == 'racecl4');
+
   const units = ['mean', 'have', 'median'];
-  const [selectedDemo, setSelectedDemo] = useState(demos[3]);
+  const [selectedDemo, setSelectedDemo] = useState(starting);
   const [selectedUnit, setSelectedUnit] = useState(units[2]);
-  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[3]);
+  const [selectedDemoObj, setSelectedDemoObj] = useState(starting);
   const colors = [
     selectedDemoObj.color2,
     selectedDemoObj.color1,
@@ -80,7 +82,7 @@ function TimeTrend(alldata, defs) {
                 Mean ($)
               </label>
             </Radiobutton>
-            <Radiobutton>
+            {/* <Radiobutton>
               <label>
                 <input
                   style={{ 'margin-right': '5px' }}
@@ -91,7 +93,7 @@ function TimeTrend(alldata, defs) {
                 />
                 Percent Holding (%)
               </label>
-            </Radiobutton>
+            </Radiobutton> */}
           </form>
         </div>
         <div className="dash_card_body border-bottom p-3">
