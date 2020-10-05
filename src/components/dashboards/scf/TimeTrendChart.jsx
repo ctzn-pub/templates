@@ -3,7 +3,7 @@ import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import { isMobile } from 'react-device-detect';
 
-function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
+function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
   const chartRef = React.useRef();
   const [chartOption, setChartOption] = React.useState(null);
   const getDataLevels = level => {
@@ -19,6 +19,13 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
 
     return output;
   };
+
+  let unittype = 'line';
+
+  if (unit == 'have') {
+    unittype = 'area';
+  }
+  console.log('unittype', unittype);
   React.useEffect(() => {
     setChartOption({
       tooltip: {
@@ -27,6 +34,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
       },
 
       chart: {
+        type: unittype,
+
         events: {
           load: function() {
             this.series.forEach(function(s) {
@@ -57,6 +66,15 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
         ],
       },
       plotOptions: {
+        area: {
+          stacking: 'percent',
+          lineColor: '#ffffff',
+          lineWidth: 1,
+          marker: {
+            lineWidth: 1,
+            lineColor: '#ffffff',
+          },
+        },
         series: {
           states: {
             inactive: {
@@ -81,7 +99,7 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           dataLabels: {
             enabled: true,
             formatter: function() {
-              return Math.round(this.y * 100) + '%';
+              return '$' + this.y.toFixed(2);
             },
           },
           marker: {
@@ -94,11 +112,15 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           zIndex: 1,
         },
       },
+      credits: {
+        text: 'Survey of Consumer Finance',
+        href: 'ontopic.io',
+      },
       title: {
         style: { fontSize: '14px' },
         align: 'left',
-        margin: 0,
-        text: title + ' (by ' + demo + ')',
+        // margin: 0,
+        text: title + ' by ' + demo + ' in thousands of 2019 dollars',
       },
       legend: {
         itemStyle: {
@@ -112,8 +134,6 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
         title: {
           style: { fontSize: 12, fontWeight: 'light' },
           text: null,
-          //  (isBinary ? "% " : "") +
-          //   this.props.rank.demographics_metum.sitewide_demographic,
         },
         layout: 'horizontal',
         align: 'center',
@@ -163,7 +183,7 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
           {
             from: 1960,
             to: 1972,
-            color: '#f7f8ff',
+            color: '#c5d8ff',
             label: {
               text: 'Kennedy/Johnson',
               align: 'left',
@@ -310,7 +330,7 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
         labels: {
           enabled: !isMobile,
           formatter: function() {
-            return Math.round(this.value * 100) + '%';
+            return '$' + this.value.toFixed(0);
           },
         },
       },
@@ -326,9 +346,9 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
               headerFormat: '',
               useHTML: true,
               pointFormatter: function() {
-                return `<b> ${this.x}</b>: ${' '} ${Math.round(this.y * 100).toFixed(
+                return `<b> ${this.x}</b>: ${' $'} ${this.y.toFixed(
                   0
-                )} ${' '}  ${yLabel} <br>
+                )} ${' (thousands of 2019 dollars)'}   <br>
                   <span style="color:${this.color}"> ● </span> ${this.series.name}<br> 
                   </b><br>
                   `;
@@ -336,48 +356,12 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
             },
           };
         }),
-
-        // ...levels.map((level, i) => {
-        //   return {
-        //     // colorByPoint: true,
-        //     //     color: colors[i],
-        //     marker: {
-        //       // //   lineWidth: 0,
-        //       //   fillColor: colors[i],
-        //       fillColor: '#00000',
-        //     },
-        //     name: level,
-        //     dataLabels: [
-        //       {
-        //         enabled: false,
-        //       },
-        //     ],
-        //     data: getDataLevels(level),
-        //     type: 'line',
-        //     tooltip: {
-        //       valueDecimals: 2,
-        //       headerFormat: '',
-        //       useHTML: true,
-        //       pointFormatter: function() {
-        //         return `
-        //           <span style="color:${this.color}"> ● </span> ${
-        //           this.series.name
-        //         }: <b> ${this.y.toFixed(2)}
-        //           </b><br>
-        //           `;
-        //       },
-        //     },
-        //   };
-        // }),
       ],
     });
   }, [data, levels]);
 
   const mortarboard = chart => {
     chartRef.current = chart;
-    // chart.renderer
-    //   .image('https://www.highcharts.com/samples/graphics/sun.png', 800, 500, 30, 30)
-    //   .add();
   };
 
   if (data === null) return null;
