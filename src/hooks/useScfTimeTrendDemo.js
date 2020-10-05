@@ -48,6 +48,7 @@ export const useTimeTrendDemo = variable => {
             level
             year
             unit
+            unit2
           }
         }
         demos: scf_demodefs(order_by: { order: desc }) {

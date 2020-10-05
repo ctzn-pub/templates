@@ -2,8 +2,13 @@ import React from 'react';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import { isMobile } from 'react-device-detect';
+import more from 'highcharts/highcharts-more';
 
-function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
+// init the module
+if (typeof window !== `undefined`) {
+  more(Highcharts);
+}
+function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel }) {
   const chartRef = React.useRef();
   const [chartOption, setChartOption] = React.useState(null);
   const getDataLevels = level => {
@@ -25,7 +30,12 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
   if (unit == 'have') {
     unittype = 'area';
   }
-  console.log('unittype', unittype);
+
+  let themin = 0;
+  if (unit2 == 'pdiff') {
+    themin = null;
+  }
+
   React.useEffect(() => {
     setChartOption({
       tooltip: {
@@ -38,7 +48,6 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
 
       chart: {
         type: unittype,
-
         events: {
           load: function() {
             this.series.forEach(function(s) {
@@ -97,7 +106,13 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
               var dataMin = this.series.dataMin;
 
               if (this.y === dataMax || this.y === dataMin) {
-                return '$' + this.y.toFixed(2);
+                if (unit2 === 'raw') {
+                  return '$' + this.y.toFixed(2);
+                }
+                if (unit2 === 'pdiff') {
+                  const val = this.y * 100;
+                  return val.toFixed(2) + '%';
+                }
               }
             },
           },
@@ -148,6 +163,7 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
         //   width: 2,
         //   color: 'gray',
         // },
+
         lineWidth: 0,
         minorGridLineWidth: 0,
         lineColor: 'transparent',
@@ -328,12 +344,18 @@ function TimeTrendChart({ levels, data, colors, unit, title, demo, yLabel }) {
         },
 
         type: 'linear',
-        min: 0,
+        min: themin,
 
         labels: {
           enabled: !isMobile,
           formatter: function() {
-            return '$' + this.value.toFixed(0);
+            if (unit2 === 'raw') {
+              return '$' + this.value.toFixed(0);
+            }
+            if (unit2 === 'pdiff') {
+              const val = this.value * 100;
+              return val.toFixed(0) + '%';
+            }
           },
         },
       },

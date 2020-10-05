@@ -18,6 +18,9 @@ function TimeTrend(alldata, defs) {
   const units = ['mean', 'have', 'median'];
   const [selectedDemo, setSelectedDemo] = useState(starting);
   const [selectedUnit, setSelectedUnit] = useState(units[2]);
+  const [selectedUnit2, setSelectedUnit2] = useState('raw');
+  console.log('selectedUnit2', selectedUnit2);
+  console.log('data', data);
   const [selectedDemoObj, setSelectedDemoObj] = useState(starting);
   const colors = [
     selectedDemoObj.color2,
@@ -41,8 +44,6 @@ function TimeTrend(alldata, defs) {
     setSelectedDemoObj(demos.find(a => a.demo === change.demo));
   };
 
-  console.log('selectedunit', selectedUnit);
-
   return (
     <div>
       {/* // <h1>Trends over time</h1> */}
@@ -56,6 +57,46 @@ function TimeTrend(alldata, defs) {
           <div className="h3" style={{ fontFamily: 'Georgia' }}>
             {alldata.alldata.title}
           </div>
+          <form style={{ display: 'flex' }}>
+            Data Type:
+            <Radiobutton>
+              <label>
+                <input
+                  style={{ 'margin-right': '5px' }}
+                  type="radio"
+                  value="median"
+                  checked={selectedUnit2 == 'raw'}
+                  onChange={v => setSelectedUnit2('raw')}
+                />
+                Raw
+              </label>
+            </Radiobutton>
+            <Radiobutton>
+              <label>
+                <input
+                  style={{ 'margin-right': '5px' }}
+                  type="radio"
+                  value="option2"
+                  checked={selectedUnit2 == 'pdiff'}
+                  onChange={v => setSelectedUnit2('pdiff')}
+                />
+                % Difference from 1989
+              </label>
+            </Radiobutton>
+            {/* <Radiobutton>
+              <label>
+                <input
+                  style={{ 'margin-right': '5px' }}
+                  type="radio"
+                  value="have"
+                  checked={selectedUnit == 'have'}
+                  onChange={v => setSelectedUnit('have')}
+                />
+                Percent Holding (%)
+              </label>
+            </Radiobutton> */}
+          </form>
+
           <form style={{ display: 'flex' }}>
             Units:
             <Radiobutton>
@@ -146,9 +187,11 @@ function TimeTrend(alldata, defs) {
           </div>{' '}
           <TimeTrendChart
             unit={selectedUnit}
+            unit2={selectedUnit2}
             data={data
               .filter(d => d.demo === selectedDemo.demo)
-              .filter(d => d.unit == selectedUnit)}
+              .filter(d => d.unit == selectedUnit)
+              .filter(d => d.unit2 == selectedUnit2)}
             levels={selectedDemoLevels}
             colors={colors}
             title={alldata.alldata.title}
