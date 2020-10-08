@@ -4,7 +4,7 @@ export const useAnesVariables = () => {
     graphql`
       {
         hasura {
-          anes_temp_meta {
+          anes_temp_meta: question_bank(where: { data_source: { short_name: { _eq: "anes" } } }) {
             question_id
             title
           }

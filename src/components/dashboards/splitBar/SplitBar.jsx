@@ -6,8 +6,6 @@ import Right from '../../images/rightarrow.svg';
 import classnames from 'classnames';
 import SplitBarChart from './SplitBarChart';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 function SplitBar() {
   const { data, metadata, overall, card } = useSplitData();
   const demos = useSplitBarDemo();
@@ -19,7 +17,7 @@ function SplitBar() {
   ]);
   const demoContainer = useRef();
   const demosDisplay = [...new Set(demos.map(a => a.displayname))];
-
+  console.log('selectedDemoLevels', selectedDemoLevels);
   const onDemographicChange = demo => {
     const change = demos.find(node => node.displayname === demo);
     setSelectedDemoLevels([...new Set(data.filter(d => d.demo === change.demo).map(d => d.level))]);

@@ -1,43 +1,68 @@
 import React, { useState, useRef } from 'react';
-import { useTimeTrendDemo } from '../../../hooks/useTimeTrendDemo';
+import { useSplitBarD } from '../../../hooks/useSplitBarD';
+import { useSplitBarDemo } from '../../../hooks/useSplitBarDemo';
 import Left from '../../images/leftarrow.svg';
 import Right from '../../images/rightarrow.svg';
 import classnames from 'classnames';
-import TimeTrendChart from './TimeTrendChart.jsx';
+import SplitBarChart from './SplitBarChart';
+import Skeleton from '@material-ui/lab/Skeleton';
+import { useLocation } from '@reach/router';
+import { parse } from 'query-string';
 
-function TimeTrend({ meta, chartdata, demos }) {
+function SplitBar() {
+  const location = useLocation();
+  const { v: v, d: d } = parse(location.search);
+  // const [chartData , setChartData] = useState(null)
+  console.log('v', v);
+  const chartdata = useSplitBarD(v ? v : 'news_sources');
 
-  console.log('meta', meta)
-  const data = chartdata.map(d => Object.freeze(d));
-  const [selectedDemo, setSelectedDemo] = useState(demos[3]);
-  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[3]);
-  const colors = [selectedDemoObj.color2, selectedDemoObj.color1];
+  const demos = useSplitBarDemo();
 
-  const [selectedDemoLevels, setSelectedDemoLevels] = useState([
-    ...new Set(data.filter(d => d.demo === selectedDemo.demo).map(d => d.level)),
-  ]);
+  const [selectedDemo, setSelectedDemo] = useState(demos[0]);
+  const [selectedDemoObj, setSelectedDemoObj] = useState(demos[0]);
+
+  // const [selectedDemoLevels, setSelectedDemoLevels] = useState([
+  //   ...new Set(data.filter(d => d.demo === selectedDemo.displayname).map(d => d.level)),
+  // ]);
+
+  const [selectedDemoLevels, setSelectedDemoLevels] = useState(['Democrat', 'Republican']);
   const demoContainer = useRef();
-  const demosDisplay = [...new Set(demos.map(a => a.display))];
+  const demosDisplay = [...new Set(demos.map(a => a.displayname))];
 
   const onDemographicChange = demo => {
-    const change = demos.find(node => node.display === demo);
-    setSelectedDemoLevels([...new Set(data.filter(d => d.demo === change.demo).map(d => d.level))]);
+    const change = demos.find(node => node.displayname === demo);
+    setSelectedDemoLevels([
+      ...new Set(chartdata.data.filter(d => d.demo === change.demo).map(d => d.level)),
+    ]);
     setSelectedDemo(change);
     setSelectedDemoObj(demos.find(a => a.demo === change.demo));
   };
 
+  if (!chartdata)
+    return (
+      <div>
+        <h1>Loading</h1>
+
+        <Skeleton variant="rect" width={'100%'} height={773} />
+      </div>
+    );
+
+  let { card, metadata, overall, data } = chartdata;
   return (
-    <div>
-      {/* // <h1>Trends over time</h1> */}
+    <div
+      style={{
+        width: '100%',
+      }}
+    >
       <div
         className="border rounded dash_card"
         style={{
-          width: '100%',
+          width: 900,
         }}
       >
         <div className="border-bottom p-3">
           <div className="h3" style={{ fontFamily: 'Georgia' }}>
-            {meta.title}
+            {card.title}
           </div>
         </div>
         <div className="dash_card_body border-bottom p-3">
@@ -53,6 +78,7 @@ function TimeTrend({ meta, chartdata, demos }) {
               <Left
                 style={{
                   height: '20px',
+
                   width: '20px',
                 }}
               />
@@ -65,7 +91,7 @@ function TimeTrend({ meta, chartdata, demos }) {
                     onDemographicChange(demo);
                   }}
                   className={classnames('demo-pills', {
-                    'active-pill': selectedDemo.display === demo,
+                    'active-pill': selectedDemo.displayname === demo,
                   })}
                 >
                   {demo}
@@ -88,21 +114,25 @@ function TimeTrend({ meta, chartdata, demos }) {
               />
             </div>
           </div>
-
-          <TimeTrendChart
+          <SplitBarChart
             data={data.filter(d => d.demo === selectedDemo.demo)}
             levels={selectedDemoLevels}
-            colors={colors}
-            title={meta.question_text}
-            demo={selectedDemo.display}
-            yLabel={`${meta.units} ${meta.measure}`}
-            //  source={metadata?.data_source?.long_name}
+            colors={[selectedDemoObj.color2, selectedDemoObj.color1]}
+            title={metadata.question_text}
+            demo={selectedDemo.displayname}
+            overall={overall}
+            yLabel={`${metadata.units} ${metadata.measure}`}
+            source={metadata?.data_source?.long_name}
           />
         </div>
+
+        <div className=" d-flex justify-content-end p-3"></div>
       </div>
     </div>
   );
 }
+
+export default SplitBar;
 
 function sideScroll(direction, speed, distance, step, demoContainer) {
   let scrollAmount = 0;
@@ -118,5 +148,3 @@ function sideScroll(direction, speed, distance, step, demoContainer) {
     }
   }, speed);
 }
-
-export default TimeTrend;

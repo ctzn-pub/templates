@@ -6,8 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
 import Skeleton from '@material-ui/lab/Skeleton';
 import '../../styles/main.css';
-
+import { useLocation } from '@reach/router';
+import { parse } from 'query-string';
 function ScfTime() {
+  const location = useLocation();
+  const { v: v, d: d } = parse(location.search);
+  console.log('v', v);
+
+  console.log('d', d);
   const variables = useAnesVariables();
   const [selectedVariable, setSelectedVariable] = useState({
     value: 'Before_Tax_Income',
@@ -17,6 +23,7 @@ function ScfTime() {
   // const [chartData , setChartData] = useState(null)
 
   const data = useTimeTrendDemo(selectedVariable?.value);
+
   useEffect(() => {
     if (variables) {
       const scfVars = variables;
@@ -28,6 +35,7 @@ function ScfTime() {
       );
     }
   }, [variables]);
+
   if (!data)
     return (
       <div>

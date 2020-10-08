@@ -25,6 +25,13 @@ const plugins = [
   {
     resolve: `gatsby-source-filesystem`,
     options: {
+      name: `templatetypes`,
+      path: `${__dirname}/src/images/templatetypes`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
       name: `images`,
       // path: /\/\.\/src\/components\/images\/candidates\//,
       path: path.join(__dirname, `src`, 'components', `images`, `candidates/`),

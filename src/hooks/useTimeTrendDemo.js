@@ -39,20 +39,23 @@ export const useTimeTrendDemo = variable => {
   const { loading, error, data } = useQuery(
     gql`
       query($var: String) {
-        meta: anes_temp_meta(where: { question_id: { _eq: $var } }) {
+        meta: question_bank(where: { question_id: { _eq: $var }, source: { _eq: "anes" } }) {
           question_text
           title
           source
           units
           measure
-          chartdata: rdf1s {
-            avg
-            demo
-            level
-            count
-            year
-          }
         }
+
+        chartdata: anes_rdf1(where: { question_id: { _eq: $var } }) {
+          avg
+          demo
+          level
+
+          count
+          year
+        }
+
         demos: anes_demodefs {
           display
           color2: color1
@@ -65,7 +68,8 @@ export const useTimeTrendDemo = variable => {
   );
   if (loading || error) return null;
   return {
-    alldata: data.meta[0],
-    defs: data.demos,
+    meta: data.meta[0],
+    chartdata: data.chartdata,
+    demos: data.demos,
   };
 };

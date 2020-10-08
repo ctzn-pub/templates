@@ -68,7 +68,7 @@ function FrontPage() {
       return d.node.frontmatter.tags;
     })
     .flat(2);
-
+  console.log('tags', data.pages.edges);
   const distinctbags = [...new Set(bags)];
   const tags = distinctbags.map(item => {
     return {

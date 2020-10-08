@@ -43,7 +43,7 @@ function Time() {
         <Skeleton variant="rect" width={'100%'} height={773} />
       </div>
     );
-  let { alldata, defs } = data;
+  let { meta, chartdata, demos } = data;
   return (
     <div
       style={{
@@ -60,7 +60,7 @@ function Time() {
         />
       </div>
 
-      <TimeTrend alldata={alldata} defs={defs} />
+      <TimeTrend meta={meta} chartdata={chartdata} demos={demos} />
     </div>
   );
 }
