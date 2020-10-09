@@ -6,8 +6,8 @@ import classnames from 'classnames';
 import TimeTrendChart from './TimeTrendChart.jsx';
 
 function TimeTrend({ meta, chartdata, demos }) {
-
-  console.log('meta', meta)
+ 
+  
   const data = chartdata.map(d => Object.freeze(d));
   const [selectedDemo, setSelectedDemo] = useState(demos[3]);
   const [selectedDemoObj, setSelectedDemoObj] = useState(demos[3]);
