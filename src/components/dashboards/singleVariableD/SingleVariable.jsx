@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Interactions from './graphs/Interactions';
 import MarginalEffect from './graphs/MarginalEffect';
 import VariableSummery from './graphs/VariableSummery';
-import { useSingleVariable } from '../../../hooks/useSinglevariable';
+import { useSingleVariable } from '../../../hooks/useSingleVariable';
 import { graphql, useStaticQuery } from 'gatsby';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
