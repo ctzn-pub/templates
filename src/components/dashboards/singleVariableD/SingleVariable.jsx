@@ -18,7 +18,7 @@ function SingleVariable() {
   const location = useLocation();
   const { v: v, d: d } = parse(location.search);
   // const [chartData , setChartData] = useState(null)
-  console.log('?v=registration/', v);
+
   const chartdata = useSingleVariable(v ? v : 'gender_attitudes_maleboss');
   const [activeTab, setActiveTab] = useState('interactions');
   const [selectedDemo, setSelectedDemo] = useState();

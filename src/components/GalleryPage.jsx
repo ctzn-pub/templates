@@ -5,10 +5,16 @@ import FrontCard from './common/FrontCard/';
 import BgImage from './common/FrontCard/BgImage';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import { useLocation } from '@reach/router';
+import { parse } from 'query-string';
+
 
 const animatedComponents = makeAnimated();
-
 function GalleryPage() {
+
+  const location = useLocation();
+  const { source: source } = parse(location.search);
+
   const Grid = styled.div`
     display: grid;
     align-items: top;
@@ -32,6 +38,10 @@ function GalleryPage() {
   const data = useStaticQuery(graphql`
     query {
       hasura {
+        sources:   dashboards_data_source {
+          long_name
+          short_name
+        }
         cards {
           template_type
           title
@@ -53,7 +63,7 @@ function GalleryPage() {
               question_id
               data_source {
                 geo
-                long_name
+                short_name
               }
             }
           }
@@ -73,6 +83,18 @@ function GalleryPage() {
       }
     }
   `);
+
+
+
+ const sourcelookup =  data.hasura.sources
+let initialsource = null 
+ if (source){
+  initialsource = [{ 
+value: source, 
+label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
+  }]
+ }
+
 
   const bags = data.hasura.cards
     .map(d => {
@@ -95,7 +117,9 @@ function GalleryPage() {
 
   const [selectedVariable, setSelectedVariable] = useState(null);
   const [selectedGeo, setSelectedGeo] = useState(null);
-  const [selectedSource, setSelectedSource] = useState(null);
+  const [selectedSource, setSelectedSource] = useState(initialsource);
+  console.log('selectedSource', selectedSource)
+  console.log('initialSource', initialsource)
 
   function containsAny(source, target) {
     var result = source.filter(function(item) {
@@ -124,7 +148,7 @@ function GalleryPage() {
     return {
       title: d.title,
       geo: d.qb_card_bridges[0].question_bank.data_source.geo,
-      source: d.qb_card_bridges[0].question_bank.data_source.long_name,
+      source: d.qb_card_bridges[0].question_bank.data_source.short_name,
       topic: topic,
       cut: cut,
       type: d.template_type,
@@ -192,9 +216,10 @@ function GalleryPage() {
         value={selectedSource}
         onChange={v => setSelectedSource(v)}
         options={[...new Set(cards.map(d => d.source))].map(item => {
+          const displayname = sourcelookup.find( ({ short_name }) => short_name === item )
           return {
             value: item,
-            label: item,
+            label: displayname.long_name,
           };
         })}
       />

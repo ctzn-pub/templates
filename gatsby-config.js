@@ -41,11 +41,13 @@ const plugins = [
   `gatsby-transformer-sharp`,
   `gatsby-plugin-styled-components`,
   `gatsby-plugin-emotion`,
+
   {
     resolve: 'gatsby-plugin-react-svg',
     options: {
       rule: {
         include: /\.svg$/,
+        include: /images\/.*\.svg/,
       },
     },
   },
