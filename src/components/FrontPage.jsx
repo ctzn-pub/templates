@@ -5,6 +5,7 @@ import FrontCard from './common/FrontCard/';
 import BgImage from './common/FrontCard/BgImage';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import { Link } from 'gatsby-plugin-modal-routing'
 
 const animatedComponents = makeAnimated();
 
@@ -99,6 +100,7 @@ function FrontPage() {
 
   return (
     <div id="container">
+
       <h1 style={{ marginBottom: 40 }}>Our Contents</h1>
 
       <Select
