@@ -25,6 +25,13 @@ export const useGssVariable = variable => {
           max
           obs
         }
+
+        summary_barchart: gss_all_levels_final(where: { var: { _eq: $var } }) {
+          color
+          level
+          level_count
+          order
+        }
         variableimportance: gss_importance(where: { var: { _eq: $var } }) {
           percentage
           relative_importance
@@ -57,6 +64,7 @@ export const useGssVariable = variable => {
   if (loading || error) return null;
   return {
     meta2: data.meta2[0],
+    summary_barchart: data.summary_barchart,
     metadata: data.question_bank[0],
     timetrend: data.timetrend,
     variableimportance: data.variableimportance,

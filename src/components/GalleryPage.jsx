@@ -118,8 +118,7 @@ label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
   const [selectedVariable, setSelectedVariable] = useState(null);
   const [selectedGeo, setSelectedGeo] = useState(null);
   const [selectedSource, setSelectedSource] = useState(initialsource);
-  console.log('selectedSource', selectedSource)
-  console.log('initialSource', initialsource)
+ 
 
   function containsAny(source, target) {
     var result = source.filter(function(item) {
@@ -267,7 +266,10 @@ label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
                 tags={tags}
                 image={img.childImageSharp.fluid}
                 key={title}
-                subtitle={source}
+                subtitle={
+
+                  ''
+                }
               />
             );
           })}

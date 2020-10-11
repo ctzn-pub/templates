@@ -6,9 +6,10 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { useGssVariable } from '../../../hooks/useGssVariable';
 import { parse } from 'query-string';
 import Infotable from './../../common/meta/Infotable'
+import Meta from './../../common/meta/Meta'
 import '../../styles/main.css';
  
-function Index() {
+function GssIndex() {
     const location = useLocation();
   const { v: v, c: c } = parse(location.search);
 
@@ -23,30 +24,26 @@ function Index() {
       </div>
     );
 
-  let { metadata, timetrend, meta2, variableimportance } = chartdata;
+  let { metadata, timetrend, meta2, summary_barchart,  variableimportance } = chartdata;
   const source = {
    display: metadata.data_source.long_name, 
    url: metadata.data_source.short_name
   }
     return (
-
 <div>
-
-
 <h1>{metadata.title}</h1>
 <TimeTrend defaultDemo={c ? c  : null } 
 data={timetrend}
 variables={variableimportance}
 axislabel={metadata.units + " " + metadata.measure}
 shortname={metadata.title}
-variable = {v} />
-
+variable = {v} /> 
 
 <Infotable source={source} 
 time = {meta2.min + '-' + meta2.max} obs ={meta2.obs} geo={metadata.data_source.geo}  vari={v} /> 
-
+<Meta  metadata = {metadata}  summary_barchart={summary_barchart}/>
 </div>
   );
 }
 
-export default Index;
+export default GssIndex;
