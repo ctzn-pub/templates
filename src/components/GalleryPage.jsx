@@ -184,7 +184,7 @@ label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
       )
     : cards;
 
-  const tagopts = cards
+  const tagopts = carddata
     .map(d => {
       const tags1 = d.tags.map(e => {
         if (e !== null) {
@@ -203,6 +203,27 @@ label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
     };
   });
 
+
+
+  const geos = [...new Set(carddata.map(d => d.geo))].map(item => {
+    return {
+      value: item,
+      label: item,
+    };
+  })
+
+
+const sources  = data.hasura.sources.map(item => {
+  return {
+    value: item.short_name,
+    label: item.long_name,
+  };
+})
+
+ 
+
+
+ 
   return (
     <div id="container">
       <h1 style={{ marginBottom: 40 }}>Cards</h1>
@@ -214,13 +235,7 @@ label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
         isMulti
         value={selectedSource}
         onChange={v => setSelectedSource(v)}
-        options={[...new Set(cards.map(d => d.source))].map(item => {
-          const displayname = sourcelookup.find( ({ short_name }) => short_name === item )
-          return {
-            value: item,
-            label: displayname.long_name,
-          };
-        })}
+        options={sources}
       />
       Geo:
       <Select
@@ -230,12 +245,7 @@ label:  sourcelookup.find( ({ short_name }) => short_name === source ).long_name
         isMulti
         value={selectedGeo}
         onChange={v => setSelectedGeo(v)}
-        options={[...new Set(cards.map(d => d.geo))].map(item => {
-          return {
-            value: item,
-            label: item,
-          };
-        })}
+        options={geos}
       />
       Tags:
       <Select

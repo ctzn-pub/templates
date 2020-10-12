@@ -12,6 +12,8 @@ if (typeof window !== `undefined`) {
 }
 
 function Interactions({ data, demo, axislabel, facet }) {
+
+  console.log('intdata', data)
   const c1 = data.map(level => ({
     high: level.conf_high * 100,
     low: level.conf_low * 100,

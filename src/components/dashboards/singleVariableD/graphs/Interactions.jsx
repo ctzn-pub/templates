@@ -6,16 +6,21 @@ import classnames from 'classnames';
 import { useMemo } from 'react';
 function Interactions({ setTechnicalNotesDemo, intdata, axislabel }) {
   const data = intdata.map(d => ({ ...d, displayname: d.demoByLabelsDemo.displayname }));
-
   const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
   const demosDisplay = useMemo(() => [...new Set(data.map(a => a.displayname))], [data]);
   const demoContainer = useRef();
 
-  const [selectedDemo, setSelectedDemo] = useState(demos[0]);
-  const [selectedDemofacets, setSelectedDemofacets] = useState([
-    ...new Set(data.filter(d => d.demo === selectedDemo).map(d => d.facet)),
-  ]);
+  const [selectedDemo, setSelectedDemo] = useState(demos[1]);
+  // const [selectedDemofacets, setSelectedDemofacets] = useState([
+  //   ...new Set(data.filter(d => d.demo === selectedDemo).map(d => d.facet)),
+  // ]);
 
+ const [selectedDemofacets, setSelectedDemofacets] = useState(["white", "nonwhite"]);
+
+
+  console.log('selectedDemofacets',selectedDemofacets )
+
+ 
   const onDemographicChange = demo => {
     setSelectedDemofacets([...new Set(data.filter(d => d.displayname === demo).map(d => d.facet))]);
     setSelectedDemo(demo);
