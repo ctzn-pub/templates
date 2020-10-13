@@ -1,10 +1,10 @@
 import { useStaticQuery, graphql } from 'gatsby';
-export const useAnesVariables = () => {
+export const useYrbsVariables = () => {
   const { hasura } = useStaticQuery(
     graphql`
       {
         hasura {
-          scf_temp_meta: question_bank(where: { data_source: { short_name: { _eq: "scf" } } }) {
+          yrbs_temp_meta {
             question_id
             title
           }
@@ -13,5 +13,5 @@ export const useAnesVariables = () => {
     `
   );
 
-  return hasura.scf_temp_meta;
+  return hasura.yrbs_temp_meta;
 };
