@@ -10,9 +10,9 @@ const Radiobutton = styled.div`
   margin-right: 10px;
 `;
 
-function TimeTrend(alldata, defs) {
-  const data = alldata.alldata.chartdata.map(d => Object.freeze(d));
-  const demos = alldata.defs;
+function TimeTrend({chartdata, alldata, defs} ) {
+  const data = chartdata.map(d => Object.freeze(d));
+  const demos = defs;
   const starting = demos.find(element => element.demo == 'racecl4');
 
   const units = ['mean', 'have', 'median'];
@@ -55,7 +55,7 @@ function TimeTrend(alldata, defs) {
       >
         <div className="border-bottom p-3">
           <div className="h3" style={{ fontFamily: 'Georgia' }}>
-            {alldata.alldata.title}
+            {alldata.title}
           </div>
           <form style={{ display: 'flex' }}>
             Data Type:
@@ -194,7 +194,7 @@ function TimeTrend(alldata, defs) {
               .filter(d => d.unit2 == selectedUnit2)}
             levels={selectedDemoLevels}
             colors={colors}
-            title={alldata.alldata.title}
+            title={alldata.title}
             demo={selectedDemo.display}
             //    yLabel={`${alldata.alldata.units} ${alldata.alldata.measure}`}
             //  source={metadata?.data_source?.long_name}

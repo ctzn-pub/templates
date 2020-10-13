@@ -220,10 +220,7 @@ const sources  = data.hasura.sources.map(item => {
   };
 })
 
- 
 
-
- 
   return (
     <div id="container">
       <h1 style={{ marginBottom: 40 }}>Cards</h1>
@@ -266,8 +263,8 @@ const sources  = data.hasura.sources.map(item => {
               : `/Dashboards/${d.type}?v=${d.variable}`;
             const image = d.type + '.png';
             const tags = d.tags;
-            const source = d.source;
-            const img = data.images.edges.find(({ node }) => node.relativePath === image).node;
+            const source = sources.find((source) => source.value === d.source).label;
+             const img = data.images.edges.find(({ node }) => node.relativePath === image).node;
 
             return (
               <FrontCard
@@ -276,10 +273,7 @@ const sources  = data.hasura.sources.map(item => {
                 tags={tags}
                 image={img.childImageSharp.fluid}
                 key={title}
-                subtitle={
-
-                  ''
-                }
+                subtitle={source}
               />
             );
           })}

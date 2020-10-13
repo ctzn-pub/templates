@@ -5,17 +5,17 @@ export const useTimeTrendDemo = variable => {
   const { loading, error, data } = useQuery(
     gql`
       query($var: String) {
-        meta: scf_temp_meta(where: { question_id: { _eq: $var } }) {
+        meta: question_bank(where: { question_id: { _eq: $var }, source: { _eq: "scf" } }) {
           question_text
           title
-          chartdata: scf1s {
-            avg
-            demo
-            level
-            year
-            unit
-            unit2
-          }
+        }
+        chartdata: scf_scf1(where: { question_id: { _eq: $var } }) {
+          avg
+          demo
+          level
+          year
+          unit
+          unit2
         }
         demos: scf_demodefs(order_by: { order: desc }) {
           order
@@ -35,6 +35,7 @@ export const useTimeTrendDemo = variable => {
   if (loading || error) return null;
   return {
     alldata: data.meta[0],
+    chartdata: data.chartdata,
     defs: data.demos,
   };
 };

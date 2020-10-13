@@ -18,7 +18,6 @@ function Interactions({ setTechnicalNotesDemo, intdata, axislabel }) {
  const [selectedDemofacets, setSelectedDemofacets] = useState(["white", "nonwhite"]);
 
 
-  console.log('selectedDemofacets',selectedDemofacets )
 
  
   const onDemographicChange = demo => {
