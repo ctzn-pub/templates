@@ -52,7 +52,8 @@ function TimeTrend({chartdata, title, defs} ) {
         <div className="dash_card_body border-bottom p-3">
           <div className="d-flex align-items-center">
  
-            <div className="demo-container d-flex flex-nowrap mx-1" ref={demoContainer}>
+            <div className="demo-container d-flex flex-nowrap"   style={{alignItems: "center",
+    justifyContent: "center"}} ref={demoContainer}>
               {demos.map((demo, i) => (
                 <div
                   key={demo.display}

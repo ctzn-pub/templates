@@ -7,6 +7,7 @@ export const useYrbsVariables = () => {
           yrbs_temp_meta {
             question_id
             title
+            tags
           }
         }
       }

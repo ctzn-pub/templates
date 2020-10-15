@@ -18,18 +18,43 @@ function YrbsTime() {
   });
   const [variableOptions, setVariablesOptions] = useState([]);
   const data = useTimeTrendDemo(selectedVariable?.value);
+console.log('variables',variables)
+const opts = [...new Set(variables.map(a => a.tags))];
+const fullopts = opts.map(head => ({
+  label: head,
+   options: variables.filter(v => v.tags == head ).map(variable => ({
+    value: variable.question_id,
+    label: `${variable.title}`,
+  }))
+  
+  }))
+console.log('opts',fullopts )
 
-console.log('data', data)
   useEffect(() => {
+    // if (variables) {
+    //   const yrbsVars = variables;
+    //   setVariablesOptions(
+    //     yrbsVars.map(variable => ({
+    //       value: variable.question_id,
+    //       label: `${variable.title}`,
+    //     }))
+    //   );
+    // }
     if (variables) {
-      const yrbsVars = variables;
+      const opts = [...new Set(variables.map(a => a.tags))];
+
       setVariablesOptions(
-        yrbsVars.map(variable => ({
-          value: variable.question_id,
-          label: `${variable.title}`,
-        }))
+        opts.map(head => ({
+          label: head,
+           options: variables.filter(v => v.tags == head ).map(variable => ({
+            value: variable.question_id,
+            label: `${variable.title}`,
+          }))
+          
+          }))
       );
     }
+    
   }, [variables]);
 
   if (!data)
