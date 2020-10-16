@@ -5,14 +5,25 @@ export const useTimeTrendDemo = variable => {
   const { loading, error, data } = useQuery(
     gql`
       query($var: String) {
+        chartdata: yrbs_rdf(where: { question_id: { _eq: $var } }) {
+          avg
+          demo
+          level
+          year
+        }
+        facet: yrbs_facet(where: { key: { _eq: $var } }) {
+          avg
+          grade
+          count
+          key
+          race4
+          sex
+        }
         yrbs_temp_meta(where: { question_id: { _eq: $var } }) {
           title
-          chartdata: rdfs(where: { question_id: { _eq: $var } }) {
-            avg
-            demo
-            level
-            year
-          }
+          count
+          units
+          measure
         }
         demos: yrbs_demodefs {
           display
@@ -29,8 +40,9 @@ export const useTimeTrendDemo = variable => {
   );
   if (loading || error) return null;
   return {
-    title: data.yrbs_temp_meta[0].title,
-    chartdata: data.yrbs_temp_meta[0].chartdata,
+    meta: data.yrbs_temp_meta[0],
+    facet: data.facet,
+    chartdata: data.chartdata,
     defs: data.demos,
   };
 };

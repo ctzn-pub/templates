@@ -19,8 +19,7 @@ function TimeTrend({chartdata, alldata, defs} ) {
   const [selectedDemo, setSelectedDemo] = useState(starting);
   const [selectedUnit, setSelectedUnit] = useState(units[2]);
   const [selectedUnit2, setSelectedUnit2] = useState('raw');
-  console.log('selectedUnit2', selectedUnit2);
-  console.log('data', data);
+
   const [selectedDemoObj, setSelectedDemoObj] = useState(starting);
   const colors = [
     selectedDemoObj.color2,

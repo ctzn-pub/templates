@@ -11,9 +11,9 @@ if (typeof window !== `undefined`) {
   more(Highcharts);
 }
 
-function Interactions({ data, demo, axislabel, facet }) {
+function Interactions({ data, axislabel, facet }) {
 
-  console.log('intdata', data)
+ 
   const c1 = data.map(level => ({
     high: level.conf_high * 100,
     low: level.conf_low * 100,

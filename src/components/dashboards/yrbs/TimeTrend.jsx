@@ -33,23 +33,9 @@ function TimeTrend({chartdata, title, defs} ) {
   };
 
 
-  console.log('title', title)
+ 
+  return (<>
 
-
-  return (
-    <div>
-      <div
-        className="border rounded dash_card"
-        style={{
-          width: '100%',
-        }}
-      >
-        <div className="border-bottom p-3">
-          <div className="h3" style={{ fontFamily: 'Georgia' }}>
-            {title}
-          </div>
-      </div>
-        <div className="dash_card_body border-bottom p-3">
           <div className="d-flex align-items-center">
  
             <div className="demo-container d-flex flex-nowrap"   style={{alignItems: "center",
@@ -80,9 +66,8 @@ function TimeTrend({chartdata, title, defs} ) {
             title={title}
             demo={selectedDemo.display}
           />
-        </div>
-      </div>
-    </div>
+    </>
+    
   );
 }
 
