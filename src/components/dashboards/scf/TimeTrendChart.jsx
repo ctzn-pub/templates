@@ -332,6 +332,7 @@ function TimeTrendChart({ levels, data, colors, unit, unit2, title, demo, yLabel
         tickWidth: 1,
         gridLineColor: 'transparent',
         title: {
+          text: '% ' + yLabel,
           style: {
             fontFamily: 'Georgia',
           },

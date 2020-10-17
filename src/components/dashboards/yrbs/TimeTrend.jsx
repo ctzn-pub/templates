@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import styled from 'styled-components';
 import TimeTrendChart from './TimeTrendChart.jsx';
 
-function TimeTrend({chartdata, title, defs} ) {
+function TimeTrend({chartdata,axis, title, defs} ) {
   const data = chartdata.map(d => Object.freeze(d));
   const demos = defs;
   const starting = demos.find(element => element.demo == 'race4');
@@ -64,6 +64,7 @@ function TimeTrend({chartdata, title, defs} ) {
             levels={selectedDemoLevels}
             colors={colors}
             title={title}
+            axis={axis}
             demo={selectedDemo.display}
           />
     </>

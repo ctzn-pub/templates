@@ -105,7 +105,7 @@ padding: 1rem;
 
 {    meta.count > 6 &&      <Butt onClick={butt=>setShowTab('tab1')}> <Time fill= "#000000" height='30px' width="30px" /> Time Trend</Butt>
 }
-{    meta.count > 7 &&   <Butt onClick={butt=>setShowTab('tab2')}>  <Gender fill= "#000000" height='30px' width="30px"  />  By Gender </Butt>}
+{    meta.count > 7 &&   <Butt onClick={butt=>setShowTab('tab2')} style={{minWidth: "127px"}}>  <Gender fill= "#000000" height='30px' width="30px"  />  <span>Interaction</span> </Butt>}
 
 
 <Butt onClick={butt=>setShowInfo(!showInfo)}>  <Info fill= "#000000" height='30px' width="20px" style={{marginRight: "3px"}} /> { ' ' }Details  </Butt>
@@ -114,7 +114,7 @@ padding: 1rem;
     </div>
   <div className="dash_card_body border-bottom p-3"> 
   
-    {showTab == 'tab1' && meta.count > 6 &&   <TimeTrend  title={meta.title} chartdata={chartdata} defs={defs} />}
+    {showTab == 'tab1' && meta.count > 6 &&   <TimeTrend  title={meta.title} chartdata={chartdata} axis={meta.measure}  defs={defs} />}
     {showTab == 'tab2' || meta.count < 7  ?   <Facet  title={meta.title} axis={meta.measure} facet={facet}  /> : ''}
     
     {showInfo == true &&  <Infotable source={'YRBSS'} 

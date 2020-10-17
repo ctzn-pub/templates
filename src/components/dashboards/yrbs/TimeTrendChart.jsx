@@ -8,7 +8,9 @@ import more from 'highcharts/highcharts-more';
 if (typeof window !== `undefined`) {
   more(Highcharts);
 }
-function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
+function TimeTrendChart({ levels, data, colors, title, demo, axis }) {
+
+const defaulthide = ["Hispanic/Latino", "All other races", "10th", "11th"]
   const chartRef = React.useRef();
   const [chartOption, setChartOption] = React.useState(null);
   const getDataLevels = level => {
@@ -105,7 +107,7 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
       
 
                   const val = this.y;
-                  return val.toFixed(2) + '%';
+                  return val.toFixed(0) + '%';
                 
               }
             },
@@ -128,7 +130,7 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
         style: { fontSize: '16px' },
         align: 'center',
         margin: 0,
-        text: title + ' by ' + demo + '(%)',
+        text: title + " by <span style='font-style: italic; font-weight: bold; color: #8700f8'>" + demo + "</span>",
       },
       legend: {
         itemStyle: {
@@ -251,10 +253,10 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
 
         title: {
           enable: false,
-          text: yLabel,
+          text: '% ' + axis,
           // offset: 20,
           style: {
-            fontWeight: 'bold',
+
             fontSize: '12px',
           },
         },
@@ -278,6 +280,8 @@ function TimeTrendChart({ levels, data, colors, title, demo, yLabel }) {
         ...levels.map((level, i) => {
           return {
             name: levels[i],
+            visible: defaulthide.includes(levels[i]) ?  false : true,
+
             data: getDataLevels(level),
             color: colors[i],
             tooltip: {

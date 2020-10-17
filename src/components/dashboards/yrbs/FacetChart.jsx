@@ -86,7 +86,7 @@ function FacetChart({facet,ftitle, axis, max} ) {
           align: 'center',
         },
         yAxis: {
-            lineColor: '#000000',
+            lineColor: '#adadad',
             lineWidth: 1,
             max: max,
         max: max,
@@ -100,7 +100,7 @@ function FacetChart({facet,ftitle, axis, max} ) {
               text: ftitle == 'White'  ?  '% ' + axis : ''     ,
             style: {
               fontFamily: 'Georgia',
-              fontSize: 10,
+              fontSize: 12,
             },
           },
           type: 'linear',
