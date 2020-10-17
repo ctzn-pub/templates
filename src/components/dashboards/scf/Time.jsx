@@ -69,7 +69,7 @@ function ScfTime() {
         />
       </div>
 
-      <TimeTrend alldata={alldata}  chartdatan={chartdata} defs={defs} />
+      <TimeTrend alldata={alldata}  chartdata={chartdata} defs={defs} />
     </div>
   );
 }
