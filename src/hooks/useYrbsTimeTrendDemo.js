@@ -11,6 +11,11 @@ export const useTimeTrendDemo = variable => {
           level
           year
         }
+        overall: yrbs_overall_time(where: { question_id: { _eq: $var } }) {
+          avg
+          count
+          year
+        }
         facet: yrbs_facet(where: { key: { _eq: $var } }) {
           avg
           grade
@@ -43,6 +48,7 @@ export const useTimeTrendDemo = variable => {
     meta: data.yrbs_temp_meta[0],
     facet: data.facet,
     chartdata: data.chartdata,
+    overall: data.overall,
     defs: data.demos,
   };
 };

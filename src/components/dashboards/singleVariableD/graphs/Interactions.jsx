@@ -5,7 +5,7 @@ import Right from '../../../images/rightarrow.svg';
 import classnames from 'classnames';
 import { useMemo } from 'react';
 function Interactions({ setTechnicalNotesDemo, intdata, axislabel }) {
-  const data = intdata.map(d => ({ ...d, displayname: d.demoByLabelsDemo.displayname }));
+  const data = intdata.map(d => ({ ...d, displayname: d.meta.demometum.display }));
   const demos = useMemo(() => [...new Set(data.map(d => d.displayname))], [data]);
   const demosDisplay = useMemo(() => [...new Set(data.map(a => a.displayname))], [data]);
   const demoContainer = useRef();

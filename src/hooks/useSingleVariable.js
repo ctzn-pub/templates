@@ -27,9 +27,12 @@ export const useSingleVariable = variable => {
           conf_high
           conf_low
           demo
-          demoByLabelsDemo {
-            displayname
+          meta: level {
+            demometum {
+              display
+            }
             order
+            display
           }
           facet
           group

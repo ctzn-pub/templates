@@ -10,17 +10,17 @@ if (typeof window !== `undefined`) {
   HC_exporting(Highcharts);
   more(Highcharts);
 }
-
+ 
 function Interactions({ data, axislabel, facet }) {
 
- 
+ console.log('data', data)
   const c1 = data.map(level => ({
     high: level.conf_high * 100,
     low: level.conf_low * 100,
     y: level.predicted * 100,
     label: level.group,
-    name: level.labels,
-    order: level.demoByLabelsDemo.order,
+    name:level.meta.display,
+    order: level.meta.order,
   }));
 
   //  const colors = [data[0].color_1, data[0].color_2];

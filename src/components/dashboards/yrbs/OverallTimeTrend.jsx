@@ -8,61 +8,26 @@ import more from 'highcharts/highcharts-more';
 if (typeof window !== `undefined`) {
   more(Highcharts);
 }
-function TimeTrendChart({ levels,overall,  data, colors, title, demo, axis }) {
+function OverallTimeTrend({overall,axis, title} ) {
 
-const defaulthide = ["Hispanic/Latino", "All other races", "10th", "11th"]
-  const chartRef = React.useRef();
 
-  const overalldata = overall.map(data => {
-    return [+data['year'], data.avg * 100];
-})
-.sort((a, b) => a[0] - b[0])
-.map(d => {
-  return [d[0], d[1]];
-});
-console.log('overalldata', overalldata)
+    const data = overall.map(data => {
+        return [+data['year'], data.avg * 100];
+    })
+    .sort((a, b) => a[0] - b[0])
+    .map(d => {
+      return [d[0], d[1]];
+    });
 
-  const [chartOption, setChartOption] = React.useState(null);
-  const getDataLevels = level => {
-    const output = data
-      .filter(a => a.level === level)
-      .map(data => {
-          return [+data['year'], data.avg * 100];
- 
-      })
-      .sort((a, b) => a[0] - b[0])
-      .map(d => {
-        return [d[0], d[1]];
-      });
 
-    return output;
-  };
-
- 
-
- 
-
-  React.useEffect(() => {
-    setChartOption({
-      tooltip: {
+const chartOption = {
+    tooltip: {
         borderColor: '#000000',
         backgroundColor: '#ffffff',
-
         shared: true,
         crosshairs: true,
       },
-
-      chart: {
-
-        events: {
-          load: function() {
-            this.series.forEach(function(s) {
-              s.update({
-                showInLegend: !!s.points.length,
-              });
-            });
-          },
-        },
+chart: {
         height: '550px',
         style: {
           fontFamily: 'Georgia',
@@ -138,7 +103,7 @@ console.log('overalldata', overalldata)
         style: { fontSize: '16px' },
         align: 'center',
         margin: 0,
-        text: title + " by <span style='font-style: italic; font-weight: bold; color: #8700f8'>" + demo + "</span>",
+        text: title ,
       },
       legend: {
         itemStyle: {
@@ -148,7 +113,6 @@ console.log('overalldata', overalldata)
           fontWeight: 'light',
           textOverflow: 'ellipsis',
         },
-
         title: {
           style: { fontSize: 12, fontWeight: 'light' },
           text: null,
@@ -163,7 +127,6 @@ console.log('overalldata', overalldata)
       },
 
       xAxis: {
- 
         lineWidth: 0,
         minorGridLineWidth: 0,
         lineColor: 'transparent',
@@ -183,7 +146,6 @@ console.log('overalldata', overalldata)
           text: 'Year',
         },
         plotBands: [
- 
           {
             from: 1991,
             to: 2000,
@@ -244,7 +206,6 @@ console.log('overalldata', overalldata)
           },
         ],
       },
-
       yAxis: {
         // visible: false,
         lineWidth: 0,
@@ -283,59 +244,41 @@ console.log('overalldata', overalldata)
           },
         },
       },
-
-      series: [
-        {
-          name: 'Overall',
-          type: 'column',
-          data: overalldata,
-          color: "#e7e7e7",
-          visible: false,
-          tooltip: {
-            valueDecimals: 2,
-            headerFormat: '',
-            useHTML: true,
-            valueSuffix: '%', 
-          },
-        },
-        ...levels.map((level, i) => {
-          return {
-            name: levels[i],
-            visible: defaulthide.includes(levels[i]) ?  false : true,
-            data: getDataLevels(level),
-            color: colors[i],
+      series:[ {
+            name: 'Name',
+            data: data,
+            color: "#000000",
             tooltip: {
               valueDecimals: 2,
               headerFormat: '',
               useHTML: true,
-
-              valueSuffix: '%',
-              
+              valueSuffix: '%', 
             },
-          };
-        }),
-      ],
-    });
-  }, [data, levels]);
+          }]
+  
 
-  const mortarboard = chart => {
-    chartRef.current = chart;
-  };
+}
 
-  if (data === null) return null;
-  return (
-    <div>
+
+
+
+
+  return (<>
+
+<div>
       <HighchartsReact
         containerProps={{
           width: '100%',
         }}
         highcharts={Highcharts}
         options={chartOption}
-        //  callback={chart => (chartRef.current = chart)}
-        callback={mortarboard}
       />
     </div>
+    </>
+    
   );
 }
 
-export default TimeTrendChart;
+ 
+
+export default OverallTimeTrend;

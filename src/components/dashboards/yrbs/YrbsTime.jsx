@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTimeTrendDemo } from '../../../hooks/useYrbsTimeTrendDemo';
 import { useYrbsVariables } from '../../../hooks/useYrbsVariables';
 import TimeTrend from './TimeTrend.jsx';
+import OverallTimeTrend from './OverallTimeTrend.jsx';
 import Facet from './Facet.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
@@ -25,7 +26,7 @@ function YrbsTime() {
   });
   const [variableOptions, setVariablesOptions] = useState([]);
   const data = useTimeTrendDemo(selectedVariable?.value);
-  const [showTab, setShowTab] = useState( 'tab1');
+  const [showTab, setShowTab] = useState( 'tab3');
   const [showInfo, setShowInfo] = useState(false);
 
 const Butt = styled.button`
@@ -83,7 +84,7 @@ padding: 1rem;
         <Skeleton variant="rect" width={'100%'} height={773} />
       </div>
     );
-  let { meta, defs ,chartdata,facet } = data;
+  let { meta, defs ,chartdata,facet , overall } = data;
   return (
 <div style={{ width: '100%' }}>
       <div>
@@ -106,6 +107,7 @@ padding: 1rem;
 {    meta.count > 6 &&      <Butt onClick={butt=>setShowTab('tab1')}> <Time fill= "#000000" height='30px' width="30px" /> Time Trend</Butt>
 }
 {    meta.count > 7 &&   <Butt onClick={butt=>setShowTab('tab2')} style={{minWidth: "127px"}}>  <Gender fill= "#000000" height='30px' width="30px"  />  <span>Interaction</span> </Butt>}
+{    meta.count > 6 &&      <Butt onClick={butt=>setShowTab('tab3')}> <Time fill= "#000000" height='30px' width="30px" /> Overall Trend</Butt> } 
 
 
 <Butt onClick={butt=>setShowInfo(!showInfo)}>  <Info fill= "#000000" height='30px' width="20px" style={{marginRight: "3px"}} /> { ' ' }Details  </Butt>
@@ -114,9 +116,10 @@ padding: 1rem;
     </div>
   <div className="dash_card_body border-bottom p-3"> 
   
-    {showTab == 'tab1' && meta.count > 6 &&   <TimeTrend  title={meta.title} chartdata={chartdata} axis={meta.measure}  defs={defs} />}
+    {showTab == 'tab1' && meta.count > 6 &&   <TimeTrend  title={meta.title} chartdata={chartdata}  overall={overall} axis={meta.measure}  defs={defs} />}
     {showTab == 'tab2' || meta.count < 7  ?   <Facet  title={meta.title} axis={meta.measure} facet={facet}  /> : ''}
-    
+    {showTab == 'tab3' && meta.count > 6 &&   <OverallTimeTrend  title={meta.title} overall={overall} axis={meta.measure} />}
+
     {showInfo == true &&  <Infotable source={'YRBSS'} 
 time = {'1990-2019'} obs ={'217340'} geo={'United Stated'}  vari={selectedVariable.value} /> }
  

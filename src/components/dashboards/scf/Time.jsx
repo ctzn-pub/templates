@@ -52,7 +52,7 @@ function ScfTime() {
         <Skeleton variant="rect" width={'100%'} height={773} />
       </div>
     );
-  let { alldata, defs ,chartdata } = data;
+  let { alldata, defs ,chartdata, overall } = data;
   return (
     <div
       style={{
@@ -69,7 +69,8 @@ function ScfTime() {
         />
       </div>
 
-      <TimeTrend alldata={alldata}  chartdata={chartdata} defs={defs} />
+      <TimeTrend alldata={alldata} 
+      overall={overall} chartdata={chartdata} defs={defs} />
     </div>
   );
 }

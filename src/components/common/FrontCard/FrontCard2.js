@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
 const Title = styled.h3`
-  color: #000;
+  color: #fff;
   font-weight: 300;
   font-size: 25px;
 `;
@@ -98,6 +98,8 @@ const Tile = styled(BackgroundImage)`
 `;
 const CardText = styled.div`
   position: relative;
+  background-color: rgb(0 0 0 / 75%);
+
   // background-color: rgba(255, 255, 255, 0.75);
   height: auto;
   margin-top: 10px;
@@ -106,8 +108,6 @@ const CardText = styled.div`
 
 const CardTextInner = styled.div`
   position: relative;
-  background-color: rgba(255, 255, 255, 0.75);
-
   margin-top: 10px;
   padding: 5px 10px;
 `;
