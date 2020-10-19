@@ -2,7 +2,6 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Wrapper } from './style';
-import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
 const Title = styled.h3`
@@ -131,7 +130,7 @@ const LittleTag = styled.button`
 `;
 const FrontCard = ({ title, url, tags, image, subtitle }) => (
   <Wrapper>
-    <Link to={url}>
+    <a href={url}>
       <Card>
         <Tile
           Tag="section"
@@ -157,7 +156,7 @@ const FrontCard = ({ title, url, tags, image, subtitle }) => (
         </Tile>
         {/* <Bookimg fluid={image} alt={title} /> */}
       </Card>
-    </Link>
+    </a>
   </Wrapper>
 );
 
