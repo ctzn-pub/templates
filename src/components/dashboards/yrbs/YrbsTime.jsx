@@ -26,7 +26,7 @@ function YrbsTime() {
   });
   const [variableOptions, setVariablesOptions] = useState([]);
   const data = useTimeTrendDemo(selectedVariable?.value);
-  const [showTab, setShowTab] = useState( 'tab3');
+  const [showTab, setShowTab] = useState( 'tab1');
   const [showInfo, setShowInfo] = useState(false);
 
 const Butt = styled.button`
@@ -107,8 +107,7 @@ padding: 1rem;
 {    meta.count > 6 &&      <Butt onClick={butt=>setShowTab('tab1')}> <Time fill= "#000000" height='30px' width="30px" /> Time Trend</Butt>
 }
 {    meta.count > 7 &&   <Butt onClick={butt=>setShowTab('tab2')} style={{minWidth: "127px"}}>  <Gender fill= "#000000" height='30px' width="30px"  />  <span>Interaction</span> </Butt>}
-{    meta.count > 6 &&      <Butt onClick={butt=>setShowTab('tab3')}> <Time fill= "#000000" height='30px' width="30px" /> Overall Trend</Butt> } 
-
+ 
 
 <Butt onClick={butt=>setShowInfo(!showInfo)}>  <Info fill= "#000000" height='30px' width="20px" style={{marginRight: "3px"}} /> { ' ' }Details  </Butt>
 
@@ -118,8 +117,7 @@ padding: 1rem;
   
     {showTab == 'tab1' && meta.count > 6 &&   <TimeTrend  title={meta.title} chartdata={chartdata}  overall={overall} axis={meta.measure}  defs={defs} />}
     {showTab == 'tab2' || meta.count < 7  ?   <Facet  title={meta.title} axis={meta.measure} facet={facet}  /> : ''}
-    {showTab == 'tab3' && meta.count > 6 &&   <OverallTimeTrend  title={meta.title} overall={overall} axis={meta.measure} />}
-
+ 
     {showInfo == true &&  <Infotable source={'YRBSS'} 
 time = {'1990-2019'} obs ={'217340'} geo={'United Stated'}  vari={selectedVariable.value} /> }
  

@@ -288,9 +288,10 @@ console.log('overalldata', overalldata)
         {
           name: 'Overall',
           type: 'column',
+          showInLegend: false,
           data: overalldata,
           color: "#e7e7e7",
-          visible: false,
+          visible: true,
           tooltip: {
             valueDecimals: 2,
             headerFormat: '',
