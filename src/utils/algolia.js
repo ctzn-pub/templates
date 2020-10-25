@@ -1,43 +1,65 @@
-const config = require('../../config.js');
+const escapeStringRegexp = require('escape-string-regexp');
+
+const pagePath = `content`;
+const indexName = `Gallery`;
 
 const pageQuery = `{
-  pages: allMdx {
-    edges {
-      node {
-        objectID: id
-        fields {
-          slug
+  hasura {
+    cards {
+      template_type
+      title
+      cards_tags {
+        tag {
+          tag_value
+          id
         }
-        headings {
+      }
+      card_topics {
+        cut
+        topic {
+          id
           value
         }
-        frontmatter {
-          title
-          metaDescription 
+      }
+      qb_card_bridges {
+        question_bank {
+          question_id
+          data_source {
+            geo
+            short_name
+          }
         }
-        excerpt(pruneLength: 50000)
       }
     }
   }
 }`;
 
-const flatten = arr =>
-  arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
-    ...frontmatter,
-    ...fields,
-    ...rest,
-  }));
-
-const settings = { attributesToSnippet: [`excerpt:20`] };
-
-const indexName = config.header.search ? config.header.search.indexName : '';
-
+function pageToAlgoliaRecord(d) {
+  return {
+    type: d.template_type,
+    title: d.title,
+    topic: d.card_topics,
+    tags:
+      d.cards_tags.length == 0
+        ? []
+        : d.cards_tags
+            .map(e => {
+              if (e.tag !== null) {
+                return e.tag.tag_value;
+              }
+            })
+            .filter(tag => tag !== undefined),
+    qid: d.qb_card_bridges[0].question_bank.question_id,
+    geo: d.qb_card_bridges[0].question_bank.data_source.geo,
+    source: d.qb_card_bridges[0].question_bank.data_source.short_name,
+  };
+}
 const queries = [
   {
     query: pageQuery,
-    transformer: ({ data }) => flatten(data.pages.edges),
-    indexName: `${indexName}`,
-    settings,
+    transformer: ({ data }) => data.hasura.cards.map(pageToAlgoliaRecord),
+    indexName,
+    settings: { attributesToSnippet: [`excerpt:20`] },
   },
 ];
 
