@@ -27,6 +27,7 @@ const pageQuery = `{
           data_source {
             geo
             short_name
+            long_name
           }
         }
       }
@@ -51,7 +52,7 @@ function pageToAlgoliaRecord(d) {
             .filter(tag => tag !== undefined),
     qid: d.qb_card_bridges[0].question_bank.question_id,
     geo: d.qb_card_bridges[0].question_bank.data_source.geo,
-    source: d.qb_card_bridges[0].question_bank.data_source.short_name,
+    source: d.qb_card_bridges[0].question_bank.data_source,
   };
 }
 const queries = [

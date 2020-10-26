@@ -1,6 +1,10 @@
 import algoliasearch from 'algoliasearch/lite';
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+import DropdownRefinementList from './DropdownRefinementList';
+import RefinementListSearch from './RefinementListSearch';
+import { orderBy } from 'lodash';
+import './Dropdown.css';
 import Hit from './../common/Hits';
 import {
   InstantSearch,
@@ -25,20 +29,23 @@ export default function GalSearch() {
     <InstantSearch searchClient={searchClient} indexName="Gallery">
       <SearchBox />
       <Stats />
-      <Row>
-        <Col>
-          <CurrentRefinements />
-          <ClearRefinements />
 
-          <h2>Geography:</h2>
-          <RefinementList attribute="geo" />
-          <h2>Data Source</h2>
-          <RefinementList attribute="source" />
-        </Col>
-        <Col>
-          <h3> Tags </h3>
-          <RefinementList attribute="tags" searchable={true} showMore={true} />
-        </Col>
+      <CurrentRefinements />
+      <ClearRefinements />
+      <Row>
+        <DropdownRefinementList
+          transformItems={items => orderBy(items, 'label', 'asc')}
+          header="Geography"
+          attribute="geo"
+        />
+
+        <DropdownRefinementList
+          transformItems={items => orderBy(items, 'label', 'asc')}
+          attribute="source.long_name"
+          header="Data Source"
+        />
+
+        <DropdownRefinementList attribute="tags" header="Tags" searchable={true} showMore={true} />
       </Row>
 
       <Hits hitComponent={Hit} />

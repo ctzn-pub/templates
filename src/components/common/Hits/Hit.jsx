@@ -183,7 +183,7 @@ return (
           <CardText>
             <CardTextInner>
               <Title>{title}</Title>
-              <Description> {source}</Description>
+              <Description> {source.long_name}</Description>
             </CardTextInner>
             <Tags>
               {tags.map(d => {
