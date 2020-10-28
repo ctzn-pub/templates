@@ -38,17 +38,12 @@ export default function GalSearch() {
           header="Geography"
           attribute="geo"
         />
+
         <DropdownRefinementList
           transformItems={items => orderBy(items, 'label', 'asc')}
-          header="Geography"
-          attribute="source"
-        />
-        {/* 
-        <DropdownRefinementList
-          //   transformItems={items => orderBy(items, 'label', 'asc')}
-          //    attribute="source.long_name"
+          attribute="source.long_name"
           header="Data Source"
-        /> */}
+        />
 
         <DropdownRefinementList attribute="tags" header="Tags" searchable={true} showMore={true} />
       </Row>
