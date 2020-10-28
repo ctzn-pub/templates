@@ -118,7 +118,7 @@ DropdownRefinementList.propTypes = {
   limit: PropTypes.number,
 };
 DropdownRefinementList.defaultProps = {
-  hoverable: true,
+  hoverable: false,
 };
 
 export default connectRefinementList(DropdownRefinementList);
