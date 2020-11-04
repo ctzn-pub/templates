@@ -2,6 +2,7 @@ import algoliasearch from 'algoliasearch/lite';
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import DropdownRefinementList from './DropdownRefinementList';
+import CustomHits from './CustomHits.js';
 import RefinementListSearch from './RefinementListSearch';
 import { orderBy } from 'lodash';
 import './Dropdown.css';
@@ -31,7 +32,7 @@ export default function GalSearch() {
       <Stats />
 
       <CurrentRefinements />
-      <ClearRefinements />
+      {/* <CustomCurrentRefinement /> */}
       <Row>
         <DropdownRefinementList
           transformItems={items => orderBy(items, 'label', 'asc')}
@@ -48,7 +49,11 @@ export default function GalSearch() {
         <DropdownRefinementList attribute="tags" header="Tags" searchable={true} showMore={true} />
       </Row>
 
-      <Hits hitComponent={Hit} />
+      {/* <Hits hitComponent={Hit} /> */}
+      <ClearRefinements />
+
+      <CustomHits />
+
       <Pagination />
     </InstantSearch>
   );

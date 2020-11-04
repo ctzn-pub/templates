@@ -102,10 +102,10 @@ function FrontPage() {
     <div id="container">
 
       <h1 style={{ marginBottom: 40 }}>Our Contents</h1>
-
+      For a full search, visit <Link to="/search"> Search </Link>
       <Select
         closeMenuOnSelect={false}
-        components={animatedComponents}
+         components={animatedComponents}
         defaultValue={[]}
         isMulti
         value={selectedVariable}

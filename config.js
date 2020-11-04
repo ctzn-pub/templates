@@ -7,8 +7,8 @@ const config = {
   },
   header: {
     logo: './onlogo.svg',
-    logoLink: 'https://ontopic.io/',
-    title: "<a href='https://ontopic.io/'>Graph Documentation</a>",
+    logoLink: 'https://ontopicdocs.netlify.app/',
+    title: "<a href='https://ontopicdocs.netlify.app/'>Graph Documentation</a>",
     githubUrl: 'https://github.com/ctzn-pub',
     helpUrl: '',
     tweetText: '',
