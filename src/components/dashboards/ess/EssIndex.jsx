@@ -15,6 +15,7 @@ function EssIndex() {
 
   let variable = 'happy'
 
+
   if(v){
     variable=v
   }
@@ -38,7 +39,8 @@ function EssIndex() {
   return (
 <div>
 <h1>{metadata.title}</h1>
-<Demographics defaultDemo={c ? c  : null } 
+<Demographics 
+// defaultDemo={c ? c  : null } 
                 source="ess"
                 overall={overall}
                 demos={demos}

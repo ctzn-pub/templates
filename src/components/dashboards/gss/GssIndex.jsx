@@ -32,7 +32,9 @@ function GssIndex() {
     return (
 <div>
 <h1>{metadata.title}</h1>
-<TimeTrend defaultDemo={c ? c  : null } 
+<TimeTrend 
+
+// defaultDemo={c ? c  : null } 
 data={timetrend}
 variables={variableimportance}
 axislabel={metadata.units + " " + metadata.measure}

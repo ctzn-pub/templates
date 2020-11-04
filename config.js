@@ -36,8 +36,7 @@ const config = {
     links: [{ text: 'Ontopic', link: 'https://ontopic.io' }],
     frontline: false,
     ignoreIndex: true,
-    title:
-      "<a href='https://ontopic.io/'>on </a><div class='greenCircle'></div><a href='https://ontopic.io/'>graphs</a>",
+    title: '',
   },
   siteMetadata: {
     title: 'Gatsby Gitbook Boilerplate | Ontopic',
