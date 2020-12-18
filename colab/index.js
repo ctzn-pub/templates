@@ -1,6 +1,6 @@
 const timeTrendTemplate = require('./templates/timeTrendTemplate');
 const fs = require('fs');
-const variables = ['happy', 'trust'];
+const variables = require('./variables');
 
 variables.forEach(variable => {
   fs.writeFileSync(

@@ -3,7 +3,6 @@ const fetch = require(`node-fetch`);
 const { createHttpLink } = require(`apollo-link-http`);
 
 const path = require('path');
-
 const config = require('./config');
 const plugins = [
   {
@@ -69,7 +68,7 @@ const plugins = [
           uri: process.env.GATSBY_HASURA_GRAPHQL_URL,
           headers: {
             'hasura-collaborator-token': process.env.GATSBY_HASURA_COLLABORATOR_TOKEN,
-            //  'x-hasura-admin-secret': process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET,
+            // 'x-hasura-admin-secret': process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET,
           },
           fetch,
         }),

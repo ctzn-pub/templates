@@ -62,10 +62,12 @@ export const useGssVariable = variable => {
     { variables: { var: variable } }
   );
   if (loading || error) return null;
+
+  console.log(data, loading, error);
   return {
-    meta2: data.meta2[0],
+    meta2: data?.meta2[0],
     summary_barchart: data.summary_barchart,
-    metadata: data.question_bank[0],
+    metadata: data?.question_bank[0],
     timetrend: data.timetrend,
     variableimportance: data.variableimportance,
   };

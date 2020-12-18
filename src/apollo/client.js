@@ -15,7 +15,7 @@ export const client = new ApolloClient({
   link: new HttpLink({
     uri: process.env.GATSBY_HASURA_GRAPHQL_URL,
     headers: {
-      'x-hasura-admin-secret': process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET,
+      'hasura-collaborator-token': process.env.GATSBY_HASURA_COLLABORATOR_TOKEN,
     },
     fetch,
   }),
