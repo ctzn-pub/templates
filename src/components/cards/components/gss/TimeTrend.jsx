@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useRef, useEffect } from "react"
 import Chart from "./TimeTrendChart"
 import classnames from "classnames"
-import Left from '../../images/leftarrow.svg';
-import Right from '../../images/rightarrow.svg';
+import Left from '../../../images/leftarrow.svg';
+import Right from '../../../images/rightarrow.svg';
 
 
 function TimeTrend({
@@ -22,31 +22,6 @@ console.log("defaultDemo", defaultDemo)
     (a, b) => b.percentage - a.percentage
   )
 
-  if (variable == "relig") {
-    variables = variables.filter(
-      d => d.demographic !== "Religion"
-    )
-  }
-  if (variable == "fund") {
-    variables = variables.filter(
-      d => d.demographic !== "Religion"
-    )
-  }
-  if (variable == "fund16") {
-    variables = variables.filter(
-      d => d.demographic !== "Religion"
-    )
-  }
-  if (variable == "reliten") {
-    variables = variables.filter(
-      d => d.demographic !== "ReligiousStrength"
-    )
-  }
-  if (variable == "attend") {
-    variables = variables.filter(
-      d => d.demographic !== "ChurchAttendance"
-    )
-  }
   variables.forEach(
     (object, i) => (object.my_ranks = variables.length - i)
   )
@@ -57,8 +32,8 @@ console.log("defaultDemo", defaultDemo)
     () =>
       variables.filter(
         d =>
-          d.demographics_metum.sitewide_demographic !== "Year" &&
-          d.demographics_metum.sitewide_demographic !== "Census Region"
+          d.demo_metum.sitewide_demographic !== "Year" &&
+          d.demo_metum.sitewide_demographic !== "Census Region"
       ),
     [variables]
   )
@@ -91,7 +66,7 @@ console.log("defaultDemo", defaultDemo)
     return null
   }
 
-  console.log('chartData', chartData)
+console.log('chartData', chartData)
 
   return (
 
@@ -130,8 +105,8 @@ console.log("defaultDemo", defaultDemo)
                       selectedDemographe.demographic === demo.demographic,
                   })}
                 >
-                  <i className={demo.demographics_metum.icon + " fas mr-2"}></i>
-                  {demo.demographics_metum.sitewide_demographic}
+                  <i className={demo.demo_metum.icon + " fas mr-2"}></i>
+                  {demo.demo_metum.sitewide_demographic}
                 </div>
               )
             })}
@@ -164,29 +139,29 @@ const calcChartData = (data, selectedDemographe, axislabel, shortname) => {
   if (!selectedDemographe) return null
   let newData = data.filter(d => {
     return (
-      d.demographics_metum.sitewide_demographic ===
-      selectedDemographe.demographics_metum.sitewide_demographic
+      d.demo_metum.sitewide_demographic ===
+      selectedDemographe.demo_metum.sitewide_demographic
     )
   })
 
-  let DemographicLevel = []
+  let demographiclevel = []
   newData.forEach(d => {
-    if (!DemographicLevel.includes(d.DemographicLevel))
-      DemographicLevel.push(d.DemographicLevel)
+    if (!demographiclevel.includes(d.demographiclevel))
+      demographiclevel.push(d.demographiclevel)
   })
 
-  DemographicLevel = DemographicLevel.map(level => ({
+  demographiclevel = demographiclevel.map(level => ({
     title: level,
-    color: newData.find(d => d.DemographicLevel === level).Color,
+    color: newData.find(d => d.demographiclevel === level).color,
   }))
 
-  let series = DemographicLevel.map(level => ({
+  let series = demographiclevel.map(level => ({
     name: level.title,
-    color: newData.find(d => d.DemographicLevel === level.title).Color,
+    color: newData.find(d => d.demographiclevel === level.title).color,
     type: "line",
-    data: newData.filter(d => d.DemographicLevel === level.title),
+    data: newData.filter(d => d.demographiclevel === level.title),
   }))
-  const cut = selectedDemographe.demographics_metum.sitewide_demographic
+  const cut = selectedDemographe.demo_metum.sitewide_demographic
   const question = "question"
   const x_label = "x_label"
   const y_label = axislabel

@@ -76,6 +76,19 @@ const plugins = [
     },
   },
   {
+    resolve: 'gatsby-source-graphql', // <- Configure plugin
+    options: {
+      typeName: 'HASURA2',
+      fieldName: 'hasura2', // <- fieldName under which schema will be stitched
+      createLink: () =>
+        createHttpLink({
+          uri: process.env.GATSBY_HASURA_GRAPHQL_URL2,
+          fetch,
+        }),
+      //  refetchInterval: 10, // Refresh every 10 seconds for new data
+    },
+  },
+  {
     resolve: `gatsby-plugin-layout`,
     options: {
       component: require.resolve(`./src/templates/docs.js`),
