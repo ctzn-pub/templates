@@ -14241,10 +14241,39 @@ function Globe() {
     },
   ];
 
+  let defaultHeight;
+  let defaultWidth;
+
+  if (typeof window !== `undefined`) {
+    defaultHeight = window.innerHeight;
+    defaultWidth = window.innerWidth;
+  }
+
+  const useWindowSize = () => {
+    const [dimensions, setDimensions] = useState({
+      windowHeight: defaultHeight,
+      windowWidth: defaultWidth,
+    });
+
+    useEffect(() => {
+      const handler = () =>
+        setDimensions({
+          windowHeight: window.innerHeight,
+          windowWidth: window.innerWidth,
+        });
+
+      window.addEventListener(`resize`, handler);
+      return () => window.removeEventListener(`resize`, handler);
+    }, []);
+
+    return dimensions;
+  };
+  console.log('useWindowSize', useWindowSize().windowWidth);
+
   return (
     <div>
-      <div style={{ height: '400px' }}>
-        <h1>Nivo</h1>
+      <h1>Nivo</h1>
+      <div style={{ height: '800px' }}>
         <ResponsiveChoropleth
           data={data}
           features={features}
@@ -14254,6 +14283,7 @@ function Globe() {
           unknownColor="#666666"
           label="properties.name"
           valueFormat=".2s"
+          projectionScale={useWindowSize().windowWidth < 600 ? 60 : 130}
           projectionTranslation={[0.5, 0.5]}
           projectionRotation={[0, 0, 0]}
           graticuleLineColor="#dddddd"
@@ -14284,7 +14314,7 @@ function Globe() {
               ],
             },
           ]}
-        />
+        />{' '}
       </div>
     </div>
   );
