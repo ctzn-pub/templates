@@ -27,8 +27,30 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
-      '/barcharts', // add trailing slash if enabled above
-      '/maps',
+      // add trailing slash if enabled above
+      '/search',
+      '/Dashboards',
+      './Cards',
+      '/ESS-Standard',
+      '/GSS-Standard',
+      './Nivo',
+      './NivoLine',
+      '/Charts',
+      '/correlation',
+      '/facetedScatterChart',
+      '/mapBar',
+      '/raceChart',
+      '/ridgeLine',
+      '/scatterChart',
+      '/colabTest',
+      '/countyAnalysis',
+      '/ESS_template',
+      '/GSS_template',
+      '/Scf',
+      '/single_variable',
+      '/split_bar',
+      '/Timetrend',
+      '/yrbs',
     ],
     collapsedNav: [
       // '/maps', // add trailing slash if enabled above
