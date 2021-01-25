@@ -284,10 +284,16 @@ function MapBar() {
   return (
     <div
       style={{
-        width: 800,
+        maxWidth: '800px',
       }}
     >
-      <div ref={chartRef}></div>
+      <div
+        style={{
+          width: '100%',
+        }}
+      >
+        <div ref={chartRef}></div>
+      </div>{' '}
     </div>
   );
 }
